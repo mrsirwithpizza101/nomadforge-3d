@@ -80,7 +80,8 @@ jobs:
             "appName": "NomadForge 3D",
             "webDir": "www",
             "backgroundColor": "#121417",
-            "android": { "adjustMarginsForEdgeToEdge": "force", "backgroundColor": "#121417" }
+            "android": { "adjustMarginsForEdgeToEdge": "force", "backgroundColor": "#121417" },
+            "plugins": { "CapacitorHttp": { "enabled": true } }
           }
           JSON
           npx cap add android

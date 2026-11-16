@@ -8,8 +8,10 @@ It's a single self-contained `index.html` (Three.js loaded from a CDN) — no bu
 
 ## Features
 
-- **Base vehicles** — Sprinter High-Roof Extended (170" WB), Transit Mid-Roof (148" WB), ProMaster High-Roof (159" WB), Pickup + Slide-in Camper, Skoolie Short Bus, and 4x4 Box Truck, each with wheelbase, roof-height and paint options.
-- **Inspection tools** — Solid / X-ray / Hidden toggles for the outer body, roof, driver cab and walls; part isolation (hide, swap variant, change material, remove); an exploded-view slider; floor grid and dimension lines in inches and centimeters.
+- **Base vehicles (2025 specs)** — Sprinter High-Roof (144/170/170 EXT), Transit (130/148/148 EL, low/medium/high roof), ProMaster (136/159/159 EXT), 1-ton crew-cab pickup + slide-in camper, Type A cutaway skoolie, and 4x4 cab-over box truck, each with wheelbase, roof-height and paint options.
+- **View modes** — one-tap Exterior, Cutaway (auto-opens the wall facing you), X-Ray and Interior views, plus fine-tune Solid / X-ray / Off controls per layer.
+- **Inspection tools** — part isolation (hide, swap variant, change material, remove), an exploded-view slider, a floor grid, vehicle dimension lines, and live length / width / height callouts on any selected part (inches and centimeters).
+- **Part search & custom parts** — search by brand, model or spec to find the closest catalog module; in the Android app, Search Online pulls live web results and pre-fills size, weight and price; add any custom part with its own specs and placement.
 - **Camera presets** — Exterior 3/4, Rear Doors Open, Side Door Open, Top-Down Floorplan, and Driver Cab View on hotkeys `1`–`5`, with animated doors.
 - **Modular catalog (45+ parts)** — sleeping & seating, kitchen & galley, bathroom & hygiene, off-grid power, water & climate, and exterior/overland gear. Modules snap to zones and swap when a zone is occupied.
 - **Materials & finishes** — procedural cabinetry, countertop, wall/ceiling and flooring finishes, applied build-wide or per part.

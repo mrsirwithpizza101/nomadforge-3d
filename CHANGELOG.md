@@ -1,5 +1,19 @@
 # Changelog
 
+## v1.2.0 — 2026-11-16
+
+- One-tap view modes — Exterior, Cutaway, X-Ray and Interior — make it easy to see inside the build.
+- Cutaway mode automatically opens the wall facing you and lifts the roof as you orbit around the vehicle.
+- Every catalog part now lists its real-world size in inches and centimeters.
+- Selecting a part draws its length, width and height in 3D and shows its spec and as-placed size.
+- Vehicles are rebuilt from 2025 published specs with accurate lengths, heights, wheelbases and interior vs. exterior widths.
+- Each van has its own modern front end, wheel arches, roof profile and high-roof fairing.
+- The box truck is now a 4x4 cab-over, the skoolie a Type A cutaway bus, and the pickup a 1-ton crew cab.
+- A new part search finds the closest catalog module for brand names, models and specs like “100Ah lithium” or “Maxxair fan”.
+- In the Android app, Search Online pulls live web results and pre-fills a part’s size, weight and price when it can.
+- You can add any custom part with its own size, weight, cost, power and water specs, and place it anywhere in the build.
+- The toolbar, catalog and part details have a cleaner, more compact layout.
+
 ## v1.1.0 — 2026-11-16
 
 - NomadForge 3D now installs on Android as an APK, attached to every GitHub release.

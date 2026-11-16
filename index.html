@@ -202,11 +202,58 @@ table.bom{width:100%;border-collapse:collapse;font-size:11.5px}
 .blist{display:flex;flex-direction:column;gap:6px}
 .bitem{display:flex;align-items:center;gap:8px;padding:9px 10px;border:1px solid var(--line);border-radius:8px;background:var(--panel2)}
 .bitem .grow{flex:1;min-width:0}.bitem .grow div:last-child{font-size:11px;color:var(--muted);font-family:var(--mono);margin-top:2px}
-#toast{position:fixed;left:50%;top:64px;transform:translate(-50%,-12px);opacity:0;background:#0f1215;border:1px solid var(--line2);padding:9px 14px;border-radius:9px;font-size:12.5px;z-index:60;transition:.25s;pointer-events:none;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+#toast{position:fixed;left:50%;bottom:84px;transform:translate(-50%,12px);opacity:0;background:#0f1215;border:1px solid var(--line2);padding:9px 14px;border-radius:9px;font-size:12.5px;z-index:60;transition:.25s;pointer-events:none;box-shadow:0 10px 30px rgba(0,0,0,.4)}
 #toast.show{opacity:1;transform:translate(-50%,0)}
 #toast b{color:var(--cyan);font-weight:600}
 
 #mnav{display:none}
+.vmodes{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;padding:2px 2px 0}
+.vm{display:flex;flex-direction:column;align-items:center;gap:3px;padding:7px 2px 6px;border-radius:7px;font-size:10.5px;font-weight:600;color:var(--muted);border:1px solid transparent}
+.vm:hover{background:var(--panel3);color:var(--text)}
+.vm.on{background:rgba(47,214,238,.1);border-color:rgba(47,214,238,.45);color:var(--cyan)}
+.tip{font-size:11px;line-height:1.4;color:var(--muted);padding:2px 6px 4px;max-width:236px}
+.tgl.lt{font-size:11.5px;color:var(--muted);padding:5px 6px}
+.lrows{display:flex;flex-direction:column;gap:5px;padding:0 4px 4px}
+.lrow{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:11.5px}
+.seg3{display:flex;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:2px;gap:2px}
+.seg3 button{font-size:10px;font-weight:600;padding:3px 6px;border-radius:4px;color:var(--muted)}
+.seg3 button.on{background:var(--panel3);color:var(--cyan)}
+.chips{display:flex;gap:4px;padding:0 2px}
+.chip2{flex:1;padding:6px 6px;border-radius:7px;font-size:11px;font-weight:600;color:var(--muted);border:1px solid var(--line);white-space:nowrap}
+.chip2:hover{color:var(--text)} .chip2.on{color:var(--amber);border-color:rgba(245,180,64,.4);background:rgba(245,180,64,.08)}
+#toolbar{width:248px}
+.search{display:flex;align-items:center;gap:8px;background:var(--bg);border:1px solid var(--line);border-radius:9px;padding:0 10px;margin-bottom:8px;color:var(--muted)}
+.search:focus-within{border-color:var(--cyan2)}
+.search input{flex:1;background:none;border:0;outline:none;padding:10px 0;font-size:13px;min-width:0}
+.qres{border:1px solid var(--line);border-radius:9px;background:var(--panel2);padding:6px 0 10px;margin-bottom:8px}
+.qres .sublbl{padding:4px 11px 0}
+.qonline{display:block;width:calc(100% - 22px);margin:8px 11px 0;padding:9px;border-radius:8px;border:1px dashed var(--line2);color:var(--cyan);font-weight:600;font-size:12px}
+.qonline:hover{background:rgba(47,214,238,.06)}
+#qWeb{padding:0 11px}
+.webnote{font-size:11.5px;color:var(--muted);line-height:1.45;margin-top:10px}
+.webcard{border-top:1px solid var(--line);padding:10px 0 2px;margin-top:8px}
+.webcard .wt{color:var(--text);font-weight:600;font-size:12.5px;text-decoration:none;line-height:1.3;display:block}
+.webcard .wh{font-size:10.5px;color:var(--cyan);font-family:var(--mono);margin:2px 0 4px}
+.webcard .ws{font-size:11.5px;color:var(--muted);line-height:1.4}
+.wchips{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+.wchips span{font-family:var(--mono);font-size:10.5px;padding:2px 6px;border-radius:5px;background:rgba(245,180,64,.1);color:var(--amber)}
+.addc{width:100%;padding:9px;border-radius:9px;border:1px dashed var(--line2);color:var(--muted);font-weight:600;font-size:12px;margin-bottom:10px}
+.addc:hover{color:var(--cyan);border-color:var(--cyan2)}
+.item .grow{flex:1;min-width:0}
+.plus{color:var(--dim);font-size:15px;width:22px;text-align:center}
+.item:hover .plus{color:var(--cyan)}
+.pop-dims{padding:0 12px 10px;display:flex;flex-direction:column;gap:3px}
+.pop-dims div{display:flex;justify-content:space-between;gap:10px;font-size:11.5px}
+.pop-dims span{color:var(--muted)} .pop-dims b{font-family:var(--mono);font-weight:500;font-size:11px;text-align:right}
+.cform{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.cform label{display:flex;flex-direction:column;gap:4px;font-size:11px;color:var(--muted);min-width:0}
+.cform .full{grid-column:1/-1}
+.cform label:has(select){grid-column:span 1}
+.cform input,.cform select{background:var(--bg);border:1px solid var(--line);border-radius:7px;padding:8px 9px;font-size:13px;color:var(--text);min-width:0;width:100%}
+.cform input:focus,.cform select:focus{outline:none;border-color:var(--cyan2)}
+.dimrow{display:flex;align-items:center;justify-content:space-between;font-size:11px;color:var(--muted)}
+.seg.mini{padding:2px}.seg.mini button{padding:3px 10px;font-size:11px}
+@media (max-width:560px){ .cform{grid-template-columns:1fr 1fr} }
 .set-sec{border:1px solid var(--line);border-radius:10px;background:var(--panel2);padding:14px;margin-bottom:12px}
 .set-sec h4{margin:0 0 10px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;display:flex;align-items:center;gap:8px}
 .set-sec h4 .ver{margin-left:auto;font-family:var(--mono);letter-spacing:0;text-transform:none;color:var(--cyan);background:rgba(47,214,238,.1);padding:2px 8px;border-radius:10px}
@@ -232,7 +279,10 @@ table.bom{width:100%;border-collapse:collapse;font-size:11.5px}
   #mnav{display:flex;position:fixed;left:0;right:0;bottom:0;height:58px;background:#16191D;border-top:1px solid var(--line);z-index:35;padding-bottom:env(safe-area-inset-bottom)}
   #mnav button{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:10.5px;color:var(--muted);font-weight:500}
   #mnav button.on{color:var(--cyan)}
-  #toolbar{flex-direction:row;flex-wrap:nowrap;left:8px;right:8px;top:8px;overflow-x:auto;max-height:none;padding:5px;gap:3px}
+  #toolbar{flex-direction:row;flex-wrap:nowrap;left:8px;right:8px;top:8px;overflow-x:auto;max-height:none;padding:5px;gap:4px;width:auto;align-items:center}
+  #toolbar .tip,#toolbar .lt,#toolbar .lrows{display:none}
+  .vmodes{display:flex;flex:none}.vm{padding:5px 8px;min-width:58px}
+  .chips{flex:none}
   .tgl{min-width:auto;flex-direction:column;gap:3px;padding:5px 7px}
   .tsep{width:1px;height:auto;margin:3px 1px}
   .tbl{display:none}
@@ -244,6 +294,7 @@ table.bom{width:100%;border-collapse:collapse;font-size:11.5px}
   .ph .t{display:none}.ph .t.keep{display:inline}.ph{padding:6px 8px}
   .long{display:none}.short{display:inline !important}
   #cams kbd{display:none}
+  #toast{bottom:190px}
   #pop{left:8px !important;right:8px;width:auto;top:auto !important;bottom:168px}
 }
 </style>
@@ -329,24 +380,45 @@ const fmtN = (n,d=0) => Number(n).toLocaleString('en-US',{maximumFractionDigits:
 const lb2kg = n => n*0.45359;
 
 const VEHICLES = {
-  sprinter:{name:'Sprinter High-Roof Extended',tag:'170" WB cargo van',group:'Cargo Vans',kind:'van',W:70,f:27,cab:72,overF:34,wheelR:15.2,curb:6050,gvwr:9050,
-    wbs:[{label:'144"',wb:144,L:130},{label:'170"',wb:170,L:156},{label:'170" EXT',wb:170,L:183}],wbDef:2,
-    roofs:[{label:'Standard',H:65},{label:'High',H:79}],roofDef:1},
-  transit:{name:'Transit Mid-Roof',tag:'148" WB cargo van',group:'Cargo Vans',kind:'van',W:70,f:27,cab:70,overF:34,wheelR:15,curb:5450,gvwr:9000,
-    wbs:[{label:'130"',wb:130,L:122},{label:'148"',wb:148,L:144},{label:'148" EL',wb:148,L:172}],wbDef:1,
-    roofs:[{label:'Low',H:57},{label:'Mid',H:65},{label:'High',H:81.5}],roofDef:1},
-  promaster:{name:'ProMaster High-Roof',tag:'159" WB cargo van',group:'Cargo Vans',kind:'van',W:75.6,f:21,cab:80,overF:38,wheelR:14.6,curb:5000,gvwr:9350,
-    wbs:[{label:'136"',wb:136,L:118},{label:'159"',wb:159,L:146},{label:'159" EXT',wb:159,L:160}],wbDef:1,
+  sprinter:{name:'Sprinter High-Roof Extended',tag:'2025 · 170" WB · VS30',group:'Cargo Vans',kind:'van',cab:'sprinter',
+    Wi:70.4,W:79.7,f:27,overF:39,wheelR:15.3,tireW:8.6,curb:5950,gvwr:9050,
+    wbs:[{label:'144"',wb:144,L:133,OL:233.5},{label:'170"',wb:170,L:173,OL:274.3},{label:'170" EXT',wb:170,L:188,OL:290}],wbDef:2,
+    roofs:[{label:'Standard',H:67.7},{label:'High',H:79.1}],roofDef:1},
+  transit:{name:'Transit Medium-Roof',tag:'2025 · 148" WB · T-250',group:'Cargo Vans',kind:'van',cab:'transit',
+    Wi:70.2,W:81.3,f:26.8,overF:40,wheelR:15,tireW:9,curb:5450,gvwr:9070,
+    wbs:[{label:'130"',wb:129.9,L:128,OL:219.9},{label:'148"',wb:147.6,L:143.6,OL:235.5},{label:'148" EL',wb:147.6,L:172.2,OL:263.9}],wbDef:1,
+    roofs:[{label:'Low',H:56.9},{label:'Medium',H:72},{label:'High',H:81.5}],roofDef:1},
+  promaster:{name:'ProMaster High-Roof',tag:'2025 · 159" WB · 3500',group:'Cargo Vans',kind:'van',cab:'promaster',
+    Wi:75.6,W:80.3,f:21,overF:37.6,wheelR:14.6,tireW:8.9,curb:5100,gvwr:9350,
+    wbs:[{label:'136"',wb:136,L:125,OL:213.2},{label:'159"',wb:159,L:145.9,OL:236},{label:'159" EXT',wb:159,L:160.2,OL:250.6}],wbDef:1,
     roofs:[{label:'Low',H:65},{label:'High',H:76}],roofDef:1},
-  pickup:{name:'Pickup + Slide-in Camper',tag:'1-ton truck camper',group:'Overland & Alt Rigs',kind:'pickup',W:80,f:36,cab:130,overF:36,wheelR:16.5,curb:7800,gvwr:11500,
-    wbs:[{label:'Short bed',wb:140,L:81},{label:'Long bed',wb:158,L:96}],wbDef:1,
+  pickup:{name:'HD Pickup + Slide-in Camper',tag:'2025 · 1-ton crew cab',group:'Overland & Alt Rigs',kind:'pickup',cab:'pickup',
+    Wi:84,W:90,f:38,overF:40,wheelR:16.6,tireW:10.5,curb:8100,gvwr:11550,bedW:80,
+    wbs:[{label:"6¾' bed",wb:159.8,L:81,OL:250},{label:"8' bed",wb:176,L:96,OL:266}],wbDef:1,
     roofs:[{label:'Low-profile',H:66},{label:'Full-height',H:76}],roofDef:1},
-  skoolie:{name:'Skoolie Short Bus',tag:'Type A bus conversion',group:'Overland & Alt Rigs',kind:'bus',W:88,f:30,cab:70,overF:26,wheelR:17,curb:10200,gvwr:14500,
-    wbs:[{label:'138" WB',wb:138,L:170},{label:'158" WB',wb:158,L:204}],wbDef:1,
+  skoolie:{name:'Type A Short Bus',tag:'2025 · cutaway chassis',group:'Overland & Alt Rigs',kind:'bus',cab:'bus',
+    Wi:86,W:92,f:30,overF:33,wheelR:15.8,tireW:9,curb:10300,gvwr:14200,
+    wbs:[{label:'158" WB',wb:158,L:180,OL:272},{label:'176" WB',wb:176,L:204,OL:296}],wbDef:1,
     roofs:[{label:'Stock',H:76},{label:'+12" Raise',H:88}],roofDef:0},
-  box:{name:'4x4 Box Truck',tag:'Class 5 4WD box',group:'Overland & Alt Rigs',kind:'box',W:90,f:40,cab:100,overF:34,wheelR:19,curb:9600,gvwr:14500,
-    wbs:[{label:"12' box",wb:150,L:144},{label:"14' box",wb:170,L:168}],wbDef:1,
-    roofs:[{label:'Low 76"',H:76},{label:'Std 84"',H:84}],roofDef:1},
+  box:{name:'4x4 Cab-Over Box Truck',tag:'2025 · Class 5 COE 4WD',group:'Overland & Alt Rigs',kind:'box',cab:'coe',
+    Wi:92,W:96,f:47,overF:42,wheelR:19,tireW:11,curb:9800,gvwr:14500,
+    wbs:[{label:"14' box",wb:150,L:168,OL:256},{label:"16' box",wb:176,L:192,OL:280}],wbDef:1,
+    roofs:[{label:'Std 84"',H:84},{label:'Tall 96"',H:96}],roofDef:0},
+};
+// Cab side profiles: [x from cargo front, y from ground] (inches), plus fascia layout
+const CABS = {
+  transit:{prof:C=>[[0,13],[C-7,13],[C-1,17],[C,27],[C-.4,39],[C-5,45.5],[C-31,50],[C-57,79],[C-63,81.5],[0,81.5]],ws:[6,7],belt:52,top:81.5,floor:24,
+    grille:[[-25,28],[25,28],[22.5,41.5],[-22.5,41.5]],lights:[24,36.5,38,45.5],lower:[13,28],slats:3},
+  sprinter:{prof:C=>[[0,13],[C-6,13],[C-1,16],[C,28],[C-.4,37],[C-7,43.5],[C-41,50],[C-65,80],[C-71,84],[0,84]],ws:[6,7],belt:53,top:84,floor:25,
+    grille:[[-17,29],[17,29],[16,41],[-16,41]],lights:[19.5,35.5,36,42.5],lower:[13,29],slats:2},
+  promaster:{prof:C=>[[0,11],[C-5,11],[C,20],[C,40],[C-3,48.5],[C-18,52.5],[C-48,84],[C-54,86.5],[0,86.5]],ws:[5,6],belt:50,top:86.5,floor:21,
+    grille:[[-31,21],[31,21],[30,37],[-30,37]],lights:[25,37,42,50.5],lower:[11,21],slats:4},
+  pickup:{prof:C=>[[4,22],[C-3,22],[C,30],[C,53.5],[C-2,59],[C-64,61],[C-83,80.5],[10,82],[4,80]],ws:[5,6],belt:62,top:82,floor:27,width:80,crew:true,
+    grille:[[-30,36],[30,36],[30,56],[-30,56]],lights:[27,38.5,47,57],lower:[22,36],slats:4},
+  bus:{prof:C=>[[0,15],[C-6,15],[C,24],[C,40],[C-5,47],[C-33,50],[C-56,77.5],[C-62,80],[0,80]],ws:[6,7],belt:54,top:80,floor:24,width:80,
+    grille:[[-20,26],[20,26],[19,40],[-19,40]],lights:[21,34,36,43],lower:[15,26],slats:3},
+  coe:{prof:C=>[[5,27],[C-2,27],[C,35],[C,60],[C-5,94],[C-12,98],[8,98],[5,95]],ws:[3,4],belt:70,top:98,floor:52,width:80,
+    grille:[[-27,42],[27,42],[27,57],[-27,57]],lights:[26,38,33,40],lower:[27,37],slats:5},
 };
 const PAINTS = [['#E9E9E4','Arctic White'],['#9AA3AB','Silver'],['#2B2F33','Graphite'],['#6B7A5A','Sage'],['#C9B48A','Sand'],['#1F3B5C','Navy'],['#8A3324','Rust'],['#E0A526','School Bus']];
 
@@ -413,6 +485,34 @@ const CATALOG = [
 ];
 const ITEM = {}; CATALOG.forEach(c=>c.items.forEach(i=>{i.cat=c.id;ITEM[i.id]=i;}));
 const ZONE = {}; Object.values(ITEM).forEach(i=>{(ZONE[i.zone] ||= []).push(i.id);});
+// real-world nominal sizes: [width, depth, height, count] in inches
+const SIZES = {bed_fixed:[70,60,40],bed_murphy:[70,60,24],bed_lift:[70,60,6],dinette:[66,70,40],swivel:[21,23,41],galley_p:[40,18,36.5],
+  sink:[15,13,9],induction:[21,14,2.5],propane:[21,20,21],fridge85:[21,22,33],fridge130:[22,24,48],okit:[27,24,11],wetbath:[32,32,74],toilet:[16,18,16],oshower:[6,3,6],
+  solar200:[58,26,1.4,1],solar400:[58,26,1.4,2],solar800:[58,26,1.4,4],bat200:[20.5,8.6,9,1],bat400:[20.5,8.6,9,2],bat800:[20.5,8.6,9,4],
+  inv2000:[15,5,8],inv3000:[19,5,9.5],dcdc:[7,3,6],shore:[6,1,6],fresh20:[24,14,12],fresh40:[34,13,19],grey:[28,16,9],fan:[16,16,6],ac:[38,28,13],
+  heater:[14,7,6.5],hydronic:[14,13,12],carrier:[70,24,44],windows:[40,4,26]};
+const KW = {insul:'insulation thinsulate havelock wool sheep reflectix foam polyiso spray sound deadener noico kilmat dynamat',frame:'subfloor plywood furring strips framing battens rivnuts studs',
+  panel:'wall paneling ceiling planks tongue groove shiplap cedar led strip lights lighting puck',floor:'flooring vinyl lvp rubber coin teak floor mat',
+  bed_fixed:'bed platform fixed garage mattress rear',bed_murphy:'murphy bed fold down folding',bed_lift:'elevator bed lift electric lagun happijac',dinette:'dinette bench table convertible seating lagun',
+  swivel:'swivel seat base cab seats captain chairs',galley_d:'galley kitchen cabinet drawers counter upper cabinets',galley_p:'galley kitchen cabinet entry counter',sink:'sink faucet stainless basin tap',
+  induction:'induction cooktop burner hob electric stove',propane:'propane stove oven range gas lp suburban furrion atwood smev',
+  fridge85:'fridge refrigerator freezer compressor dometic cfx isotherm iceco vevor alpicool novakool vitrifrigo upright',fridge130:'fridge refrigerator freezer compressor dometic dmc4101 novakool r4500 isotherm vitrifrigo upright large',
+  okit:'outdoor kitchen slide drawer camp tailgate',wetbath:'wet bath shower stall cassette toilet thetford bathroom',toilet:'composting toilet natures head nature airhead trelino boxio cuddy porta potti cassette dry',
+  oshower:'outdoor shower rear hose mixing valve',solar200:'solar panel panels pv renogy rich bougerv sunpower eco worthy mono',solar400:'solar panel panels pv renogy rich bougerv sunpower eco worthy',solar800:'solar panel panels pv renogy rich bougerv sunpower eco worthy',
+  bat200:'battery lithium lifepo4 battle born battleborn renogy sok epoch victron ampere time litime redodo',bat400:'battery lithium lifepo4 battle born battleborn renogy sok epoch victron ampere time litime',bat800:'battery lithium lifepo4 battle born battleborn renogy sok epoch victron ampere time',
+  inv2000:'inverter charger multiplus victron renogy giandel xantrex magnum aims pure sine',inv3000:'inverter charger multiplus victron renogy xantrex freedom magnum pure sine',dcdc:'dc charger alternator orion victron renogy redarc b2b battery to battery',
+  shore:'shore power inlet plug 30a 15a outlet external charging port',fresh20:'fresh water tank storage jug',fresh40:'fresh water tank wheel well',grey:'grey gray water tank waste drain undermount',
+  fan:'roof vent fan maxxair maxx air fantastic 7500k ventilation dometic',ac:'air conditioner a/c ac rooftop dometic rtx velit mabru cooling',heater:'diesel heater air webasto espar planar autoterm vevor chinese gasoline furnace',
+  hydronic:'hydronic heater boiler webasto thermo top espar heat exchanger water radiant floor',rack:'roof rack ladder deck flatline aluminess owl front runner',awning:'awning shade fiamma thule arb carefree',
+  carrier:'bike rack spare tire carrier swing arm hitch',armor:'bumper skid plate winch off road armor rock sliders',windows:'window flares bunk windows motionfx cr laurence'};
+Object.values(ITEM).forEach(i=>{ i.sz=SIZES[i.id]||null; i.kw=KW[i.id]||''; });
+ITEM.fridge85.liters=85; ITEM.fridge130.liters=130;
+const CAT_NAME={power:'Off-Grid Power',water:'Water & Climate',kitchen:'Kitchen & Galley',sleep:'Sleeping & Seating',bath:'Bathroom & Hygiene',ext:'Exterior & Overland Gear',shell:'Shell Prep',storage:'Storage',other:'Other'};
+function IT(inst){
+  if(inst.cid!=='custom') return ITEM[inst.cid];
+  const s=inst.spec||{};
+  return {id:'custom',custom:true,name:s.name||'Custom part',zone:'custom:'+inst.iid,cat:s.cat||'other',cost:+s.cost||0,wt:+s.wt||0,phase:+s.phase||3,draw:+s.draw||0,solarW:+s.solarW||0,ah:+s.ah||0,fresh:+s.fresh||0,grey:+s.grey||0,sz:[+s.w||0,+s.d||0,+s.h||0]};
+}
 
 const MATS = {
   cabinet:[['birch','Baltic Birch Plywood'],['sage','Matte Sage Green'],['walnut','Warm Walnut'],['whitelam','White Laminate'],['hexply','Textured Black Hex-Ply']],
@@ -434,15 +534,15 @@ function freshState(){
     settings:{sunHours:4.5, driveHours:1, fullWater:true, cargo:350}};
 }
 let S = freshState();
-const view = {layers:{body:'ghost',roof:'solid',cab:'solid',walls:'solid'}, grid:true, dims:false, hidden:new Set(), phase:0, explode:0, sel:null, preset:'ext', roofBeforeTop:null};
+const view = {mode:'cutaway', layers:{body:'solid',roof:'hidden',cab:'solid',walls:'solid'}, grid:true, dims:false, hidden:new Set(), phase:0, explode:0, sel:null, preset:'ext', roofBeforeTop:null};
 
 function store(k,v){try{localStorage.setItem(k,JSON.stringify(v));return true}catch(e){return false}}
 function load(k){try{const s=localStorage.getItem(k);return s?JSON.parse(s):null}catch(e){return null}}
 function sanitize(o){
   if(!o||typeof o!=='object'||!VEHICLES[o.vehicle]) return null;
   const d = freshState(), v = VEHICLES[o.vehicle];
-  const items = Array.isArray(o.items)? o.items.filter(i=>i&&ITEM[i.cid]).map(i=>({iid:String(i.iid||uid()),cid:i.cid,mats:(i.mats&&typeof i.mats==='object')?i.mats:{}})) : [];
-  const seen=new Set(); const uniq=[]; for(const i of items){const z=ITEM[i.cid].zone; if(seen.has(z)) continue; seen.add(z); uniq.push(i);}
+  const items = Array.isArray(o.items)? o.items.filter(i=>i&&(ITEM[i.cid]||(i.cid==='custom'&&i.spec&&typeof i.spec==='object'))).map(i=>{const n={iid:String(i.iid||uid()),cid:i.cid,mats:(i.mats&&typeof i.mats==='object')?i.mats:{}}; if(i.cid==='custom') n.spec=Object.assign({},i.spec,{name:String(i.spec.name||'Custom part').slice(0,60)}); return n;}) : [];
+  const seen=new Set(); const uniq=[]; for(const i of items){const z=IT(i).zone; if(seen.has(z)) continue; seen.add(z); uniq.push(i);}
   return {name:String(o.name||'Untitled Build').slice(0,60), vehicle:o.vehicle,
     wbIdx:Math.min(Math.max(0,o.wbIdx|0),v.wbs.length-1), roofIdx:Math.min(Math.max(0,o.roofIdx|0),v.roofs.length-1),
     paint:/^#[0-9a-f]{6}$/i.test(o.paint)?o.paint:d.paint, items:uniq,
@@ -537,11 +637,14 @@ const M = {
   head:new THREE.MeshStandardMaterial({color:'#f4f6f8',emissive:'#cfe6ff',emissiveIntensity:.6}),
   tail:new THREE.MeshStandardMaterial({color:'#8a1010',emissive:'#ff2a1a',emissiveIntensity:.5}),
   screen:new THREE.MeshStandardMaterial({color:'#0b2a30',emissive:'#2FD6EE',emissiveIntensity:.8}),
+  liner:std('#0c0d0f',{roughness:.95,side:THREE.DoubleSide}), grille:std('#0f1113',{roughness:.35,metalness:.4}), chrome:std('#cfd5dc',{metalness:1,roughness:.18}),
+  drl:new THREE.MeshStandardMaterial({color:'#ffffff',emissive:'#e8f4ff',emissiveIntensity:1.4}),
 };
 const ghostMat = new THREE.MeshBasicMaterial({color:'#2FD6EE',transparent:true,opacity:.06,depthWrite:false,side:THREE.DoubleSide});
 const ghostMatW = new THREE.MeshBasicMaterial({color:'#F5B440',transparent:true,opacity:.05,depthWrite:false,side:THREE.DoubleSide});
 const edgeMat = new THREE.LineBasicMaterial({color:'#2FD6EE',transparent:true,opacity:.55});
 const edgeMatW = new THREE.LineBasicMaterial({color:'#F5B440',transparent:true,opacity:.45});
+const edgeMatC = new THREE.LineBasicMaterial({color:'#2FD6EE',transparent:true,opacity:.6});
 const dimMat = new THREE.LineBasicMaterial({color:'#2FD6EE',depthTest:false,transparent:true,opacity:.95});
 
 /* =====================================================================
@@ -623,13 +726,15 @@ let servicesGroup = null, dimsGroup = null;
 
 function makeCtx(){
   const v=VEHICLES[S.vehicle], wbo=v.wbs[S.wbIdx], H=v.roofs[S.roofIdx].H;
-  const c={v,kind:v.kind,L:wbo.L,W:v.W,H,f:v.f,CL:v.cab,wb:wbo.wb};
-  c.T=c.L+c.CL; c.xf=c.T-v.overF; c.xr=c.xf-c.wb; c.wheelR=v.wheelR;
-  c.roofY=c.f+H; c.roofTop=c.roofY+1.2; c.ceilY=c.f+H-1.6; c.fy=c.f+1; c.zi=c.W/2-3.2;
+  const c={v,kind:v.kind,L:wbo.L,W:v.W,Wi:v.Wi,H,f:v.f,wb:wbo.wb,T:wbo.OL};
+  c.CL=c.T-c.L; c.cab=CABS[v.cab]; c.xf=c.T-v.overF; c.xr=c.xf-c.wb; c.wheelR=v.wheelR;
+  c.trackW = v.bedW || (c.kind==='bus'||c.kind==='box' ? 82 : c.W);
+  c.roofY=c.f+H; c.roofTop=c.roofY+(c.kind==='box'?1.8:3.6); c.ceilY=c.f+H-1.6; c.fy=c.f+1; c.zi=c.Wi/2-.8;
   c.cabover = c.kind==='pickup';
-  c.roofEndX = c.kind==='pickup'? c.L+38 : c.kind==='bus'? c.L+36 : c.L;
-  c.door = c.kind==='van' ? {x0:c.L-50,x1:c.L-4,h:Math.min(H-3,68)} : c.kind==='box' ? {x0:c.L-38,x1:c.L-6,h:Math.min(H-6,72)} : null;
-  const has = z => S.items.find(i=>ITEM[i.cid].zone===z);
+  c.roofEndX = c.kind==='pickup'? c.L+40 : c.kind==='bus'? c.L+8 : c.L;
+  c.door = c.kind==='van' ? {x0:c.L-50,x1:c.L-4,h:Math.min(H-3,68)} : null;
+  c.seatX=c.L+20; c.cabFloor=c.f;
+  const has = z => S.items.find(i=>IT(i).zone===z);
   c.has = has;
   const bed = has('bed');
   c.bedEnd = (!bed || c.cabover) ? 0 : (bed.cid==='dinette' ? Math.min(66,c.L*.42) : Math.min(62,c.L*.42));
@@ -647,139 +752,215 @@ const matOf = (inst,slot) => (inst.mats&&inst.mats[slot]) || S.defaults[slot];
 /* =====================================================================
    VEHICLE SHELL
    ===================================================================== */
+function L_(m,layer,side){ layerize(m,layer); if(side!==undefined) m.userData.side=side; return m; }
 function wheel(c,x,z,parent){
-  const g=new THREE.Group(); g.position.set(x,c.wheelR,z); parent.add(g);
-  const t=Cyl(c.wheelR,9.5,M.rubber,'z',0,0,0,g,36);
-  Cyl(c.wheelR*.6,9.9,M.alu,'z',0,0,0,g,24);
-  Cyl(c.wheelR*.22,10.3,M.dark,'z',0,0,0,g,12);
+  const R=c.wheelR, w=c.v.tireW||9.5, rr=R*.6;
+  const g=new THREE.Group(); g.position.set(x,R,z); parent.add(g);
+  const a=new THREE.Group(); a.rotation.x=Math.PI/2; g.add(a);
+  const pts=[[rr+.5,-w/2+.6],[R-2.2,-w/2],[R-.8,-w/2+.8],[R,-w/2+2.4],[R,w/2-2.4],[R-.8,w/2-.8],[R-2.2,w/2],[rr+.5,w/2-.6]].map(p=>new THREE.Vector2(p[0],p[1]));
+  a.add(mesh(new THREE.LatheGeometry(pts,40),M.rubber));
+  a.add(mesh(new THREE.CylinderGeometry(rr,rr,w-1.6,32),M.alu));
+  const s=Math.sign(z)||1;
+  const face=mesh(new THREE.CylinderGeometry(rr*.92,rr*.92,.4,32),M.dark); face.position.y=s*(w/2-.9); a.add(face);
+  for(let i=0;i<6;i++){ const sp=mesh(new THREE.BoxGeometry(rr*1.75,.6,1.5),M.alu); sp.rotation.y=i*Math.PI/6; sp.position.y=s*(w/2-.6); a.add(sp); }
+  const hub=mesh(new THREE.CylinderGeometry(rr*.26,rr*.3,1.2,20),M.steel); hub.position.y=s*(w/2-.3); a.add(hub);
   return g;
+}
+function archShape(c,s,x0,x1,yb,arches){
+  const R=c.wheelR+2.8, yc=c.wheelR;
+  for(const ax of arches.slice().sort((a,b)=>a-b)){
+    if(ax-R<x0+1||ax+R>x1-1) continue; const dy=yb-yc; if(dy>=R-.5) continue;
+    const a0=Math.asin(dy/R), dx=Math.cos(a0)*R; s.lineTo(ax-dx,yb); s.absarc(ax,yc,R,Math.PI-a0,a0,true);
+  }
+}
+function sidePanel(c,x0,x1,yb,yt,arches,zPos,mat,parent){
+  const s=new THREE.Shape(); s.moveTo(x0,yb); archShape(c,s,x0,x1,yb,arches);
+  s.lineTo(x1,yb); s.lineTo(x1,yt); s.lineTo(x0,yt); s.lineTo(x0,yb);
+  const geo=new THREE.ExtrudeGeometry(s,{depth:1,bevelEnabled:true,bevelThickness:.5,bevelSize:.5,bevelSegments:2,curveSegments:18});
+  const m=mesh(geo,mat); m.position.z=zPos; if(parent) parent.add(m); return m;
+}
+function archLiner(c,x,z,depth,parent){
+  const R=c.wheelR+2.6, m=mesh(new THREE.CylinderGeometry(R,R,depth,28,1,true,Math.PI/2,Math.PI),M.liner);
+  m.rotation.x=Math.PI/2; m.position.set(x,c.wheelR,z); parent.add(m); return m;
+}
+function roofCap(c,x0,x1,r,crown,mat){
+  const hw=c.W/2, H0=-4, s=new THREE.Shape();
+  s.moveTo(-hw,H0); s.lineTo(-hw,crown-r); s.quadraticCurveTo(-hw,crown,-hw+r,crown); s.lineTo(hw-r,crown); s.quadraticCurveTo(hw,crown,hw,crown-r);
+  s.lineTo(hw,H0); s.lineTo(hw-1.4,H0); s.lineTo(hw-1.4,0); s.lineTo(-hw+1.4,0); s.lineTo(-hw+1.4,H0); s.lineTo(-hw,H0);
+  const geo=new THREE.ExtrudeGeometry(s,{depth:x1-x0,bevelEnabled:true,bevelThickness:1,bevelSize:.8,bevelSegments:3,curveSegments:10});
+  geo.rotateY(Math.PI/2); geo.translate(x0,c.roofY,0); return mesh(geo,mat);
+}
+function profExtrude(pts,width,mat,bev=1.6){
+  const s=new THREE.Shape(pts.map(p=>new THREE.Vector2(p[0],p[1])));
+  const geo=new THREE.ExtrudeGeometry(s,{depth:width-2*bev,bevelEnabled:true,bevelThickness:bev,bevelSize:bev,bevelSegments:3,curveSegments:12});
+  geo.translate(0,0,-(width-2*bev)/2); return mesh(geo,mat);
 }
 function buildShell(c){
   const {L,W,H,f}=c, g=new THREE.Group(); root.add(g);
   const P = c.kind==='pickup' ? M.camper : paintMat;
   // chassis
   const ch=new THREE.Group(); g.add(ch);
-  for(const s of [-1,1]) B(4,c.xf+14,f-10,f-4,s*W*.3-1.5,s*W*.3+1.5,M.dark,ch);
-  B(0,L,f-2.2,f,-W/2,W/2,M.floorPan,ch);
-  for(const s of [-1,1]){ wheel(c,c.xr,s*(W/2-4.8),ch); wheel(c,c.xf,s*(W/2-4.8),ch); }
-  if(c.kind==='box'||c.kind==='bus'){ for(const s of [-1,1]) B(c.xr-c.wheelR-3,c.xr+c.wheelR+3,f-1.5,f,s*W/2-.5+(s<0?0:-.1),s*W/2+(s<0?.6:.5),M.black,ch); }
-  B(-3.5,6,c.wheelR*.75,c.wheelR*.75+7,-W/2+2,W/2-2,M.black,ch); // rear bumper
-  // pickup bed
-  if(c.kind==='pickup'){
-    for(const s of [-1,1]){ const m=B(-1,L+2,f-6,f+18,s>0?W/2+.2:-W/2-2.2,s>0?W/2+2.2:-W/2-.2,paintMat,g); layerize(m,'body'); reg(m,0,0,s*30); }
-    const tg=B(-2,0,f-6,f+18,-W/2-2,W/2+2,paintMat,g); layerize(tg,'body');
-  }
-  const wallBot = c.kind==='pickup'? f : f;
-  // driver wall
-  const lw=B(0,L,wallBot,c.roofY,-W/2,-W/2+1.1,P,g); layerize(lw,'body'); reg(lw,0,0,-45);
-  // passenger wall (with door opening)
+  const rz=Math.min(c.trackW*.3,17);
+  for(const s of [-1,1]) B(-2,c.xf+16,c.wheelR+1,c.wheelR+7,s*rz-1.6,s*rz+1.6,M.dark,ch);
+  if(c.kind!=='pickup') B(0,L,f-2.2,f,-W/2+1,W/2-1,M.floorPan,ch);
+  if(c.kind==='box'||c.kind==='bus') for(const s of [-1,1]) B(0,L,c.wheelR+7,f-2,s*rz-2,s*rz+2,M.dark,ch);
+  const tz=c.trackW/2-(c.v.tireW||9.5)/2-1;
+  for(const s of [-1,1]){ wheel(c,c.xr,s*tz,ch); wheel(c,c.xf,s*tz,ch); }
+  if(c.kind==='box'){ Cyl(9,30,M.alu,'x',L+14,c.wheelR+4,-W*.32,ch,24); }
+  if(c.kind==='van'||c.kind==='bus') B(-4.5,3,c.wheelR*.7+2,c.wheelR*.7+9,-W/2+3,W/2-3,M.black,ch);
+  if(c.kind==='box') B(-4,2,c.wheelR+2,c.wheelR+9,-W/2+6,W/2-6,M.black,ch);
+  const yt=c.roofY-3;
+  const lw=new THREE.Group(); g.add(lw); reg(lw,0,0,-45);
   const rw=new THREE.Group(); g.add(rw); reg(rw,0,0,45);
-  if(c.door){
-    const d=c.door;
-    layerize(B(0,d.x0,wallBot,c.roofY,W/2-1.1,W/2,P,rw),'body');
-    layerize(B(d.x1,L,wallBot,c.roofY,W/2-1.1,W/2,P,rw),'body');
-    layerize(B(d.x0,d.x1,f+d.h,c.roofY,W/2-1.1,W/2,P,rw),'body');
-    const outer=new THREE.Group(); rw.add(outer); const inner=new THREE.Group(); outer.add(inner);
-    layerize(B(d.x0,d.x1,f,f+d.h,W/2-.2,W/2+.9,P,inner),'body');
-    if(c.kind==='van') layerize(B(d.x0+6,d.x1-6,f+d.h-24,f+d.h-6,W/2+.9,W/2+1.1,M.glass,inner),'body');
-    B(d.x1-8,d.x1-3,f+d.h*.48,f+d.h*.48+1.2,W/2+.9,W/2+1.8,M.black,inner);
-    doorRefs.slide={g:inner,len:(d.x1-d.x0)*.92};
-  } else layerize(B(0,L,wallBot,c.roofY,W/2-1.1,W/2,P,rw),'body');
-  // bus side windows
-  if(c.kind==='bus'){ for(let x=10;x<L-20;x+=30){ for(const s of [-1,1]){ const m=B(x,x+24,c.roofY-30,c.roofY-11,s>0?W/2:-W/2-.25,s>0?W/2+.25:-W/2,M.glass,s>0?rw:g); layerize(m,'body'); if(s<0) reg(m,0,0,-45);} } }
-  // stripe on camper
-  if(c.kind==='pickup'){ for(const s of [-1,1]){ const m=B(0,L,f+22,f+25,s>0?W/2:-W/2-.2,s>0?W/2+.2:-W/2,paintMat,s>0?rw:g); layerize(m,'body'); if(s<0) reg(m,0,0,-45);} }
-  // roof
-  const roof=B(-.6,c.roofEndX+.6,c.roofY,c.roofTop,-W/2,W/2,P,g); layerize(roof,'roof'); reg(roof,0,65,0);
-  if(c.kind==='van'){ for(let x=10;x<L-8;x+=22){ const r=B(x,x+3,c.roofTop,c.roofTop+.5,-W/2+3,W/2-3,P,roof); r.position.sub(roof.position); layerize(r,'roof'); } }
-  // pickup cabover
   if(c.kind==='pickup'){
+    const bw=c.v.bedW;
+    for(const s of [-1,1]){ const p=s<0?lw:rw;
+      L_(sidePanel(c,-2,L+3,22,58,[c.xr],s>0?bw/2-1.5:-bw/2+.5,paintMat,p),'body',s);
+      L_(sidePanel(c,0,L,58,yt,[],s>0?W/2-1.5:-W/2+.5,M.camper,p),'body',s);
+      L_(B(0,L,57,58.6,s>0?bw/2:-W/2,s>0?W/2:-bw/2,M.camper,p),'body',s);
+      L_(B(0,L,62,65,s>0?W/2:-W/2-.25,s>0?W/2+.25:-W/2,paintMat,p),'body',s);
+      archLiner(c,c.xr,s*(bw/2-3.5),7,ch);
+    }
+    const tg=L_(B(-3.5,-1.5,22,57,-bw/2,bw/2,paintMat,g),'body','rear'); reg(tg,-40,0,0);
     const co=new THREE.Group(); g.add(co); reg(co,25,25,0);
-    layerize(B(L,L+38,f+48,c.roofY,-W/2,-W/2+1.1,M.camper,co),'body');
-    layerize(B(L,L+38,f+48,c.roofY,W/2-1.1,W/2,M.camper,co),'body');
-    layerize(B(L+36.9,L+38,f+48,c.roofY,-W/2,W/2,M.camper,co),'body');
-    layerize(B(L,L+38,f+47,f+48.2,-W/2,W/2,M.camper,co),'body');
-    layerize(B(L+38,L+38.3,f+52,c.roofY-5,-W/2+10,W/2-10,M.glass,co),'body');
-    layerize(B(L,L+36.9,f+38,f+48,-W/2+.5,W/2-.5,M.dark,co),'body');
-  }
-  // rear doors
-  const rd=new THREE.Group(); g.add(rd); reg(rd,-40,0,0);
-  const dh = c.roofY-f;
-  const pl=new THREE.Group(); pl.position.set(0,0,-W/2); rd.add(pl);
-  const pr=new THREE.Group(); pr.position.set(0,0,W/2); rd.add(pr);
-  const half=W/2;
-  if(c.kind==='pickup'){
-    layerize(B(-1.1,0,f+4,f+dh-6,22,half,M.camper,pl),'body');
-    layerize(B(-1.1,0,f,c.roofY,0,22,M.camper,pl),'body');
-    layerize(B(-1.1,0,f+4,f+dh-6,-half,-6,M.camper,pr),'body');
-    layerize(B(-1.1,0,f,c.roofY,-6,0,M.camper,pr),'body');
-    layerize(B(-1.3,-1.1,f+dh-22,f+dh-10,26,half-4,M.glass,pl),'body');
+    const top=c.cab.top+3;
+    L_(co.add(profExtrude([[L-1,top],[L+34,top],[L+41,top+7],[L+41,c.roofY-5],[L+35,c.roofY+1.5],[L-1,c.roofY+1.5]],W,M.camper))&&co.children[co.children.length-1],'body');
+    L_(B(L+41.5,L+42,top+11,c.roofY-7,-W/2+12,W/2-12,M.glass,co),'body');
   } else {
-    layerize(B(-1.1,0,f,c.roofY,0,half-.2,P,pl),'body');
-    layerize(B(-1.1,0,f,c.roofY,-half+.2,0,P,pr),'body');
-    if(c.kind!=='box'){ layerize(B(-1.3,-1.1,c.roofY-24,c.roofY-7,5,half-4,M.glass,pl),'body'); layerize(B(-1.3,-1.1,c.roofY-24,c.roofY-7,-half+4,-5,M.glass,pr),'body'); }
-    B(-2.2,-1.1,f+dh*.45,f+dh*.45+5,half-5,half-3.5,M.black,pl);
+    const yb = c.kind==='box'? f-3 : f-8;
+    const arch = c.kind==='box'? [] : [c.xr];
+    L_(sidePanel(c,0,L,yb,yt,arch,-W/2+.5,P,lw),'body',-1);
+    if(c.door){ const d=c.door;
+      L_(sidePanel(c,0,d.x0,yb,yt,arch,W/2-1.5,P,rw),'body',1);
+      L_(sidePanel(c,d.x1,L,yb,yt,[],W/2-1.5,P,rw),'body',1);
+      L_(sidePanel(c,d.x0,d.x1,f+d.h,yt,[],W/2-1.5,P,rw),'body',1);
+      const outer=new THREE.Group(); rw.add(outer); const inner=new THREE.Group(); outer.add(inner);
+      L_(sidePanel(c,d.x0+.3,d.x1-.3,yb+1,f+d.h-.3,[],W/2-1.2,P,inner),'body',1);
+      L_(B(d.x0+5,d.x1-8,f+d.h-24,f+d.h-6,W/2+.9,W/2+1.15,M.glass,inner),'body',1);
+      L_(B(d.x1-9,d.x1-4,f+d.h*.47,f+d.h*.47+1.3,W/2+.9,W/2+1.8,M.black,inner),'body',1);
+      L_(B(d.x0-3,L-1,f+d.h*.56-.5,f+d.h*.56+.5,W/2+.3,W/2+.9,M.black,rw),'body',1);
+      doorRefs.slide={g:inner,len:(d.x1-d.x0)*.92};
+    } else L_(sidePanel(c,0,L,yb,yt,arch,W/2-1.5,P,rw),'body',1);
+    if(c.kind!=='box') for(const s of [-1,1]) archLiner(c,c.xr,s*(W/2-4),8,ch);
+    if(c.kind==='bus'){
+      for(let x=12;x<L-18;x+=30) for(const s of [-1,1]) L_(B(x,x+24,c.roofY-30,c.roofY-11,s>0?W/2:-W/2-.3,s>0?W/2+.3:-W/2,M.glass,s>0?rw:lw),'body',s);
+      for(const s of [-1,1]) L_(B(0,L,c.roofY-34,c.roofY-33,s>0?W/2:-W/2-.3,s>0?W/2+.3:-W/2,M.black,s>0?rw:lw),'body',s);
+      const fc=new THREE.Group(); g.add(fc); reg(fc,30,20,0);
+      L_(fc.add(profExtrude([[L-1,c.cab.top-1],[L+7,c.cab.top-1],[L+8.5,c.cab.top+4],[L+8.5,c.roofY],[L-1,c.roofY]],W,P))&&fc.children[0],'body');
+      L_(B(L+9.2,L+9.6,c.roofY-14,c.roofY-4,-W/2+8,W/2-8,M.black,fc),'body');
+    }
+    if(c.kind==='box'){
+      for(const s of [-1,1]) for(const x of [0,L]) L_(B(x-1.6,x+.4,f-3,c.roofY+.5,s>0?W/2-2:-W/2-.4,s>0?W/2+.4:-W/2+2,M.alu,s>0?rw:lw),'body',s);
+      const fw=L_(B(L-1.2,L,f-3,c.roofY,-W/2,W/2,P,g),'body','front');
+      for(const s of [-1,1]) L_(B(4,L-4,f-3.5,f-2.5,s>0?W/2:-W/2-.5,s>0?W/2+.5:-W/2,M.alu,s>0?rw:lw),'body',s);
+    }
   }
-  doorRefs.rear={l:pl,r:pr};
-  // tail lights
-  for(const s of [-1,1]) B(-.4,.6,f+6,f+22,s*(W/2)-(s>0?2.5:-1.5)-(s>0?0:1),s*(W/2)-(s>0?.5:-.5)-(s>0?0:-1),M.tail,g);
+  // roof
+  const rx1 = c.kind==='bus'? L+8 : L;
+  const roof=roofCap(c,-.5,rx1+.5,c.kind==='box'?2:6,c.kind==='box'?.6:2.6,P); g.add(roof); L_(roof,'roof','top'); reg(roof,0,65,0);
+  if(c.kind==='van') for(let x=10;x<L-8;x+=22){ const r=B(x,x+3,c.roofTop-.6,c.roofTop+.3,-W/2+8,W/2-8,P,roof); L_(r,'roof','top'); }
+  // rear
+  const rd=new THREE.Group(); g.add(rd); reg(rd,-40,0,0);
+  if(c.kind==='box'){
+    const fr=new THREE.Group(); rd.add(fr); const roll=new THREE.Group(); fr.add(roll);
+    L_(B(-1.6,0,c.roofY-4,c.roofY+.5,-W/2,W/2,M.alu,fr),'body','rear');
+    L_(B(-1.2,-.4,f-1,c.roofY-4,-W/2+2,W/2-2,M.white,roll),'body','rear');
+    for(let y=f+6;y<c.roofY-5;y+=8) L_(B(-1.6,-1.2,y,y+.6,-W/2+2,W/2-2,M.alu,roll),'body','rear');
+    L_(B(-2.6,-1.2,f+2,f+4,-6,6,M.black,roll),'body','rear');
+    doorRefs.rear={roll,h:c.roofY-f-10};
+    for(const s of [-1,1]) L_(Cyl(1.6,.8,M.tail,'x',-2.8,c.wheelR+5.5,s*(W/2-10),g,16),'body','rear');
+  } else if(c.kind==='pickup'){
+    const bw=c.v.bedW, pr=new THREE.Group(); pr.position.set(0,0,30); rd.add(pr);
+    L_(B(-1.2,0,58,c.roofY,-W/2,6,M.camper,rd),'body','rear'); L_(B(-1.2,0,58,c.roofY,30,W/2,M.camper,rd),'body','rear');
+    L_(B(-1.2,0,f,58,-bw/2+2,6,M.camper,rd),'body','rear'); L_(B(-1.2,0,f,58,30,bw/2-2,M.camper,rd),'body','rear');
+    L_(B(-1.2,0,f+2,c.roofY-3,-24,0,M.camper,pr),'body','rear');
+    L_(B(-1.4,-1.2,c.roofY-26,c.roofY-12,-20,-4,M.glass,pr),'body','rear');
+    L_(B(-2.6,-1.2,f+30,f+32,-6,-3,M.black,pr),'body','rear');
+    doorRefs.rear={l:new THREE.Group(),r:pr};
+    for(const s of [-1,1]) L_(B(-4,-3,38,50,s*(bw/2-1)-1.5,s*(bw/2-1)+1.5,M.tail,g),'body','rear');
+  } else {
+    const pl=new THREE.Group(); pl.position.set(0,0,-W/2+.6); rd.add(pl);
+    const pr=new THREE.Group(); pr.position.set(0,0,W/2-.6); rd.add(pr);
+    const half=W/2-.6, y0=f-3, y1=c.roofY-1.5;
+    L_(B(-1.6,0,y0,y1,0,half-.2,P,pl),'body','rear'); L_(B(-1.6,0,y0,y1,-half+.2,0,P,pr),'body','rear');
+    L_(B(-1.8,-1.6,y1-25,y1-7,5,half-4,M.glass,pl),'body','rear'); L_(B(-1.8,-1.6,y1-25,y1-7,-half+4,-5,M.glass,pr),'body','rear');
+    L_(B(-2.6,-1.6,f+H*.42,f+H*.42+5,half-5,half-3.5,M.black,pl),'body','rear');
+    doorRefs.rear={l:pl,r:pr};
+    const tl = c.kind==='bus' ? [f-4,f+8] : [f-2,f+30];
+    for(const s of [-1,1]) L_(B(-.8,.6,tl[0],tl[1],s>0?W/2-3.4:-W/2+.2,s>0?W/2-.2:-W/2+3.4,M.tail,g),'body','rear');
+  }
   buildCab(c,g);
 }
 function buildCab(c,g){
-  const {L,W,H,f}=c, CL=c.CL;
+  const {L,f}=c, C=c.CL, cb=c.cab, CW=cb.width||c.W, pr=cb.prof(C), p=pr.map(q=>[L+q[0],q[1]]);
   const cg=new THREE.Group(); g.add(cg); reg(cg,45,0,0);
-  let pts, ws, sideWin, ch, seatX, dash;
-  if(c.kind==='van'){
-    ch=Math.min(H,52);
-    pts=[[0,f-12],[CL,f-12],[CL+1,f+6],[CL-2,f+16],[CL-26,f+21],[CL*.34,f+ch],[0,f+ch]]; ws=[4,5];
-    sideWin=[CL*.08,CL*.4,f+ch-21,f+ch-3]; seatX=CL*.22; dash=CL-30;
-  } else if(c.kind==='pickup'){
-    ch=44; pts=[[4,f-16],[CL,f-16],[CL+1,f+2],[CL-2,f+14],[64,f+18],[56,f+ch],[8,f+ch],[4,f+ch-4]]; ws=[4,5];
-    sideWin=[12,52,f+22,f+ch-3]; seatX=26; dash=60;
-  } else if(c.kind==='box'){
-    ch=46; pts=[[6,f-22],[CL,f-22],[CL+1,f-2],[CL-2,f+10],[70,f+14],[62,f+ch],[10,f+ch],[6,f+ch-4]]; ws=[4,5];
-    sideWin=[14,58,f+18,f+ch-3]; seatX=30; dash=66;
-  } else {
-    ch=H; pts=[[0,f-12],[CL,f-12],[CL+1,f+2],[CL-2,f+14],[44,f+18],[40,f+H-4],[35,f+H+1.2],[0,f+H+1.2]]; ws=[4,5];
-    sideWin=[4,34,f+H-30,f+H-8]; seatX=18; dash=40;
+  const bev=1.6;
+  const s=new THREE.Shape(); s.moveTo(p[0][0],p[0][1]);
+  if(c.xf>p[0][0] && c.xf<p[1][0]) archShape(c,s,p[0][0],p[1][0],p[0][1],[c.xf]);
+  for(let i=1;i<p.length;i++) s.lineTo(p[i][0],p[i][1]); s.lineTo(p[0][0],p[0][1]);
+  const geo=new THREE.ExtrudeGeometry(s,{depth:CW-2*bev,bevelEnabled:true,bevelThickness:bev,bevelSize:bev,bevelSegments:4,curveSegments:18});
+  geo.translate(0,0,-(CW-2*bev)/2);
+  const body=mesh(geo,paintMat); cg.add(body); L_(body,'cab');
+  for(const sd of [-1,1]) L_(archLiner(c,c.xf,sd*(CW/2-4),8,cg),'cab');
+  // windshield line helpers
+  const a=p[cb.ws[0]], b=p[cb.ws[1]];
+  const xAt=y=>a[0]+(y-a[1])*(b[0]-a[0])/(b[1]-a[1]);
+  const dx=b[0]-a[0], dy=b[1]-a[1], len=Math.hypot(dx,dy), nx=dy/len, ny=-dx/len;
+  const wsm=mesh(new THREE.BoxGeometry(len-3,.4,CW-8),M.glass);
+  wsm.position.set((a[0]+b[0])/2+nx*(bev+.25),(a[1]+b[1])/2+ny*(bev+.25),0); wsm.rotation.z=Math.atan2(dy,dx); cg.add(wsm); L_(wsm,'cab');
+  // side windows (follow A-pillar)
+  const top=cb.top-3, belt=cb.belt, xb=xAt(belt)-4, xt=xAt(top)-3;
+  const wins=[[Math.max(L+6,xb-40),xb,xt]];
+  if(cb.crew) wins.push([L+12,wins[0][0]-4,wins[0][0]-4]);
+  for(const [x0,xb2,xt2] of wins) for(const sd of [-1,1]){
+    const sh=new THREE.Shape([new THREE.Vector2(x0,belt),new THREE.Vector2(xb2,belt),new THREE.Vector2(xt2,top),new THREE.Vector2(x0,top)]);
+    const wg=new THREE.ExtrudeGeometry(sh,{depth:.3,bevelEnabled:false}); const wm=mesh(wg,M.glass); wm.position.z=sd>0?CW/2+bev-.1:-CW/2-bev-.2; cg.add(wm); L_(wm,'cab');
+    L_(B(x0-2.2,x0-1.8,p[0][1]+6,top+1,sd>0?CW/2+bev-.2:-CW/2-bev-.2,sd>0?CW/2+bev+.2:-CW/2-bev+.2,M.black,cg),'cab');
+    L_(B(x0+1,x0+5,belt-5,belt-4,sd>0?CW/2+bev:-CW/2-bev-.8,sd>0?CW/2+bev+.8:-CW/2-bev,M.black,cg),'cab');
   }
-  c.cabTop=f+ch; c.seatX=L+seatX;
-  const shape=new THREE.Shape(pts.map(p=>new THREE.Vector2(L+p[0],p[1])));
-  const geo=new THREE.ExtrudeGeometry(shape,{depth:W-3,bevelEnabled:true,bevelThickness:1.5,bevelSize:1.5,bevelSegments:3,curveSegments:4});
-  geo.translate(0,0,-(W-3)/2);
-  const body=mesh(geo,c.kind==='bus'?paintMat:paintMat); cg.add(body); layerize(body,'cab');
-  // windshield
-  const a=pts[ws[0]], b=pts[ws[1]], dx=b[0]-a[0], dy=b[1]-a[1], len=Math.hypot(dx,dy);
-  const nx=dy/len, ny=-dx/len;
-  const wsm=mesh(new THREE.BoxGeometry(len-3,.4,W-9),M.glass);
-  wsm.position.set(L+(a[0]+b[0])/2+nx*1.7,(a[1]+b[1])/2+ny*1.7,0); wsm.rotation.z=Math.atan2(dy,dx); cg.add(wsm); layerize(wsm,'cab');
-  for(const s of [-1,1]){
-    layerize(B(L+sideWin[0],L+sideWin[1],sideWin[2],sideWin[3],s>0?W/2:-W/2-.35,s>0?W/2+.35:-W/2,M.glass,cg),'cab');
-    // mirrors
-    const mx=L+(c.kind==='bus'?40:sideWin[1]+2);
-    layerize(B(mx-2,mx,sideWin[2]-6,sideWin[2]+4,s*(W/2+4)-1.5,s*(W/2+4)+1.5,M.black,cg),'cab');
-    layerize(B(mx-1.5,mx-.5,sideWin[2]-2,sideWin[2]-1,s>0?W/2:-W/2-4,s>0?W/2+4:-W/2,M.black,cg),'cab');
-    // headlights
-    layerize(B(L+CL-1,L+CL+1.2,pts[3][1]-7,pts[3][1]-2,s*(W/2-9)-4,s*(W/2-9)+4,M.head,cg),'cab');
+  // mirrors
+  for(const sd of [-1,1]){
+    const mx=xAt(belt)-3, mz=sd*(CW/2+bev+6.5);
+    L_(B(mx-2.5,mx,belt+3,belt+16,mz-2,mz+2,M.black,cg),'cab');
+    L_(B(mx-1.6,mx-.6,belt+7,belt+8,sd>0?CW/2+bev:mz,sd>0?mz:-CW/2-bev,M.black,cg),'cab');
   }
-  layerize(B(L+CL,L+CL+1.4,f-4,pts[3][1]-8,-W*.28,W*.28,M.black,cg),'cab');
-  layerize(B(L+CL-4,L+CL+2.5,c.wheelR*.7,c.wheelR*.7+8,-W/2+1,W/2-1,M.black,cg),'cab');
-  // fairing for high roof vans
-  if(c.kind==='van' && H>ch+4){
-    const sh=new THREE.Shape([new THREE.Vector2(L-1,f+ch),new THREE.Vector2(L+CL*.4,f+ch),new THREE.Vector2(L-1,c.roofTop)]);
-    const fg=new THREE.ExtrudeGeometry(sh,{depth:W-3,bevelEnabled:true,bevelThickness:1.5,bevelSize:1.2,bevelSegments:2}); fg.translate(0,0,-(W-3)/2);
-    const fm=mesh(fg,paintMat); cg.add(fm); layerize(fm,'cab');
+  // front fascia
+  const frontAt=y=>{ let best=-1e9; for(let i=0;i<pr.length;i++){ const q1=pr[i],q2=pr[(i+1)%pr.length]; if(q1[0]<C-14&&q2[0]<C-14) continue; const lo=Math.min(q1[1],q2[1]),hi=Math.max(q1[1],q2[1]); if(y<lo||y>hi||hi===lo) continue; const t=(y-q1[1])/(q2[1]-q1[1]); best=Math.max(best,q1[0]+t*(q2[0]-q1[0])); } return L+(best>-1e8?best:C)+bev; };
+  const gs=new THREE.Shape(cb.grille.map(q=>new THREE.Vector2(q[0],q[1])));
+  const gy=(cb.grille[0][1]+cb.grille[2][1])/2, gx=frontAt(gy);
+  const gg=new THREE.ExtrudeGeometry(gs,{depth:1,bevelEnabled:true,bevelThickness:.3,bevelSize:.3,bevelSegments:1}); gg.rotateY(Math.PI/2); gg.translate(gx-.9,0,0);
+  const gm=mesh(gg,M.grille); cg.add(gm); L_(gm,'cab');
+  const gw=Math.min(...cb.grille.map(q=>Math.abs(q[0])))-1.5, gy0=cb.grille[0][1], gy1=cb.grille[2][1];
+  for(let i=1;i<=cb.slats;i++){ const y=gy0+(gy1-gy0)*i/(cb.slats+1); L_(B(gx+.1,gx+.6,y-.4,y+.4,-gw,gw,M.chrome,cg),'cab'); }
+  const [z0,z1,y0,y1]=cb.lights, lx=frontAt((y0+y1)/2);
+  for(const sd of [-1,1]){
+    const ls=new THREE.Shape([new THREE.Vector2(z0,y0),new THREE.Vector2(z1,y0+1.5),new THREE.Vector2(z1,y1),new THREE.Vector2(z0+2,y1)]);
+    const lg=new THREE.ExtrudeGeometry(ls,{depth:1.2,bevelEnabled:false}); lg.rotateY(sd>0?-Math.PI/2:Math.PI/2);
+    const lm=mesh(lg,M.head); lm.position.x=lx+(sd>0?.5:-.7); if(sd<0) lm.scale.z=1; cg.add(lm); L_(lm,'cab');
+    L_(B(lx-.4,lx+.5,y0-1.2,y0-.6,sd*z0,sd*z1,M.drl,cg),'cab');
   }
-  // interior (not layered → visible through ghost cab)
-  const inner=new THREE.Group(); root.add(inner); c.cabInner=inner;
-  B(L+dash-8,L+dash+2,f+20,f+30,-W/2+3,W/2-3,M.dark,inner);
-  B(L+dash-9,L+dash-7,f+30,f+31,-W/2+8,-6,M.screen,inner);
-  const sw=mesh(new THREE.TorusGeometry(7.5,.9,10,28),M.black); sw.position.set(L+dash-13,f+29,-W/4); sw.rotation.y=Math.PI/2; sw.rotation.x=-.5; inner.add(sw);
-  if(c.kind!=='van') B(L+4,L+6,f,f+ch-2,-W/2+2,W/2-2,M.dark,inner); // cab back wall
-  if(!c.has('swivel')){ seat(L+seatX,-W/4,0,inner,c); if(c.kind!=='bus') seat(L+seatX,W/4,0,inner,c); }
+  const ly=(cb.lower[0]+cb.lower[1])/2, bx=frontAt(ly);
+  L_(B(bx-4,bx+2.2,cb.lower[0],cb.lower[1],-CW/2-bev,CW/2+bev,M.black,cg),'cab');
+  L_(B(bx-1,bx+2.4,cb.lower[0]+1,cb.lower[0]+4,-CW*.28,CW*.28,M.dark,cg),'cab');
+  // high-roof fairing (vans)
+  if(c.kind==='van' && c.roofTop>cb.top+bev+1){
+    const fl=Math.max(12,xAt(cb.top)-L-2);
+    const sh=new THREE.Shape(); sh.moveTo(L-1,cb.top); sh.lineTo(L+fl,cb.top); sh.quadraticCurveTo(L+fl*.3,c.roofTop,L-1,c.roofTop); sh.lineTo(L-1,cb.top);
+    const fg=new THREE.ExtrudeGeometry(sh,{depth:CW-3.2,bevelEnabled:true,bevelThickness:1.6,bevelSize:1.2,bevelSegments:3,curveSegments:14}); fg.translate(0,0,-(CW-3.2)/2);
+    const fm=mesh(fg,paintMat); cg.add(fm); L_(fm,'cab');
+  }
+  // interior (always visible through ghost/hidden cab)
+  const inner=new THREE.Group(); root.add(inner);
+  const dashX=xAt(belt)-2;
+  B(dashX-12,dashX,belt-9,belt+1,-CW/2+3,CW/2-3,M.dark,inner);
+  B(dashX-11,dashX-9,belt+1,belt+1.6,-CW/2+8,-6,M.screen,inner);
+  const sw=mesh(new THREE.TorusGeometry(7.5,.9,10,28),M.black); sw.position.set(dashX-15,belt-4,-CW/4); sw.rotation.y=Math.PI/2; sw.rotation.x=-.5; inner.add(sw);
+  c.seatX=dashX-34; c.cabFloor=cb.floor;
+  if(!c.has('swivel')){ seat(c.seatX,-CW/4,0,inner,c); if(c.kind!=='bus') seat(c.seatX,CW/4,0,inner,c); }
+  if(cb.crew){ B(L+14,L+32,cb.floor+8,cb.floor+14,-CW/2+4,CW/2-4,M.seat,inner); B(L+8,L+13,cb.floor+14,cb.floor+40,-CW/2+4,CW/2-4,M.seat,inner); }
 }
 function seat(x,z,rot,parent,c){
-  const s=new THREE.Group(); s.position.set(x,c.f,z); s.rotation.y=rot; parent.add(s);
+  const s=new THREE.Group(); s.position.set(x,c.cabFloor,z); s.rotation.y=rot; parent.add(s);
   B(-9,9,0,9,-8,8,M.dark,s); B(-10,10,9,14,-10,10,M.seat,s);
   const back=B(-12,-7,14,40,-10,10,M.seat,s); back.rotation.z=.12;
   B(-12,-7.5,40,47,-6,6,M.seat,s);
@@ -805,32 +986,32 @@ function cabBox(c,inst,x0,x1,y0,y1,z0,z1,g,front){ // cabinet carcass with front
 }
 const BUILD = {
   insul(c,inst,g){
-    const t=1.5, y0=c.f+.5, y1=c.roofY-.3;
-    const l=B(1,c.L-1,y0,y1,-c.W/2+1.1,-c.W/2+1.1+t,M.insul,g); layerize(l,'walls'); reg(l,0,0,-30);
-    const r=B(1,c.L-1,y0,y1,c.W/2-1.1-t,c.W/2-1.1,M.insul,g); layerize(r,'walls'); reg(r,0,0,30);
-    const ce=B(1,c.L-1,c.roofY-t,c.roofY,-c.W/2+1.2,c.W/2-1.2,M.insul,g); layerize(ce,'walls'); reg(ce,0,42,0);
+    const zo=c.W/2-1.6, zin=c.zi+.6;
+    const l=B(1,c.L-1,c.f+.5,c.roofY-.4,-zo,-zin,M.insul,g); L_(l,'walls',-1); reg(l,0,0,-30);
+    const r=B(1,c.L-1,c.f+.5,c.roofY-.4,zin,zo,M.insul,g); L_(r,'walls',1); reg(r,0,0,30);
+    const ce=B(1,c.L-1,c.ceilY+.7,c.roofY-.2,-zin,zin,M.insul,g); L_(ce,'walls','top'); reg(ce,0,42,0);
   },
   frame(c,inst,g){
-    const sub=B(.5,c.L-.5,c.f,c.f+.75,-c.W/2+1.2,c.W/2-1.2,'birch',g); layerize(sub,'walls'); reg(sub,0,-8,0);
+    const sub=B(.5,c.L-.5,c.f,c.f+.75,-c.zi-.6,c.zi+.6,'birch',g); L_(sub,'walls'); reg(sub,0,-8,0);
     for(const s of [-1,1]){
       const wg=new THREE.Group(); g.add(wg); reg(wg,0,0,s*22);
-      const z0=s<0?-c.W/2+2.6:c.W/2-3.4, z1=z0+.8;
-      for(const y of [c.f+8,c.f+(c.H*.45),c.f+c.H*.8]) layerize(B(1,c.L-1,y,y+1.5,z0,z1,M.stud,wg),'walls');
-      for(let x=2;x<c.L-1;x+=24) layerize(B(x,x+1.5,c.f+1,c.roofY-2,z0,z1,M.stud,wg),'walls');
+      const z0=s<0?-c.zi-2.2:c.zi+.6, z1=z0+1.6;
+      for(const y of [c.f+8,c.f+(c.H*.45),c.f+c.H*.8]) L_(B(1,c.L-1,y,y+1.5,z0,z1,M.stud,wg),'walls',s);
+      for(let x=2;x<c.L-1;x+=24) L_(B(x,x+1.5,c.f+1,c.ceilY,z0,z1,M.stud,wg),'walls',s);
     }
     const cg=new THREE.Group(); g.add(cg); reg(cg,0,30,0);
-    for(let x=2;x<c.L-1;x+=24) layerize(B(x,x+1.5,c.roofY-2.2,c.roofY-1.2,-c.W/2+3,c.W/2-3,M.stud,cg),'walls');
+    for(let x=2;x<c.L-1;x+=24) L_(B(x,x+1.5,c.ceilY+.6,c.ceilY+2.2,-c.zi,c.zi,M.stud,cg),'walls','top');
   },
   panel(c,inst,g){
     const k=matOf(inst,'wall');
     const dz=c.door;
-    const l=B(.5,c.L-.5,c.fy,c.ceilY,-c.zi-.6,-c.zi,k,g); layerize(l,'walls'); reg(l,0,0,-14);
+    const l=B(.5,c.L-.5,c.fy,c.ceilY,-c.zi-.6,-c.zi,k,g); L_(l,'walls',-1); reg(l,0,0,-14);
     const rg=new THREE.Group(); g.add(rg); reg(rg,0,0,14);
-    if(dz){ layerize(B(.5,dz.x0,c.fy,c.ceilY,c.zi,c.zi+.6,k,rg),'walls'); layerize(B(dz.x1,c.L-.5,c.fy,c.ceilY,c.zi,c.zi+.6,k,rg),'walls'); layerize(B(dz.x0,dz.x1,c.f+dz.h,c.ceilY,c.zi,c.zi+.6,k,rg),'walls'); }
-    else layerize(B(.5,c.L-.5,c.fy,c.ceilY,c.zi,c.zi+.6,k,rg),'walls');
+    if(dz){ L_(B(.5,dz.x0,c.fy,c.ceilY,c.zi,c.zi+.6,k,rg),'walls',1); L_(B(dz.x1,c.L-.5,c.fy,c.ceilY,c.zi,c.zi+.6,k,rg),'walls',1); L_(B(dz.x0,dz.x1,c.f+dz.h,c.ceilY,c.zi,c.zi+.6,k,rg),'walls',1); }
+    else L_(B(.5,c.L-.5,c.fy,c.ceilY,c.zi,c.zi+.6,k,rg),'walls',1);
     const ce=new THREE.Group(); g.add(ce); reg(ce,0,26,0);
-    layerize(B(.5,c.roofEndX-.5,c.ceilY,c.ceilY+.6,-c.zi,c.zi,k,ce),'walls');
-    for(const s of [-1,1]) B(2,c.L-2,c.ceilY-.6,c.ceilY,s*(c.zi-1.2)-.5,s*(c.zi-1.2)+.5,M.led,ce);
+    L_(B(.5,c.L-.5,c.ceilY,c.ceilY+.6,-c.zi,c.zi,k,ce),'walls','top');
+    for(const s of [-1,1]) L_(B(2,c.L-2,c.ceilY-.6,c.ceilY,s*(c.zi-1.2)-.5,s*(c.zi-1.2)+.5,M.led,ce),'walls','top');
     c.ports.lights=V3(c.L*.5,c.ceilY,-c.zi+1);
   },
   floor(c,inst,g){ const m=B(.6,c.L-.6,c.f+.75,c.fy,-c.zi,c.zi,matOf(inst,'floor'),g); layerize(m,'walls'); reg(m,0,-10,0); },
@@ -848,7 +1029,29 @@ const BUILD = {
     Cyl(6,.5,M.alu,'y',t,c.fy+.3,z0+12,g);
     if(c.cabover) c.dinetteX=[L0,X1];
   },
-  swivel(c,inst,g){ seat(c.seatX,-c.W/4,Math.PI,g,c); if(c.kind!=='bus') seat(c.seatX,c.W/4,Math.PI,g,c); B(c.seatX-10,c.seatX+10,c.f-.5,c.f+.5,-c.W/4-10,-c.W/4+10,M.alu,g); },
+  swivel(c,inst,g){ const CW=c.cab.width||c.W; seat(c.seatX,-CW/4,Math.PI,g,c); if(c.kind!=='bus') seat(c.seatX,CW/4,Math.PI,g,c); B(c.seatX-10,c.seatX+10,c.cabFloor-.5,c.cabFloor+.5,-CW/4-10,-CW/4+10,M.alu,g); },
+  custom(c,inst,g){
+    const sp=inst.spec||{}, w=Math.max(1,+sp.w||12), d=Math.max(1,+sp.d||12), h=Math.max(.5,+sp.h||12);
+    let off=0; for(const o of S.items){ if(o===inst) break; if(o.cid==='custom'&&(o.spec||{}).place===sp.place) off+=(+o.spec.w||12)+3; }
+    let x0=c.L*.4+off, y0=c.fy, zc=0;
+    switch(sp.place){
+      case 'driver': zc=-c.zi+d/2+.5; break;
+      case 'passenger': zc=c.zi-d/2-.5; break;
+      case 'underbed': x0=4+off; zc=c.zi-d/2-2; break;
+      case 'wall': x0=c.L*.5+off; y0=c.fy+42; zc=-c.zi+d/2+.3; break;
+      case 'ceiling': x0=c.L*.35+off; y0=c.ceilY-h; break;
+      case 'roof': x0=Math.max(2,c.roofEndX-8-off-w); y0=c.roofTop+(c.has('rack')?4.6:.6); break;
+      case 'rear': x0=-6-d; y0=c.wheelR+8; zc=-c.W/2+w/2+6+off; break;
+      case 'under': x0=c.L*.3+off; y0=c.f-3-h; zc=-8; break;
+      case 'cab': x0=c.seatX+8+off; y0=c.cabFloor+2; break;
+    }
+    const col={power:'#3B5B8C',water:'#2E9BEA',kitchen:'#9A7B55',sleep:'#7A6F9B',bath:'#E3E3DE',ext:'#2A2D31',storage:'#5D6670',shell:'#C9CDD2',other:'#8A8F96'}[sp.cat]||'#8A8F96';
+    const rear=sp.place==='rear';
+    const m=rear? B(x0,x0+d,y0,y0+h,zc-w/2,zc+w/2,std(col,{roughness:.55}),g) : B(x0,x0+w,y0,y0+h,zc-d/2,zc+d/2,std(col,{roughness:.55}),g);
+    const e=new THREE.LineSegments(new THREE.EdgesGeometry(m.geometry),edgeMatC); e.raycast=()=>{}; m.add(e);
+    const lb=label((sp.name||'Custom part').slice(0,24),sizeTxt([w,d,h]),'#2FD6EE'); lb.scale.set(24,6,1);
+    lb.position.set(m.position.x,y0+h+5,m.position.z); g.add(lb);
+  },
   galley_d(c,inst,g){
     const x0=c.gx0,x1=c.gx1,z0=-c.zi,z1=-c.zi+22;
     cabBox(c,inst,x0,x1,c.fy,c.counterY-1.5,z0,z1,g,1);
@@ -990,12 +1193,12 @@ const BUILD = {
     c.ports.ac=V3(x,c.ceilY,-11);
   },
   heater(c,inst,g){
-    const x0=c.seatX-6, x1=x0+14, z=c.W/4;
-    B(x0,x1,c.f+.2,c.f+6.5,z-3.5,z+3.5,M.black,g);
-    tube([V3(x0,c.f+3,z),V3(c.L-1,c.f+3,z),V3(c.L-4,c.fy+5,c.zi-6)],1.4,M.alu,g);
-    B(c.L-6,c.L-2,c.fy+3,c.fy+7,c.zi-8,c.zi-4,M.black,g);
-    tube([V3(x1,c.f+2,z),V3(x1,c.f-6,z),V3(x1,c.f-6,c.W/2-2)],.6,M.steel,g);
-    c.ports.heater=V3(x0,c.f+3,z);
+    const x0=c.L-17, x1=x0+14, z=c.zi-6;
+    B(x0,x1,c.fy,c.fy+6.5,z-3.5,z+3.5,M.black,g);
+    tube([V3(x0+3,c.fy+3,z),V3(x0-6,c.fy+3,z),V3(x0-8,c.fy+3,z-6)],1.4,M.alu,g);
+    B(x0-11,x0-7,c.fy+1,c.fy+5,z-9,z-5,M.black,g);
+    tube([V3(x1-2,c.fy+1,z),V3(x1-2,c.f-6,z),V3(x1-2,c.f-6,c.W/2-3)],.6,M.steel,g);
+    c.ports.heater=V3(x0,c.fy+3,z);
   },
   hydronic(c,inst,g){
     const bx0=4,bx1=18,z1=c.zi-1,z0=z1-13;
@@ -1197,12 +1400,12 @@ function buildServices(c){
   }
   g.traverse(o=>{o.userData.service=true;});
 }
-function label(text,sub){
+function label(text,sub,accent='#2FD6EE'){
   const cv=document.createElement('canvas'); cv.width=512; cv.height=128; const x=cv.getContext('2d');
-  x.fillStyle='rgba(14,17,20,.88)'; x.strokeStyle='#2FD6EE'; x.lineWidth=3;
+  x.fillStyle='rgba(14,17,20,.88)'; x.strokeStyle=accent; x.lineWidth=3;
   x.beginPath(); x.roundRect?x.roundRect(6,10,500,108,18):x.rect(6,10,500,108); x.fill(); x.stroke();
   x.fillStyle='#E7EAEE'; x.font='600 44px JetBrains Mono, monospace'; x.textAlign='center'; x.fillText(text,256,62);
-  x.fillStyle='#2FD6EE'; x.font='500 28px JetBrains Mono, monospace'; x.fillText(sub,256,100);
+  x.fillStyle=accent; x.font='500 28px JetBrains Mono, monospace'; x.fillText(sub,256,100);
   const t=new THREE.CanvasTexture(cv); t.colorSpace=THREE.SRGBColorSpace;
   const s=new THREE.Sprite(new THREE.SpriteMaterial({map:t,depthTest:false,transparent:true})); s.scale.set(28,7,1); s.renderOrder=999; return s;
 }
@@ -1217,7 +1420,9 @@ function buildDims(c){
   const cm=v=>`${fmtN(v,1)} in`, cmS=v=>`${fmtN(v*2.54,1)} cm`;
   const clear=c.ceilY-c.fy;
   dimLine(g,V3(0,c.f,c.W/2+16),V3(c.L,c.f,c.W/2+16),cm(c.L),cmS(c.L)+' · cargo L',V3(0,0,3));
-  dimLine(g,V3(-16,c.f,-c.W/2),V3(-16,c.f,c.W/2),cm(c.W),cmS(c.W)+' · width',V3(3,0,0));
+  dimLine(g,V3(-16,c.f,-c.Wi/2),V3(-16,c.f,c.Wi/2),cm(c.Wi),cmS(c.Wi)+' · cargo W',V3(3,0,0));
+  const oh=Math.max(c.roofTop,c.cab.top+1.6);
+  dimLine(g,V3(c.T+18,0,c.W/2),V3(c.T+18,oh,c.W/2),cm(oh),cmS(oh)+' · overall H',V3(0,0,3));
   dimLine(g,V3(-16,c.f,-c.W/2-10),V3(-16,c.roofY,-c.W/2-10),cm(c.H),cmS(c.H)+' · cargo H',V3(0,0,3));
   dimLine(g,V3(0,.5,-c.W/2-34),V3(c.T+1,.5,-c.W/2-34),cm(c.T),cmS(c.T)+' · overall',V3(0,0,3));
   dimLine(g,V3(c.L*.5,c.fy,0),V3(c.L*.5,c.ceilY,0),cm(clear),cmS(clear)+' · clear',V3(3,0,0));
@@ -1234,9 +1439,9 @@ function rebuild(){
   const c=makeCtx(); C=c;
   root.position.set(-c.T/2*IN,0,0); root.updateMatrixWorld(true);
   buildShell(c);
-  const order=[...S.items].sort((a,b)=>(ITEM[a.cid].zone==='galleyD'?-1:0)-(ITEM[b.cid].zone==='galleyD'?-1:0));
+  const order=[...S.items].sort((a,b)=>(IT(a).zone==='galleyD'?-1:0)-(IT(b).zone==='galleyD'?-1:0));
   for(const inst of order){
-    const it=ITEM[inst.cid], g=new THREE.Group(); g.userData.iid=inst.iid; root.add(g);
+    const it=IT(inst), g=new THREE.Group(); g.userData.iid=inst.iid; root.add(g);
     try{ BUILD[inst.cid](c,inst,g); }catch(e){ console.error('build',inst.cid,e); }
     g.traverse(o=>{o.userData.iid=inst.iid;});
     instGroups.set(inst.iid,g);
@@ -1246,7 +1451,7 @@ function rebuild(){
   root.updateMatrixWorld(true);
   computeCG();
   applyVisibility();
-  if(view.sel && !instGroups.has(view.sel)) deselect();
+  if(view.sel && !instGroups.has(view.sel)) deselect(); else if(view.sel) selDimsDirty=true;
   // interior light
   interior.position.set((c.L*.5-c.T/2)*IN,(c.ceilY-6)*IN,0); interior.intensity=S.items.some(i=>i.cid==='panel')?14:6;
 }
@@ -1266,7 +1471,7 @@ function computeCG(){
   const add=(w,x,z)=>{W+=w;mx+=w*x;mz+=w*z;};
   for(const inst of S.items){ const g=instGroups.get(inst.iid); if(!g) continue;
     const bb=new THREE.Box3().setFromObject(g); if(bb.isEmpty()) continue; const p=bb.getCenter(V3(0,0,0));
-    const x=p.x/IN+c.T/2, z=p.z/IN, it=ITEM[inst.cid];
+    const x=p.x/IN+c.T/2, z=p.z/IN, it=IT(inst);
     add(it.wt,x,z); if(it.fresh&&S.settings.fullWater) add(it.fresh*8.34,x,z); }
   if(S.settings.cargo) add(S.settings.cargo,c.L*.5,0);
   if(!W){ CG={front:0,right:.5,x:c.L/2,z:0,w:0}; return; }
@@ -1277,22 +1482,40 @@ function computeCG(){
 /* =====================================================================
    VISIBILITY / LAYERS / PHASES
    ===================================================================== */
+let camSide=1;
+const MODE_LAYERS={exterior:{body:'solid',roof:'solid',cab:'solid',walls:'solid'},xray:{body:'ghost',roof:'ghost',cab:'ghost',walls:'ghost'},
+  interior:{body:'hidden',roof:'hidden',cab:'ghost',walls:'solid'},cutaway:{body:'solid',roof:'hidden',cab:'solid',walls:'solid'}};
+function effMode(o){
+  const Lr=o.userData.layer, m=view.mode;
+  if(m==='custom') return view.layers[Lr];
+  if(m!=='cutaway') return MODE_LAYERS[m][Lr];
+  const sd=o.userData.side;
+  if(Lr==='roof'||sd==='top') return 'hidden';
+  if(sd!==undefined && sd===camSide) return 'hidden';
+  return 'solid';
+}
 function phaseOK(it){ return !view.phase || it.phase<=view.phase; }
 function applyVisibility(){
   root.traverse(o=>{
-    const L=o.userData.layer; if(!L) return;
-    const mode=view.layers[L];
-    if(o.userData.edge){ o.visible = mode==='ghost'; return; }
+    const Lr=o.userData.layer; if(!Lr) return;
+    if(o.userData.edge){ o.visible = !!o.parent && effMode(o.parent)==='ghost'; return; }
     if(!o.isMesh) return;
+    const mode=effMode(o);
     o.visible = mode!=='hidden';
-    o.material = mode==='ghost' ? (L==='walls'?ghostMatW:ghostMat) : o.userData.solid;
+    o.material = mode==='ghost' ? (Lr==='walls'?ghostMatW:ghostMat) : o.userData.solid;
     o.castShadow = mode==='solid';
   });
-  for(const inst of S.items){ const g=instGroups.get(inst.iid); if(g) g.visible = !view.hidden.has(inst.iid) && phaseOK(ITEM[inst.cid]); }
+  for(const inst of S.items){ const g=instGroups.get(inst.iid); if(g) g.visible = !view.hidden.has(inst.iid) && phaseOK(IT(inst)); }
   if(servicesGroup) servicesGroup.visible = !view.phase || view.phase>=2;
   if(dimsGroup) dimsGroup.visible = view.dims;
   grid.visible=gridFine.visible=view.grid;
   if(view.sel){ const g=instGroups.get(view.sel); if(!g||!g.visible) deselect(); }
+}
+function updateCamSide(){
+  if(!C || view.mode!=='cutaway') return;
+  const cx=(C.L/2-C.T/2)*IN, dx=(camera.position.x-cx)/IN, dz=camera.position.z/IN;
+  const ns=(dx<-(C.L/2+12) && Math.abs(dx)>Math.abs(dz)*1.1) ? 'rear' : (dz<0?-1:1);
+  if(ns!==camSide){ camSide=ns; applyVisibility(); }
 }
 
 /* =====================================================================
@@ -1301,7 +1524,7 @@ function applyVisibility(){
 function calc(){
   const c=C, v=c.v, st=S.settings;
   let cost=0,wt=0,solarW=0,ah=0,invW=0,alt=0,fresh=0,grey=0; const loads=[]; const byPhase={1:0,2:0,3:0,4:0};
-  for(const inst of S.items){ const it=ITEM[inst.cid];
+  for(const inst of S.items){ const it=IT(inst);
     cost+=it.cost; wt+=it.wt; byPhase[it.phase]+=it.cost; solarW+=it.solarW||0; ah+=it.ah||0; invW=Math.max(invW,it.invW||0); alt+=it.altA||0;
     fresh+=it.fresh||0; grey+=it.grey||0; if(it.draw) loads.push([it.name.replace(/ \(.*\)/,''),it.draw]); }
   if(ah) loads.push(['Phones, laptop, pump & misc.',180]);
@@ -1354,13 +1577,16 @@ function renderVehicle(){
   const pl=v.gvwr-v.curb;
   h+=`<div class="h">Platform Specs</div><div class="spec">
     <span>Cargo length</span><span>${fmtN(wbo.L,1)}" · ${fmtN(wbo.L*2.54)} cm</span>
-    <span>Cargo width</span><span>${fmtN(v.W,1)}" · ${fmtN(v.W*2.54)} cm</span>
+    <span>Cargo width</span><span>${fmtN(v.Wi,1)}" · ${fmtN(v.Wi*2.54)} cm</span>
     <span>Cargo height</span><span>${fmtN(H,1)}" · ${fmtN(H*2.54)} cm</span>
+    <span>Overall length</span><span>${fmtN(wbo.OL,1)}" · ${fmtN(wbo.OL*2.54)} cm</span>
+    <span>Overall height</span><span>${fmtN(v.f+H+(v.kind==='box'?1.8:3.6),1)}"</span>
+    <span>Width (no mirrors)</span><span>${fmtN(v.W,1)}"</span>
     <span>Wheelbase</span><span>${wbo.wb}"</span>
     <span>Curb weight</span><span>${fmtN(v.curb)} lb</span>
     <span>GVWR</span><span>${fmtN(v.gvwr)} lb</span>
     <span>Payload</span><span style="color:var(--cyan)">${fmtN(pl)} lb · ${fmtN(lb2kg(pl))} kg</span></div>
-    <p class="muted" style="font-size:11px;line-height:1.45;margin:10px 2px 0">Dimensions and weights are typical published figures for planning — confirm against your door-jamb sticker.</p>`;
+    <p class="muted" style="font-size:11px;line-height:1.45;margin:10px 2px 0">Dimensions are from 2025 published specs; cargo figures are at the floor. Weights vary by trim — confirm payload against your door-jamb sticker.</p>`;
   $('#p-vehicle').innerHTML=h;
 }
 $('#p-vehicle').addEventListener('click',e=>{
@@ -1373,26 +1599,180 @@ $('#p-vehicle').addEventListener('input',e=>{ if(e.target.id==='paintPick') setP
 function setPaint(c,live){ S.paint=c; paintMat.color.set(c); if(!live) renderVehicle(); else document.querySelectorAll('.sw[data-c]').forEach(s=>s.classList.remove('on')); save(); }
 
 const openCats = new Set(['sleep','kitchen','power']);
+let qText='';
+const esc=s=>String(s).replace(/[&<>"]/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]));
+function sizeTxt(sz){ if(!sz) return ''; const [w,d,h,n]=sz, r=v=>fmtN(v,v%1?1:0); return (n>1?n+'× ':'')+`${r(w)}×${r(d)}×${r(h)} in`; }
+function sizeCm(sz){ const [w,d,h]=sz; return `${Math.round(w*2.54)}×${Math.round(d*2.54)}×${Math.round(h*2.54)} cm`; }
+function itemMeta(it){ const m=[fmt$(it.cost),`${it.wt} lb`]; m.push(it.sz?sizeTxt(it.sz):'sized to vehicle'); if(it.draw) m.push(`${it.draw} Wh/d`); if(it.solarW) m.push(`+${it.solarW} W`); if(it.ah) m.push(`${it.ah} Ah`); if(it.fresh) m.push(`${it.fresh} gal`); return m.join(' · '); }
+function itemRow(it,badge){
+  const inst=S.items.find(s=>s.cid===it.id), occ=!inst&&S.items.find(s=>IT(s).zone===it.zone);
+  return `<div class="item ${inst?'in':''}" data-add="${it.id}"><div class="grow"><div class="nm">${it.name}${badge?` <span class="tag ${badge[0]}">${badge[1]}</span>`:''}</div><div class="mt">${itemMeta(it)}</div></div><div class="st">${inst?`<span class="tag ok">P${it.phase}</span><button class="x" data-rm="${inst.iid}" title="Remove">✕</button>`:occ?`<span class="tag swap">swap</span>`:`<span class="plus">＋</span>`}</div></div>`;
+}
 function renderCatalog(){
-  let h=`<p class="muted" style="font-size:11.5px;line-height:1.45;margin:0 2px 10px">Tap a module to snap it into its zone. Picking another module for an occupied zone swaps it.</p>`;
-  for(const cat of CATALOG){
-    const cnt=cat.items.filter(i=>S.items.some(s=>s.cid===i.id)).length;
-    h+=`<details class="cat" data-cat="${cat.id}" ${openCats.has(cat.id)?'open':''}><summary><svg class="chev" width="10" height="10" viewBox="0 0 10 10"><path d="M3 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>${cat.name}${cnt?`<span class="cnt">${cnt}</span>`:''}</summary>`;
-    for(const it of cat.items){
-      const inst=S.items.find(s=>s.cid===it.id), occ=!inst && S.items.find(s=>ITEM[s.cid].zone===it.zone);
-      const meta=[fmt$(it.cost),`${it.wt} lb`]; if(it.draw) meta.push(`${it.draw} Wh/d`); if(it.solarW) meta.push(`+${it.solarW} W`); if(it.ah) meta.push(`${it.ah} Ah`); if(it.fresh) meta.push(`${it.fresh} gal`);
-      h+=`<div class="item ${inst?'in':''}" data-add="${it.id}"><div><div class="nm">${it.name}</div><div class="mt">${meta.join(' · ')}</div></div><div class="st">${inst?`<span class="tag ok">P${it.phase}</span><button class="x" data-rm="${inst.iid}" title="Remove">✕</button>`:occ?`<span class="tag swap">swap</span>`:''}</div></div>`;
-    }
+  let h=`<div class="search"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="q" type="search" enterkeyhint="search" placeholder="Search any part — “100Ah lithium”, “Maxxair”…" value="${esc(qText)}" autocomplete="off"></div>
+    <div id="qRes"></div>
+    <button class="addc" id="addCustom">＋ Add a custom part</button>`;
+  const customs=S.items.filter(i=>i.cid==='custom');
+  if(customs.length){
+    h+=`<details class="cat" open><summary><svg class="chev" width="10" height="10" viewBox="0 0 10 10"><path d="M3 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>Custom Parts<span class="cnt">${customs.length}</span></summary>`;
+    for(const ci of customs){ const it=IT(ci); h+=`<div class="item in" data-sel="${ci.iid}"><div class="grow"><div class="nm">${esc(it.name)}</div><div class="mt">${fmt$(it.cost)} · ${it.wt} lb · ${sizeTxt(it.sz)}</div></div><div class="st"><button class="x" data-ce="${ci.iid}" title="Edit">✎</button><button class="x" data-rm="${ci.iid}" title="Remove">✕</button></div></div>`; }
     h+='</details>';
   }
-  $('#p-catalog').innerHTML=h;
+  for(const cat of CATALOG){
+    const cnt=cat.items.filter(i=>S.items.some(s=>s.cid===i.id)).length;
+    h+=`<details class="cat" data-cat="${cat.id}" ${openCats.has(cat.id)?'open':''}><summary><svg class="chev" width="10" height="10" viewBox="0 0 10 10"><path d="M3 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>${cat.name}${cnt?`<span class="cnt">${cnt}</span>`:''}</summary>${cat.items.map(it=>itemRow(it)).join('')}</details>`;
+  }
+  $('#p-catalog').innerHTML=h; renderSearch();
 }
+$('#p-catalog').addEventListener('input',e=>{ if(e.target.id==='q'){ qText=e.target.value; clearTimeout(renderSearch.t); renderSearch.t=setTimeout(renderSearch,120); } });
+$('#p-catalog').addEventListener('keydown',e=>{ if(e.target.id==='q'&&e.key==='Enter'){ e.preventDefault(); qText=e.target.value; renderSearch(); if(qText.trim()) onlineSearch(qText.trim()); } });
 $('#p-catalog').addEventListener('click',e=>{
   const rm=e.target.closest('[data-rm]'); if(rm){ e.stopPropagation(); removeInst(rm.dataset.rm); return; }
+  const ce=e.target.closest('[data-ce]'); if(ce){ e.stopPropagation(); customDlg(S.items.find(i=>i.iid===ce.dataset.ce)); return; }
+  if(e.target.closest('#addCustom')){ customDlg(null, qText.trim()?prefillFrom(qText.trim()):null); return; }
+  if(e.target.closest('#qOnline')){ onlineSearch(qText.trim()); return; }
+  const wi=e.target.closest('[data-wi]'); if(wi){ const r=lastWeb[+wi.dataset.wi]; if(r) customDlg(null,prefillFrom(r.title,r)); return; }
+  const fq=e.target.closest('[data-fq]'); if(fq){ customDlg(null,prefillFrom(qText.trim())); return; }
+  const sl=e.target.closest('[data-sel]'); if(sl){ select(sl.dataset.sel); return; }
   const a=e.target.closest('[data-add]'); if(a) addItem(a.dataset.add);
 });
 $('#p-catalog').addEventListener('toggle',e=>{ const d=e.target; if(d.dataset&&d.dataset.cat){ d.open?openCats.add(d.dataset.cat):openCats.delete(d.dataset.cat);} },true);
 
+/* ---------- part search ---------- */
+const STOP=new Set(['the','a','an','for','with','and','of','to','in','on','van','camper','kit','set','new','best','rv']);
+function tokens(s){ return s.toLowerCase().replace(/[^a-z0-9.\s/-]/g,' ').split(/[\s/-]+/).filter(t=>t&&!STOP.has(t)); }
+function numHints(q){ const out={}, re=/(\d+(?:\.\d+)?)\s*(ah|amp ?hours?|kw|w|watts?|l|liters?|litres?|gal|gallons?|qt)\b/gi; let m;
+  while((m=re.exec(q))){ const v=+m[1], u=m[2].toLowerCase(); if(u==='ah'||u.startsWith('amp')) out.ah=v; else if(u==='kw') out.w=v*1000; else if(u[0]==='w') out.w=v; else if(u[0]==='l') out.l=v; else if(u.startsWith('gal')) out.gal=v; else if(u==='qt') out.l=v*.946; }
+  return out; }
+function guessCat(q){ const s=q.toLowerCase();
+  if(/batter|solar|inverter|charger|mppt|controller|volt|amp|fuse|bus ?bar|wire|cable|shunt|monitor|outlet|usb/.test(s)) return 'power';
+  if(/toilet|shower|bath/.test(s)) return 'bath';
+  if(/water|tank|pump|filter|heater|furnace|fan|vent|a\/?c\b|air con|cool/.test(s)) return 'water';
+  if(/stove|cook|sink|faucet|fridge|refrig|freezer|oven|microwave|counter|cabinet|drawer|kitchen|kettle/.test(s)) return 'kitchen';
+  if(/bed|mattress|seat|bench|cushion|table/.test(s)) return 'sleep';
+  if(/rack|awning|ladder|bumper|tire|bike|winch|light ?bar|carrier|box|skid|recovery|maxtrax/.test(s)) return 'ext';
+  if(/insulat|panel|floor|wall|ceiling|plywood/.test(s)) return 'shell';
+  return null; }
+function searchParts(q){
+  const tk=tokens(q).filter(t=>!/^\d/.test(t)), nh=numHints(q), scored=[], bare=(q.match(/(?<![\w.])\d{2,4}(?![\w.])/g)||[]).map(Number);
+  for(const it of Object.values(ITEM)){
+    const name=it.name.toLowerCase(), kwl=(it.kw||'').toLowerCase(), kws=kwl.split(/\s+/); let s=0, nameHit=0, kwHit=0;
+    for(const t of tk){ if(name.includes(t)){s+=3;nameHit++;} else if(kws.includes(t)){s+=2.5;kwHit++;} else if(t.length>3&&(kwl.includes(t)||name.includes(t.slice(0,5)))){s+=1;kwHit++;} }
+    if(s>0||Object.keys(nh).length){
+      if(nh.ah&&it.ah) s+=3-Math.min(3,Math.abs(it.ah-nh.ah)/150);
+      if(nh.w&&it.solarW&&!/inverter|charger/i.test(q)) s+=3-Math.min(3,Math.abs(it.solarW-nh.w)/200);
+      if(nh.w&&it.invW&&(/inverter|charger/i.test(q)||nh.w>=1500)) s+=3-Math.min(3,Math.abs(it.invW-nh.w)/700);
+      if(nh.l&&it.liters) s+=3-Math.min(3,Math.abs(it.liters-nh.l)/30);
+      if(nh.gal&&it.fresh) s+=3-Math.min(3,Math.abs(it.fresh-nh.gal)/15);
+    }
+    if(s>0) for(const n of bare){ for(const v of [it.ah,it.solarW,it.invW,it.liters,it.fresh]) if(v && Math.abs(v-n)/v<.16){ s+=2.2; break; } }
+    if(s>0) scored.push({it,s,viaKw:!nameHit&&kwHit>0});
+  }
+  scored.sort((a,b)=>b.s-a.s);
+  const best=scored[0]?.s||0;
+  let exact=scored.filter(r=>r.s>=Math.max(3,best*.6)).slice(0,5);
+  let closest=exact.length?[]:scored.slice(0,3);
+  if(!exact.length&&!closest.length){ const gc=guessCat(q); if(gc) closest=Object.values(ITEM).filter(i=>i.cat===gc).slice(0,3).map(it=>({it,s:0,viaKw:true})); }
+  return {exact,closest};
+}
+function renderSearch(){
+  const box=$('#qRes'); if(!box) return; const q=qText.trim();
+  if(!q){ box.innerHTML=''; return; }
+  const r=searchParts(q);
+  let h='<div class="qres">';
+  if(r.exact.length) h+=`<div class="sublbl">In the catalog</div>`+r.exact.map(x=>itemRow(x.it,x.viaKw?['swap','≈ closest']:null)).join('');
+  if(r.closest.length) h+=`<div class="sublbl">Closest match in the catalog</div>`+r.closest.map(x=>itemRow(x.it,['swap','≈ closest'])).join('');
+  if(!r.exact.length&&!r.closest.length) h+=`<div class="muted" style="padding:8px 2px;font-size:12px">No close match in the catalog.</div>`;
+  h+=`<button class="qonline" id="qOnline">🌐 Search online for “${esc(q)}”</button><div id="qWeb"></div></div>`;
+  box.innerHTML=h;
+}
+let lastWeb=[];
+const isNative=()=>!!(window.Capacitor&&window.Capacitor.isNativePlatform&&window.Capacitor.isNativePlatform());
+async function fetchText(url){ const ctl=new AbortController(), t=setTimeout(()=>ctl.abort(),12000);
+  try{ const r=await fetch(url,{signal:ctl.signal,headers:{'Accept':'text/html'}}); if(!r.ok) throw new Error('HTTP '+r.status); return await r.text(); } finally{ clearTimeout(t); } }
+async function webSearch(q){
+  const out=[];
+  try{
+    const doc=new DOMParser().parseFromString(await fetchText('https://html.duckduckgo.com/html/?q='+encodeURIComponent(q+' specs dimensions weight')),'text/html');
+    doc.querySelectorAll('.result').forEach(r=>{ const a=r.querySelector('.result__a'); if(!a) return; let href=a.getAttribute('href')||''; const m=href.match(/uddg=([^&]+)/); if(m) href=decodeURIComponent(m[1]); if(href.startsWith('//')) href='https:'+href; if(!/^https?:/.test(href)||/duckduckgo\.com/.test(href)) return; out.push({title:a.textContent.trim(),url:href,snippet:(r.querySelector('.result__snippet')?.textContent||'').trim()}); });
+  }catch(e){}
+  if(!out.length){
+    const d2=new DOMParser().parseFromString(await fetchText('https://www.bing.com/search?q='+encodeURIComponent(q+' specs')),'text/html');
+    d2.querySelectorAll('li.b_algo').forEach(li=>{ const a=li.querySelector('h2 a'); if(a&&/^https?:/.test(a.getAttribute('href')||'')) out.push({title:a.textContent.trim(),url:a.getAttribute('href'),snippet:(li.querySelector('.b_caption p, p')?.textContent||'').trim()}); });
+  }
+  return out.slice(0,6);
+}
+function extractSpecs(text){
+  const s={}, t=text.replace(/(\d),(\d{3})/g,'$1$2'); let m;
+  if((m=t.match(/\$\s?(\d{1,5}(?:\.\d{2})?)/))) s.cost=+m[1];
+  if((m=t.match(/(\d+(?:\.\d+)?)\s?(?:lbs?|pounds)\b/i))) s.wt=+m[1]; else if((m=t.match(/(\d+(?:\.\d+)?)\s?kg\b/i))) s.wt=Math.round(+m[1]*22.046)/10;
+  if((m=t.match(/(\d+(?:\.\d+)?)\s?(?:"|in(?:ch(?:es)?)?)?\s?[x×*]\s?(\d+(?:\.\d+)?)\s?(?:"|in(?:ch(?:es)?)?)?\s?[x×*]\s?(\d+(?:\.\d+)?)\s?("|in(?:ch(?:es)?)?|cm|mm)?/i))){
+    const u=(m[4]||'in').toLowerCase(), k=u==='cm'?1/2.54:u==='mm'?1/25.4:1; [s.w,s.d,s.h]=[m[1],m[2],m[3]].map(v=>Math.round(+v*k*10)/10); }
+  if((m=t.match(/(\d+(?:\.\d+)?)\s?ah\b/i))) s.ah=+m[1];
+  if((m=t.match(/(\d{2,5})\s?w(?:att)?s?\b/i))) s.watts=+m[1];
+  if((m=t.match(/(\d+(?:\.\d+)?)\s?(?:gal|gallons?)\b/i))) s.gal=+m[1];
+  return s;
+}
+const PLACE_BY_CAT={power:'underbed',water:'driver',kitchen:'driver',sleep:'aisle',bath:'passenger',ext:'roof',storage:'aisle',shell:'aisle',other:'aisle'};
+function prefillFrom(q,web){
+  const r=searchParts(q), base=(r.exact[0]||r.closest[0]||{}).it, sp=web?extractSpecs(web.title+' '+web.snippet):extractSpecs(q);
+  const cat=guessCat(q)||base?.cat||'other';
+  const out={name:(web?web.title:q).replace(/\s*[|–-]\s*[^|–-]*$/,'').slice(0,60)||q,cat,place:PLACE_BY_CAT[cat]||'aisle',phase:base?.phase||3,url:web?.url||''};
+  const bz=base?.sz||[12,12,12];
+  out.w=sp.w??bz[0]; out.d=sp.d??bz[1]; out.h=sp.h??bz[2];
+  out.wt=sp.wt??base?.wt??10; out.cost=sp.cost??base?.cost??100;
+  out.ah=sp.ah??0; out.draw=base?.draw||0; out.solarW=/solar/i.test(q)?(sp.watts||base?.solarW||0):0; out.fresh=/fresh|water tank/i.test(q)?(sp.gal||base?.fresh||0):0; out.grey=/gr[ae]y/i.test(q)?(sp.gal||16):0;
+  return out;
+}
+async function onlineSearch(q){
+  const box=$('#qWeb'); if(!box||!q) return;
+  const ddg='https://duckduckgo.com/?q='+encodeURIComponent(q);
+  const fallback=msg=>{ box.innerHTML=`<div class="webnote">${msg}</div><div class="btnrow"><a class="tb-btn" href="${ddg}" target="_blank" rel="noopener">Open web search ↗</a><button class="tb-btn primary" data-fq="1">Add as custom part</button></div>`; };
+  if(!isNative()){ fallback('Live web results load inside the Android app. Here, open the search in your browser, then add the part with the specs you find.'); return; }
+  box.innerHTML='<div class="webnote">Searching the web…</div>';
+  try{
+    const res=await webSearch(q); if(!res.length) throw new Error('none'); lastWeb=res;
+    box.innerHTML=`<div class="sublbl">Web results</div>`+res.map((r,i)=>{ const sp=extractSpecs(r.title+' '+r.snippet), chips=[];
+      if(sp.cost) chips.push(fmt$(sp.cost)); if(sp.wt) chips.push(sp.wt+' lb'); if(sp.w) chips.push(sizeTxt([sp.w,sp.d,sp.h])); if(sp.ah) chips.push(sp.ah+' Ah'); if(sp.watts) chips.push(sp.watts+' W'); if(sp.gal) chips.push(sp.gal+' gal');
+      let host=''; try{host=new URL(r.url).hostname.replace(/^www\./,'');}catch(e){}
+      const near=(searchParts(r.title).exact[0]||searchParts(r.title).closest[0]||{}).it;
+      return `<div class="webcard"><a href="${esc(r.url)}" target="_blank" rel="noopener" class="wt">${esc(r.title)}</a><div class="wh">${esc(host)}</div><div class="ws">${esc(r.snippet.slice(0,170))}</div>
+        ${chips.length?`<div class="wchips">${chips.map(c=>`<span>${esc(c)}</span>`).join('')}</div>`:''}
+        <div class="btnrow"><button class="tb-btn primary" data-wi="${i}">Add as custom part</button>${near?`<button class="tb-btn" data-add="${near.id}" title="${esc(near.name)}">Use closest: ${esc(near.name.length>22?near.name.slice(0,21)+'…':near.name)}</button>`:''}</div></div>`; }).join('');
+  }catch(e){ fallback('Couldn’t reach the web just now. Check your connection, or add the part manually.'); }
+}
+
+/* ---------- custom parts ---------- */
+const PLACES=[['aisle','Floor · center aisle'],['driver','Floor · driver side'],['passenger','Floor · passenger side'],['underbed','Under bed / garage'],['wall','Wall-mounted'],['ceiling','Ceiling'],['roof','Roof top'],['rear','Exterior · rear'],['under','Under-body'],['cab','Driver cab']];
+const CUSTOM_CATS=[['power','Off-Grid Power'],['water','Water & Climate'],['kitchen','Kitchen & Galley'],['sleep','Sleeping & Seating'],['bath','Bathroom & Hygiene'],['ext','Exterior & Overland'],['shell','Shell Prep'],['storage','Storage'],['other','Other']];
+function customDlg(inst,prefill){
+  const sp=Object.assign({name:'',cat:'other',place:'aisle',w:12,d:12,h:12,wt:10,cost:100,draw:0,solarW:0,ah:0,fresh:0,grey:0,phase:3,url:''},inst?inst.spec:(prefill||{}));
+  const num=(k,lbl,step=1)=>`<label><span>${lbl}</span><input type="number" min="0" step="${step}" data-k="${k}" value="${+sp[k]||0}"></label>`;
+  modal(inst?'Edit Custom Part':'Add Custom Part',`<form class="cform" id="cform">
+    <label class="full"><span>Part name</span><input data-k="name" value="${esc(sp.name)}" placeholder="e.g. Victron SmartShunt" required maxlength="60"></label>
+    <label><span>Category</span><select data-k="cat">${CUSTOM_CATS.map(([k,n])=>`<option value="${k}" ${sp.cat===k?'selected':''}>${n}</option>`).join('')}</select></label>
+    <label><span>Placement</span><select data-k="place">${PLACES.map(([k,n])=>`<option value="${k}" ${sp.place===k?'selected':''}>${n}</option>`).join('')}</select></label>
+    <div class="full dimrow"><span>Size (W × D × H)</span><div class="seg mini" id="cunit"><button type="button" class="on" data-u="in">in</button><button type="button" data-u="cm">cm</button></div></div>
+    ${num('w','Width',.1)}${num('d','Depth',.1)}${num('h','Height',.1)}
+    ${num('wt','Weight (lb)',.1)}${num('cost','Cost ($)',1)}
+    <label><span>Build phase</span><select data-k="phase">${[1,2,3,4].map(p=>`<option value="${p}" ${+sp.phase===p?'selected':''}>${p} · ${PHASES[p]}</option>`).join('')}</select></label>
+    ${num('draw','Power draw (Wh/day)')}${num('solarW','Solar output (W)')}${num('ah','Battery capacity (Ah)')}${num('fresh','Fresh water (gal)',.5)}${num('grey','Grey water (gal)',.5)}
+    <label class="full"><span>Source link (optional)</span><input data-k="url" value="${esc(sp.url)}" placeholder="https://"></label>
+  </form>`,`<button class="tb-btn" id="cCancel">Cancel</button><button class="tb-btn primary" id="cSave">${inst?'Save changes':'Add to build'}</button>`);
+  let unit='in';
+  $('#cunit').onclick=e=>{ const b=e.target.closest('[data-u]'); if(!b||b.dataset.u===unit) return; const k=b.dataset.u==='cm'?2.54:1/2.54;
+    ['w','d','h'].forEach(f=>{ const el=$(`#cform [data-k="${f}"]`); el.value=Math.round(+el.value*k*10)/10; }); unit=b.dataset.u; $('#cunit').querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b)); };
+  $('#cCancel').onclick=closeModal;
+  $('#cSave').onclick=()=>{
+    const o={}; document.querySelectorAll('#cform [data-k]').forEach(el=>{ o[el.dataset.k]=el.type==='number'?Math.max(0,+el.value||0):el.value.trim(); });
+    if(!o.name){ toast('Give the part a name'); return; }
+    if(unit==='cm') ['w','d','h'].forEach(f=>o[f]=Math.round(o[f]/2.54*10)/10);
+    o.phase=+o.phase||3;
+    if(inst){ inst.spec=o; commit(); select(inst.iid); toast(`Updated <b>${esc(o.name)}</b>`); }
+    else { const ni={iid:uid(),cid:'custom',spec:o,mats:{}}; S.items.push(ni); commit(); select(ni.iid); toast(`Added <b>${esc(o.name)}</b>`); }
+    closeModal();
+  };
+}
 function renderFinish(){
   let h=`<p class="muted" style="font-size:11.5px;line-height:1.45;margin:0 2px 4px">Sets the finish for every matching surface. Select a part in 3D → <b>Change Material</b> to override just that part.</p>`;
   for(const [slot,list] of Object.entries(MATS)){
@@ -1468,9 +1848,9 @@ function renderTracker(){
       <div class="bar"><i style="width:${Math.min(100,k.grey/40*100)}%;background:#8D96A0"></i></div></div>`;
   if(k.warns.length) h+=`<div class="card"><h3>Engineering Checks<span class="r" style="color:var(--amber)">${k.warns.length}</span></h3><div class="warns">${k.warns.map(w=>`<div class="warn ${w[0]}">${w[1]}</div>`).join('')}</div></div>`;
   // BOM
-  const rows=[...S.items].sort((a,b)=>ITEM[a.cid].phase-ITEM[b.cid].phase);
+  const rows=[...S.items].sort((a,b)=>IT(a).phase-IT(b).phase);
   let bom='<table class="bom"><tr><th>Item</th><th class="n">lb</th><th class="n">Cost</th></tr>', ph=0;
-  for(const r of rows){ const it=ITEM[r.cid]; if(it.phase!==ph){ ph=it.phase; bom+=`<tr class="ph"><td colspan="3">Phase ${ph} · ${PHASES[ph]}</td></tr>`; }
+  for(const r of rows){ const it=IT(r); if(it.phase!==ph){ ph=it.phase; bom+=`<tr class="ph"><td colspan="3">Phase ${ph} · ${PHASES[ph]}</td></tr>`; }
     const mats=(it.mats||[]).map(s=>MATNAME[matOf(r,s)]).join(', ');
     bom+=`<tr><td>${it.name}${mats?`<div class="muted" style="font-size:10.5px">${mats}</div>`:''}</td><td class="n">${it.wt}</td><td class="n">${fmt$(it.cost)}</td></tr>`; }
   bom+=`<tr class="tot"><td>Total</td><td class="n">${fmtN(k.wt)}</td><td class="n">${fmt$(k.cost)}</td></tr></table>`;
@@ -1497,21 +1877,35 @@ $('#tracker').addEventListener('click',e=>{ if(e.target.id==='xCSV') exportCSV()
    VIEWPORT UI — toolbar, cameras, phases, explode
    ===================================================================== */
 const LAYER_NAMES={body:'Outer Body Shell',roof:'Roof',cab:'Driver Cab',walls:'Walls & Floor'};
-const SHORT={body:'Body',roof:'Roof',cab:'Cab',walls:'Walls',grid:'Grid',dims:'Dims',unhide:'Hidden'};
-const nm=(k,n)=>`<span class="long">${n}</span><span class="short">${SHORT[k]}</span>`;
 const MODES=['solid','ghost','hidden'];
+const VIEW_MODES=[['exterior','Exterior'],['cutaway','Cutaway'],['xray','X-Ray'],['interior','Interior']];
+const MODE_TIPS={exterior:'The finished rig — everything solid.',cutaway:'Opens the wall facing you and lifts the roof. Orbit to look in from any side.',xray:'See-through shell, walls & floor — shows wiring and plumbing.',interior:'Shell removed — a dollhouse view of the whole layout.',custom:'Custom layer mix.'};
+const VM_ICON={
+  exterior:'<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="7" width="13" height="9" rx="1.5" fill="currentColor" fill-opacity=".25"/><path d="M16 10h3l2 3v3h-5"/><circle cx="7" cy="17.5" r="1.6"/><circle cx="17" cy="17.5" r="1.6"/></svg>',
+  cutaway:'<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 16V7h13v9"/><path d="M3 7l4-3h13v9l-4 3" stroke-dasharray="2 2"/><rect x="6" y="11" width="4" height="5" fill="currentColor" fill-opacity=".35"/></svg>',
+  xray:'<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="7" width="13" height="9" rx="1.5" stroke-dasharray="2.2 2"/><path d="M16 10h3l2 3v3h-5" stroke-dasharray="2.2 2"/><path d="M5 12h9M9 9v6" stroke="#F5B440"/></svg>',
+  interior:'<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 16h18"/><rect x="4" y="11" width="6" height="5" fill="currentColor" fill-opacity=".35"/><rect x="12" y="9" width="4" height="7" fill="currentColor" fill-opacity=".35"/><rect x="17" y="12" width="3" height="4"/></svg>',
+};
+let showLayers=false;
+function curLayers(){ return view.mode==='custom'? view.layers : Object.assign({},MODE_LAYERS[view.mode]); }
 function renderToolbar(){
-  let h='<div class="tbl">Layers · tap to cycle</div>';
-  for(const [k,n] of Object.entries(LAYER_NAMES)) h+=`<button class="tgl" data-layer="${k}"><span>${nm(k,n)}</span><span class="mode ${view.layers[k]}">${view.layers[k]==='ghost'?'X-RAY':view.layers[k].toUpperCase()}</span></button>`;
-  h+='<div class="tsep"></div><div class="tbl">Inspect</div>';
-  h+=`<button class="tgl" data-t="grid"><span>${nm('grid','Floor Grid')}</span><span class="mode ${view.grid?'on':'off'}">${view.grid?'ON':'OFF'}</span></button>`;
-  h+=`<button class="tgl" data-t="dims"><span>${nm('dims','Dimensions')}</span><span class="mode ${view.dims?'on':'off'}">${view.dims?'IN/CM':'OFF'}</span></button>`;
-  h+=`<button class="tgl" data-t="unhide"><span>${nm('unhide','Show Hidden')}</span><span class="mode ${view.hidden.size?'on':'off'}">${view.hidden.size}</span></button>`;
+  let h=`<div class="tbl">View</div><div class="vmodes">${VIEW_MODES.map(([k,n])=>`<button class="vm ${view.mode===k?'on':''}" data-mode="${k}" title="${MODE_TIPS[k]}">${VM_ICON[k]}<span>${n}</span></button>`).join('')}</div>`;
+  h+=`<div class="tip">${MODE_TIPS[view.mode]}</div>`;
+  h+=`<button class="tgl sm lt" data-t="layers"><span>Fine-tune layers</span><span class="muted">${showLayers?'▾':'▸'}</span></button>`;
+  if(showLayers){ const cl=curLayers();
+    h+=`<div class="lrows">${Object.entries(LAYER_NAMES).map(([k,n])=>`<div class="lrow"><span>${n}</span><div class="seg3">${MODES.map(m=>`<button data-layer="${k}" data-lm="${m}" class="${cl[k]===m?'on':''}">${m==='ghost'?'X-ray':m==='hidden'?'Off':'Solid'}</button>`).join('')}</div></div>`).join('')}</div>`; }
+  h+=`<div class="tsep"></div><div class="chips">
+    <button class="chip2 ${view.grid?'on':''}" data-t="grid" title="Floor grid (G)">▦ Grid</button>
+    <button class="chip2 ${view.dims?'on':''}" data-t="dims" title="Dimension lines (D)">↔ Dims</button>
+    <button class="chip2 ${view.hidden.size?'on':''}" data-t="unhide" title="Show hidden parts">👁 ${view.hidden.size}</button></div>`;
   $('#toolbar').innerHTML=h;
 }
+function setMode(m){ view.mode=m; view.modeBeforeTop=null; applyVisibility(); renderToolbar(); }
 $('#toolbar').addEventListener('click',e=>{
-  const l=e.target.closest('[data-layer]'); if(l){ const k=l.dataset.layer; view.layers[k]=MODES[(MODES.indexOf(view.layers[k])+1)%3]; if(k==='roof') view.roofBeforeTop=null; applyVisibility(); renderToolbar(); return; }
+  const vm=e.target.closest('[data-mode]'); if(vm){ setMode(vm.dataset.mode); return; }
+  const l=e.target.closest('[data-layer]'); if(l){ const cl=curLayers(); cl[l.dataset.layer]=l.dataset.lm; view.layers=cl; setMode('custom'); return; }
   const t=e.target.closest('[data-t]'); if(!t) return;
+  if(t.dataset.t==='layers'){ showLayers=!showLayers; renderToolbar(); return; }
   if(t.dataset.t==='grid') view.grid=!view.grid;
   if(t.dataset.t==='dims') view.dims=!view.dims;
   if(t.dataset.t==='unhide'){ if(view.hidden.size) toast(`Restored <b>${view.hidden.size}</b> hidden part${view.hidden.size>1?'s':''}`); view.hidden.clear(); }
@@ -1525,14 +1919,14 @@ let tween=null;
 function W(x,y,z){ return V3((x-C.T/2)*IN,y*IN,z*IN); }
 function goPreset(p,instant){
   const c=C; view.preset=p; renderCams();
-  if(p!=='top' && view.roofBeforeTop){ view.layers.roof=view.roofBeforeTop; view.roofBeforeTop=null; applyVisibility(); renderToolbar(); }
+  if(p!=='top' && view.modeBeforeTop){ view.mode=view.modeBeforeTop; view.modeBeforeTop=null; applyVisibility(); renderToolbar(); }
   doorAnim.rearT = p==='rear'?1:0; doorAnim.slideT = p==='side'?1:0;
   let pos,tgt; const Tm=c.T*IN;
   if(p==='ext'){ tgt=W(c.T*.48,c.f+c.H*.35,0); pos=tgt.clone().add(V3(Tm*.72,Tm*.38+.5,Tm*.9)); }
   else if(p==='rear'){ tgt=W(c.L*.45,c.f+c.H*.42,0); pos=W(-110,c.f+c.H*.75,14); }
   else if(p==='side'){ const xd=c.door?(c.door.x0+c.door.x1)/2:c.L*.55; tgt=W(xd-20,c.f+c.H*.42,-6); pos=W(xd+10,c.f+c.H*.7,c.W/2+110); }
-  else if(p==='top'){ if(view.layers.roof!=='hidden'){ view.roofBeforeTop=view.layers.roof; view.layers.roof='hidden'; applyVisibility(); renderToolbar(); } tgt=W(c.T*.5,c.f,0); pos=W(c.T*.5+.5,c.f+c.T*1.55+60,.5); }
-  else { tgt=W(c.L*.25,c.f+c.H*.4,0); pos=W(c.L+(c.CL*.3),c.f+40,-c.W/4); }
+  else if(p==='top'){ if(view.mode!=='interior'){ const pm=view.mode; view.mode='interior'; view.modeBeforeTop=pm; applyVisibility(); renderToolbar(); } tgt=W(c.T*.5,c.f,0); pos=W(c.T*.5+.5,c.f+c.T*1.55+60,.5); }
+  else { tgt=W(c.L*.25,c.f+c.H*.4,0); pos = (c.kind==='pickup'||c.kind==='box') ? W(c.L-8,c.f+Math.min(c.H-8,58),-c.zi*.4) : W(c.seatX+2,c.cabFloor+40,-(c.cab.width||c.W)/4); }
   const fit=Math.max(1,1.3/camera.aspect); if(p!=='cab') pos=tgt.clone().add(pos.clone().sub(tgt).multiplyScalar(fit));
   if(instant){ camera.position.copy(pos); controls.target.copy(tgt); controls.update(); return; }
   tween={p0:camera.position.clone(),t0:controls.target.clone(),p1:pos,t1:tgt,s:performance.now(),d:900};
@@ -1557,7 +1951,7 @@ $('#phaseBar').addEventListener('click',e=>{
   if(view.phase) toast(`Showing <b>Phase ${view.phase}</b> build state`);
 });
 const exI=$('#explode');
-exI.addEventListener('input',()=>{ view.explode=+exI.value/100; exI.style.setProperty('--p',exI.value+'%'); $('#explodeVal').textContent=exI.value+'%'; });
+exI.addEventListener('input',()=>{ selDimsDirty=true; view.explode=+exI.value/100; exI.style.setProperty('--p',exI.value+'%'); $('#explodeVal').textContent=exI.value+'%'; });
 let exCur=0;
 
 /* =====================================================================
@@ -1574,7 +1968,7 @@ renderer.domElement.addEventListener('pointerup',e=>{
   for(const h of hits){
     const o=h.object; if(!o.isMesh||o.userData.service) continue;
     if(!chainVisible(o)) continue;
-    const L=o.userData.layer; if(L && view.layers[L]!=='solid') continue;
+    if(o.userData.layer && effMode(o)!=='solid') continue;
     if(o.userData.iid){ select(o.userData.iid); return; }
     break;
   }
@@ -1582,19 +1976,23 @@ renderer.domElement.addEventListener('pointerup',e=>{
 });
 function chainVisible(o){ while(o){ if(!o.visible) return false; o=o.parent; } return true; }
 let popMode=null;
-function select(iid){ view.sel=iid; popMode=null; selHelper.visible=true; renderPop(); }
-function deselect(){ view.sel=null; selHelper.visible=false; $('#pop').hidden=true; }
+function select(iid){ view.sel=iid; popMode=null; selHelper.visible=true; selDimsDirty=true; renderPop(); }
+function deselect(){ view.sel=null; selHelper.visible=false; $('#pop').hidden=true; clearSelDims(); }
 function renderPop(){
   const inst=S.items.find(i=>i.iid===view.sel); if(!inst){deselect();return;}
-  const it=ITEM[inst.cid], variants=ZONE[it.zone];
+  const it=IT(inst), variants=it.custom?[]:ZONE[it.zone];
   let sub='';
   if(popMode==='swap'){ sub=`<div class="sublbl">Variants for this zone</div>`+variants.map(id=>`<button class="vrow ${id===inst.cid?'on':''}" data-var="${id}"><span>${ITEM[id].name}</span><span>${fmt$(ITEM[id].cost)}</span></button>`).join(''); }
   if(popMode==='mat'){ for(const slot of it.mats||[]){ const cur=matOf(inst,slot); sub+=`<div class="sublbl">${SLOT_NAME[slot]}</div><div class="msw">${MATS[slot].map(([k,n])=>`<button data-ms="${slot}" data-mk="${k}" class="${k===cur?'on':''}"><img src="${swatch(k)}" alt=""><span>${n}</span></button>`).join('')}</div>`; } }
-  $('#pop').innerHTML=`<div class="pop-h"><b>${it.name}</b><button class="x" data-a="close">✕</button></div>
-    <div class="pop-meta">${fmt$(it.cost)} · ${it.wt} lb · Phase ${it.phase} ${it.draw?'· '+it.draw+' Wh/d':''}</div>
+  let placed=''; const g=instGroups.get(inst.iid);
+  if(g){ const bb=new THREE.Box3().setFromObject(g); if(!bb.isEmpty()){ const s=bb.getSize(V3(0,0,0)).divideScalar(IN); placed=`${fmtN(s.x,1)} L × ${fmtN(s.z,1)} W × ${fmtN(s.y,1)} H in`; } }
+  const spec = it.sz ? `${sizeTxt(it.sz)} <span class="muted">(${sizeCm(it.sz)})</span>` : 'Sized to this vehicle';
+  $('#pop').innerHTML=`<div class="pop-h"><b>${esc(it.name)}</b><button class="x" data-a="close">✕</button></div>
+    <div class="pop-meta">${fmt$(it.cost)} · ${it.wt} lb · Phase ${it.phase}${it.draw?' · '+it.draw+' Wh/d':''}</div>
+    <div class="pop-dims"><div><span>Spec size</span><b>${spec}</b></div>${placed?`<div><span>As placed</span><b>${placed}</b></div>`:''}${inst.spec&&inst.spec.url?`<div><span>Source</span><b><a href="${esc(inst.spec.url)}" target="_blank" rel="noopener" style="color:var(--cyan)">open link ↗</a></b></div>`:''}</div>
     <div class="pop-act">
       <button data-a="hide">👁 Hide Part</button>
-      <button data-a="swap" ${variants.length<2?'disabled':''} class="${popMode==='swap'?'on':''}">⇄ Swap Variant</button>
+      ${it.custom?`<button data-a="edit">✎ Edit Specs</button>`:`<button data-a="swap" ${variants.length<2?'disabled':''} class="${popMode==='swap'?'on':''}">⇄ Swap Variant</button>`}
       <button data-a="mat" ${it.mats?'':'disabled'} class="${popMode==='mat'?'on':''}">◐ Change Material</button>
       <button data-a="remove" class="danger">✕ Remove</button>
     </div><div class="pop-sub">${sub}</div>`;
@@ -1605,13 +2003,30 @@ $('#pop').addEventListener('click',e=>{
   const a=e.target.closest('[data-a]');
   if(a){ const act=a.dataset.a;
     if(act==='close') deselect();
-    else if(act==='hide'){ view.hidden.add(inst.iid); applyVisibility(); renderToolbar(); deselect(); toast(`Hidden · <b>Show Hidden</b> in toolbar restores it`); }
+    else if(act==='hide'){ view.hidden.add(inst.iid); applyVisibility(); renderToolbar(); deselect(); toast(`Hidden · tap <b>👁</b> in the toolbar to restore`); }
     else if(act==='remove'){ removeInst(inst.iid); }
+    else if(act==='edit'){ customDlg(inst); }
     else { popMode = popMode===act?null:act; renderPop(); }
     return; }
-  const v=e.target.closest('[data-var]'); if(v){ if(v.dataset.var!==inst.cid){ inst.cid=v.dataset.var; commit(); select(inst.iid); popMode='swap'; renderPop(); toast(`Swapped → <b>${ITEM[inst.cid].name}</b>`);} return; }
+  const v=e.target.closest('[data-var]'); if(v){ if(v.dataset.var!==inst.cid){ inst.cid=v.dataset.var; commit(); select(inst.iid); popMode='swap'; renderPop(); toast(`Swapped → <b>${IT(inst).name}</b>`);} return; }
   const m=e.target.closest('[data-ms]'); if(m){ inst.mats=inst.mats||{}; inst.mats[m.dataset.ms]=m.dataset.mk; commit(); select(inst.iid); popMode='mat'; renderPop(); }
 });
+/* ---------- selected-part dimensions in 3D ---------- */
+const selDims=new THREE.Group(); scene.add(selDims); let selDimsDirty=false;
+const selDimMat=new THREE.LineBasicMaterial({color:'#F5B440',depthTest:false,transparent:true});
+function clearSelDims(){ for(const ch of [...selDims.children]){ ch.geometry?.dispose(); if(ch.isSprite){ ch.material.map?.dispose(); ch.material.dispose(); } selDims.remove(ch); } }
+function buildSelDims(){
+  clearSelDims(); const g=instGroups.get(view.sel); if(!g||!g.visible) return;
+  const bb=new THREE.Box3().setFromObject(g); if(bb.isEmpty()) return;
+  const mn=bb.min, mx=bb.max, o=.05, t=.025, cx=(mn.x+mx.x)/2;
+  const seg=(a,b,txt,sub,tick)=>{ const l=new THREE.LineSegments(new THREE.BufferGeometry().setFromPoints([a,b,a.clone().add(tick),a.clone().sub(tick),b.clone().add(tick),b.clone().sub(tick)]),selDimMat); l.renderOrder=998; selDims.add(l);
+    const sp=label(txt,sub,'#F5B440'); sp.scale.set(.42,.105,1); sp.position.copy(a).add(b).multiplyScalar(.5).add(tick.clone().normalize().multiplyScalar(.1)); selDims.add(sp); };
+  const s=bb.getSize(V3(0,0,0)).divideScalar(IN);
+  const near=camera.position.z>0?1:-1, zf=near>0?mx.z+o:mn.z-o, sx=camera.position.x>cx?1:-1, xe=sx>0?mx.x+o:mn.x-o;
+  seg(V3(mn.x,mn.y,zf),V3(mx.x,mn.y,zf),`${fmtN(s.x,1)} in`,`${fmtN(s.x*2.54,1)} cm · length`,V3(0,0,near*t));
+  seg(V3(xe,mn.y,mn.z),V3(xe,mn.y,mx.z),`${fmtN(s.z,1)} in`,`${fmtN(s.z*2.54,1)} cm · width`,V3(sx*t,0,0));
+  seg(V3(xe,mn.y,zf),V3(xe,mx.y,zf),`${fmtN(s.y,1)} in`,`${fmtN(s.y*2.54,1)} cm · height`,V3(sx*t,0,near*t*.5));
+}
 const _v=V3(0,0,0);
 function placePop(){
   if(!view.sel || $('#pop').hidden) return;
@@ -1621,7 +2036,7 @@ function placePop(){
   _v.set((selBox.min.x+selBox.max.x)/2,selBox.max.y,(selBox.min.z+selBox.max.z)/2).project(camera);
   const r=vp.getBoundingClientRect(), pop=$('#pop');
   let x=(_v.x*.5+.5)*r.width+18, y=(-_v.y*.5+.5)*r.height-30;
-  x=Math.min(Math.max(x,160),r.width-pop.offsetWidth-160); y=Math.min(Math.max(y,12),r.height-pop.offsetHeight-80);
+  x=Math.min(Math.max(x,272),r.width-pop.offsetWidth-170); y=Math.min(Math.max(y,70),r.height-pop.offsetHeight-80);
   if(_v.z>1){ x=r.width/2-135; y=60; }
   pop.style.left=x+'px'; pop.style.top=y+'px';
 }
@@ -1630,13 +2045,13 @@ function placePop(){
    MUTATIONS
    ===================================================================== */
 function addItem(cid){
-  const it=ITEM[cid]; const ex=S.items.find(i=>ITEM[i.cid].zone===it.zone);
+  const it=ITEM[cid]; const ex=S.items.find(i=>IT(i).zone===it.zone);
   if(ex){ if(ex.cid===cid){ view.hidden.delete(ex.iid); applyVisibility(); select(ex.iid); return; } const old=ITEM[ex.cid].name; ex.cid=cid; commit(); toast(`Swapped <b>${old}</b> → <b>${it.name}</b>`); }
   else { const inst={iid:uid(),cid,mats:{}}; S.items.push(inst); commit(); toast(`Added <b>${it.name}</b>`); }
   if(view.phase && it.phase>view.phase){ view.phase=0; applyVisibility(); renderPhases(); }
 }
 function removeInst(iid){
-  const i=S.items.findIndex(x=>x.iid===iid); if(i<0) return; const n=ITEM[S.items[i].cid].name;
+  const i=S.items.findIndex(x=>x.iid===iid); if(i<0) return; const n=IT(S.items[i]).name;
   S.items.splice(i,1); view.hidden.delete(iid); deselect(); commit(); toast(`Removed <b>${n}</b>`);
 }
 function save(){ store('nomadforge.current',S); }
@@ -1654,7 +2069,7 @@ function exportText(title,txt,note){
   modal(title,`<p class="muted" style="margin:0 0 10px;font-size:12px">${note}</p><textarea readonly spellcheck="false">${txt.replace(/&/g,'&amp;').replace(/</g,'&lt;')}</textarea>`,`<button class="tb-btn" id="mDone">Close</button><button class="tb-btn primary" id="mCopy">Copy to clipboard</button>`);
   $('#mDone').onclick=closeModal; $('#mCopy').onclick=e=>copyText(txt,e.target);
 }
-function bomRows(){ return [...S.items].sort((a,b)=>ITEM[a.cid].phase-ITEM[b.cid].phase).map(r=>{const it=ITEM[r.cid];return {phase:it.phase,phaseName:PHASES[it.phase],category:CATALOG.find(c=>c.id===it.cat).name,item:it.name,finishes:(it.mats||[]).map(s=>MATNAME[matOf(r,s)]).join(' / '),weight_lb:it.wt,cost_usd:it.cost};}); }
+function bomRows(){ return [...S.items].sort((a,b)=>IT(a).phase-IT(b).phase).map(r=>{const it=IT(r);return {phase:it.phase,phaseName:PHASES[it.phase],category:(CATALOG.find(c=>c.id===it.cat)||{name:CAT_NAME[it.cat]||'Custom'}).name,item:it.name,finishes:(it.mats||[]).map(s=>MATNAME[matOf(r,s)]).join(' / '),weight_lb:it.wt,cost_usd:it.cost};}); }
 function exportCSV(){
   const q=s=>`"${String(s).replace(/"/g,'""')}"`;
   const rows=bomRows(), k=lastCalc;
@@ -1700,16 +2115,22 @@ document.querySelectorAll('#mnav button').forEach(b=>b.onclick=()=>{
    SETTINGS · ABOUT · LATEST UPDATE
    ===================================================================== */
 const APP = {
-  version:'1.1.0', released:'Nov 16, 2026',
+  version:'1.2.0', released:'Nov 16, 2026',
   repo:'https://github.com/mrsirwithpizza101/nomadforge-3d',
   get releases(){ return this.repo+'/releases/latest'; },
   about:'NomadForge 3D is an interactive 3D configurator and build planner for off-grid camper vans and overland rigs. Pick a base vehicle, snap modular interior and exterior components into place, try finishes in real time, and x-ray or explode the build to inspect hidden wiring, plumbing and clearances — while live trackers keep your cost, payload, power and water budgets honest.',
   latest:[
-    'NomadForge 3D now installs on Android as an APK, attached to every GitHub release.',
-    'The Android app bundles its 3D engine, so it opens and works fully offline after install.',
-    'Builds you save in the Android app stay on the phone between sessions.',
-    'Check for Update inside the Android app opens the newest release in your phone’s browser so you can grab the latest APK.',
-    'Settings now has an About section, this Latest Update list, and display toggles for the stats bar, grid and dimensions.',
+    'One-tap view modes — Exterior, Cutaway, X-Ray and Interior — make it easy to see inside the build.',
+    'Cutaway mode automatically opens the wall facing you and lifts the roof as you orbit around the vehicle.',
+    'Every catalog part now lists its real-world size in inches and centimeters.',
+    'Selecting a part draws its length, width and height in 3D and shows its spec and as-placed size.',
+    'Vehicles are rebuilt from 2025 published specs with accurate lengths, heights, wheelbases and interior vs. exterior widths.',
+    'Each van has its own modern front end, wheel arches, roof profile and high-roof fairing.',
+    'The box truck is now a 4x4 cab-over, the skoolie a Type A cutaway bus, and the pickup a 1-ton crew cab.',
+    'A new part search finds the closest catalog module for brand names, models and specs like “100Ah lithium” or “Maxxair fan”.',
+    'In the Android app, Search Online pulls live web results and pre-fills a part’s size, weight and price when it can.',
+    'You can add any custom part with its own size, weight, cost, power and water specs, and place it anywhere in the build.',
+    'The toolbar, catalog and part details have a cleaner, more compact layout.',
   ],
 };
 function settingsDlg(){
@@ -1749,7 +2170,8 @@ addEventListener('keydown',e=>{
   if(e.key==='Escape'){ deselect(); closeModal(); }
   if(e.key==='g') { view.grid=!view.grid; applyVisibility(); renderToolbar(); }
   if(e.key==='d') { view.dims=!view.dims; applyVisibility(); renderToolbar(); }
-  if(e.key==='x') { view.layers.body=view.layers.body==='solid'?'ghost':'solid'; applyVisibility(); renderToolbar(); }
+  if(e.key==='x') { setMode(view.mode==='xray'?'cutaway':'xray'); }
+  if(e.key==='v') { const ks=VIEW_MODES.map(m=>m[0]); setMode(ks[(ks.indexOf(view.mode)+1)%ks.length]); }
   if(view.sel && e.key==='h'){ view.hidden.add(view.sel); applyVisibility(); renderToolbar(); deselect(); }
   if(view.sel && (e.key==='Delete'||e.key==='Backspace')) removeInst(view.sel);
 });
@@ -1765,12 +2187,14 @@ function loop(now){
   if(tween){ const t=Math.min(1,(now-tween.s)/tween.d), k=ease(t); camera.position.lerpVectors(tween.p0,tween.p1,k); controls.target.lerpVectors(tween.t0,tween.t1,k); if(t>=1) tween=null; }
   controls.update();
   doorAnim.rear+= (doorAnim.rearT-doorAnim.rear)*.08; doorAnim.slide+=(doorAnim.slideT-doorAnim.slide)*.08;
-  if(doorRefs.rear){ doorRefs.rear.l.rotation.y=-doorAnim.rear*1.85; doorRefs.rear.r.rotation.y=doorAnim.rear*1.85; }
+  if(doorRefs.rear){ if(doorRefs.rear.roll) doorRefs.rear.roll.position.y=doorAnim.rear*doorRefs.rear.h; else { doorRefs.rear.l.rotation.y=-doorAnim.rear*1.85; doorRefs.rear.r.rotation.y=doorAnim.rear*1.85; } }
   if(doorRefs.slide){ const s=doorAnim.slide; doorRefs.slide.g.position.set(-doorRefs.slide.len*Math.max(0,(s-.15)/.85), 0, 2.6*Math.min(1,s*5)); }
   if(doorRefs.okit) doorRefs.okit.position.x=-26*doorAnim.rear;
   exCur+=(view.explode-exCur)*.12; if(Math.abs(view.explode-exCur)<.0005) exCur=view.explode;
   for(const o of EXPL){ const e=o.userData.ex; o.position.set(e.base.x+e.v.x*exCur,e.base.y+e.v.y*exCur,e.base.z+e.v.z*exCur); }
-  if(view.sel){ placePop(); selHelper.visible=true; }
+  updateCamSide();
+  const settled=Math.abs(exCur-view.explode)<.002; selDims.visible=settled;
+  if(view.sel){ placePop(); selHelper.visible=true; if(selDimsDirty&&settled){ buildSelDims(); selDimsDirty=false; } }
   renderer.render(scene,camera);
 }
 
