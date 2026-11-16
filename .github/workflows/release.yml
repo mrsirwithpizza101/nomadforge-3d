@@ -1,8 +1,12 @@
 name: Publish release
 
+# Publishes a GitHub release whenever CHANGELOG.md on main gains a new "## vX.Y.Z" entry.
+# The app's "Check for Update" button opens /releases/latest, so it always lands on the newest one.
 on:
   push:
-    tags: ['v*']
+    branches: [main]
+    paths: ['CHANGELOG.md', '.github/workflows/release.yml']
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -12,13 +16,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Extract notes for this version from CHANGELOG.md
+      - name: Read newest version and notes from CHANGELOG.md
+        id: v
         run: |
-          VER="${GITHUB_REF_NAME}"
+          VER=$(grep -m1 -oE '^## v[0-9]+\.[0-9]+\.[0-9]+' CHANGELOG.md | sed 's/^## //')
+          echo "ver=$VER" >> "$GITHUB_OUTPUT"
           awk -v v="## ${VER} " 'index($0,v)==1{f=1;next} /^## /{if(f)exit} f' CHANGELOG.md > notes.md
           { echo "## What's new in ${VER}"; echo; cat notes.md; } > body.md
           cat body.md
-      - name: Create GitHub release
+      - name: Create release if it doesn't exist yet
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release create "$GITHUB_REF_NAME" --title "NomadForge 3D $GITHUB_REF_NAME" --notes-file body.md --latest
+          VER: ${{ steps.v.outputs.ver }}
+        run: |
+          if gh release view "$VER" >/dev/null 2>&1; then echo "Release $VER already exists"; exit 0; fi
+          gh release create "$VER" --target "$GITHUB_SHA" --title "NomadForge 3D $VER" --notes-file body.md --latest
