@@ -17,9 +17,21 @@ It's a single self-contained `index.html` (Three.js loaded from a CDN) — no bu
 - **Phased build mode** — step through Phase 1 Insulation & Framing → 2 Electrical & Plumbing → 3 Cabinetry & Finish → 4 Exterior Gear.
 - **Save / load** — multiple builds in browser storage, JSON import/export, and CSV bill-of-materials export.
 
-## Run it
+## Install on Android
+
+1. Open the [latest release](../../releases/latest) on your phone and download **`NomadForge-3D-vX.Y.Z.apk`** under *Assets*.
+2. Open the downloaded file. If Android asks, allow your browser to **install unknown apps**.
+3. Tap **Install**. The app works offline once installed (the 3D engine is bundled).
+
+To update, use **Settings → Check for Update** in the app, download the newer APK and install it over the old one — your saved builds are kept.
+
+## Run it in a browser
 
 Open `index.html` in any modern browser (it needs an internet connection to load Three.js and fonts from the CDN).
+
+## How releases are built
+
+Adding a new `## vX.Y.Z` entry to the top of `CHANGELOG.md` on `main` triggers `.github/workflows/release.yml`, which publishes a GitHub release with those notes and builds a signed Android APK (Capacitor WebView wrapper with Three.js bundled for offline use) and attaches it to the release.
 
 ## Keyboard shortcuts
 

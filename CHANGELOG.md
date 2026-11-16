@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.1.0 — 2026-11-16
+
+- NomadForge 3D now installs on Android as an APK, attached to every GitHub release.
+- The Android app bundles its 3D engine, so it opens and works fully offline after install.
+- Builds you save in the Android app stay on the phone between sessions.
+- Check for Update inside the Android app opens the newest release in your phone’s browser so you can grab the latest APK.
+- Settings now has an About section, this Latest Update list, and display toggles for the stats bar, grid and dimensions.
+
 ## v1.0.0 — 2026-11-16
 
 - Six base platforms — Sprinter, Transit, ProMaster, pickup camper, skoolie and 4x4 box truck — with wheelbase, roof-height and paint options.

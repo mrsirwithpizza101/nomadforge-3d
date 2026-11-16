@@ -1700,22 +1700,16 @@ document.querySelectorAll('#mnav button').forEach(b=>b.onclick=()=>{
    SETTINGS · ABOUT · LATEST UPDATE
    ===================================================================== */
 const APP = {
-  version:'1.0.0', released:'Nov 16, 2026',
+  version:'1.1.0', released:'Nov 16, 2026',
   repo:'https://github.com/mrsirwithpizza101/nomadforge-3d',
   get releases(){ return this.repo+'/releases/latest'; },
   about:'NomadForge 3D is an interactive 3D configurator and build planner for off-grid camper vans and overland rigs. Pick a base vehicle, snap modular interior and exterior components into place, try finishes in real time, and x-ray or explode the build to inspect hidden wiring, plumbing and clearances — while live trackers keep your cost, payload, power and water budgets honest.',
   latest:[
-    'Six base platforms — Sprinter, Transit, ProMaster, pickup camper, skoolie and 4x4 box truck — with wheelbase, roof-height and paint options.',
-    'A modular catalog of 45+ off-grid components that snap into zones and swap automatically when a zone is already occupied.',
-    'X-ray and hide toggles for the body, roof, cab and walls reveal the routed wiring and plumbing behind them.',
-    'Tap any part to hide it, swap its variant, change its material or remove it from the build.',
-    'An exploded-view slider pulls racks, solar, walls and cabinetry outward to show how the layers fit together.',
-    'Five animated camera presets (hotkeys 1–5) open the rear or side doors and switch to a top-down floor plan.',
-    'Procedural finishes for cabinetry, countertops, walls and flooring can be applied build-wide or per part.',
-    'A live tracker shows itemized cost, payload against GVWR, axle and side-to-side balance, solar vs. draw autonomy, and water capacity.',
-    'Engineering checks flag problems like an undersized inverter, a missing grey tank or an overweight build.',
-    'A Phase 1–4 build timeline steps through insulation, electrical, cabinetry and exterior gear in order.',
-    'Builds can be saved in the browser and moved between devices with JSON import/export, plus a CSV bill of materials.',
+    'NomadForge 3D now installs on Android as an APK, attached to every GitHub release.',
+    'The Android app bundles its 3D engine, so it opens and works fully offline after install.',
+    'Builds you save in the Android app stay on the phone between sessions.',
+    'Check for Update inside the Android app opens the newest release in your phone’s browser so you can grab the latest APK.',
+    'Settings now has an About section, this Latest Update list, and display toggles for the stats bar, grid and dimensions.',
   ],
 };
 function settingsDlg(){
@@ -1736,7 +1730,7 @@ function settingsDlg(){
     <a class="upd-btn" href="${APP.releases}" target="_blank" rel="noopener">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg>
       Check for Update</a>
-    <div class="set-note">Opens the latest release on GitHub · you're on v${APP.version}</div>`,
+    <div class="set-note">Opens the latest release on GitHub (Android APK attached) · you're on v${APP.version}</div>`,
     `<button class="tb-btn primary" id="setDone">Done</button>`);
   $('#setDone').onclick=closeModal;
   $('#setHud').onchange=e=>{ $('#hud').hidden=!e.target.checked; store('nomadforge.hud',e.target.checked); };
@@ -1744,6 +1738,8 @@ function settingsDlg(){
   $('#setDims').onchange=e=>{ view.dims=e.target.checked; applyVisibility(); renderToolbar(); };
 }
 $('#bSettings').onclick=settingsDlg;
+// In the Android app, open outside links (e.g. Check for Update) in the phone's browser
+document.addEventListener('click',e=>{ const a=e.target.closest('a[target=_blank]'); if(a && window.Capacitor?.isNativePlatform?.()){ e.preventDefault(); location.href=a.href; } });
 if(load('nomadforge.hud')===false) $('#hud').hidden=true;
 
 // keyboard
