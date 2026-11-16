@@ -1,0 +1,24 @@
+name: Publish release
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Extract notes for this version from CHANGELOG.md
+        run: |
+          VER="${GITHUB_REF_NAME}"
+          awk -v v="## ${VER} " 'index($0,v)==1{f=1;next} /^## /{if(f)exit} f' CHANGELOG.md > notes.md
+          { echo "## What's new in ${VER}"; echo; cat notes.md; } > body.md
+          cat body.md
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" --title "NomadForge 3D $GITHUB_REF_NAME" --notes-file body.md --latest
