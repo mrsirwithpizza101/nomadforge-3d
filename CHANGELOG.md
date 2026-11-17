@@ -1,5 +1,21 @@
 # Changelog
 
+## v1.3.0 — 2026-11-16
+
+- Pick the exact model year and model type — trim, GVWR and gas, diesel or EV powertrain — for every vehicle.
+- Vehicles get generation-specific front ends plus lifelike details like rub strips, wheel wells, side markers, plates and mud flaps.
+- Tap any part to see what it is, its measurements, its status, and buttons for View more and Move.
+- View more opens a full breakdown of the part on your vehicle: photo, measurements, location, energy, cost, connections, pros and cons.
+- Move shrinks the card into a compact editing bar so you can drag, nudge, rotate or switch sides with live fit checks.
+- Parts can’t go through walls, wheel wells, the ceiling or each other — the app keeps placements physically realistic.
+- Group parts into a cluster and tap Automate to get compact, weight-balanced or spread-out layouts for any area.
+- Recolor any part, and swap finishes, variants and equipment from the same card.
+- A green plus on every part adds it to your cart, your project and your profile.
+- The new Compare tab puts parts or materials side by side with cost, weight, energy, insulation R-values and what each does to your build.
+- The new Profile shows your parts, total cost, driving range and vehicle over a render of your build, with tiles that drill into each one.
+- The new Tracker shows what you need to buy, what you have and what’s installed, with a next-step suggestion and 3D preview modes.
+- Undo and redo, plus a cleaner mobile layout: bottom-bar sheets no longer repeat the same tab name at the top.
+
 ## v1.2.0 — 2026-11-16
 
 - One-tap view modes — Exterior, Cutaway, X-Ray and Interior — make it easy to see inside the build.

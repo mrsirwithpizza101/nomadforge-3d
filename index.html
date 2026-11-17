@@ -202,7 +202,7 @@ table.bom{width:100%;border-collapse:collapse;font-size:11.5px}
 .blist{display:flex;flex-direction:column;gap:6px}
 .bitem{display:flex;align-items:center;gap:8px;padding:9px 10px;border:1px solid var(--line);border-radius:8px;background:var(--panel2)}
 .bitem .grow{flex:1;min-width:0}.bitem .grow div:last-child{font-size:11px;color:var(--muted);font-family:var(--mono);margin-top:2px}
-#toast{position:fixed;left:50%;bottom:84px;transform:translate(-50%,12px);opacity:0;background:#0f1215;border:1px solid var(--line2);padding:9px 14px;border-radius:9px;font-size:12.5px;z-index:60;transition:.25s;pointer-events:none;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+#toast{position:fixed;left:50%;top:76px;transform:translate(-50%,-10px);opacity:0;background:#0f1215;border:1px solid var(--line2);padding:9px 14px;border-radius:9px;font-size:12.5px;z-index:60;transition:.25s;pointer-events:none;box-shadow:0 10px 30px rgba(0,0,0,.4)}
 #toast.show{opacity:1;transform:translate(-50%,0)}
 #toast b{color:var(--cyan);font-weight:600}
 
@@ -294,8 +294,164 @@ table.bom{width:100%;border-collapse:collapse;font-size:11.5px}
   .ph .t{display:none}.ph .t.keep{display:inline}.ph{padding:6px 8px}
   .long{display:none}.short{display:inline !important}
   #cams kbd{display:none}
-  #toast{bottom:190px}
+  #toast{top:64px;bottom:auto;max-width:92vw}
+  .brand span{display:none}
+  #top>.cartb{display:none}
+  #top{gap:8px}
   #pop{left:8px !important;right:8px;width:auto;top:auto !important;bottom:168px}
+}
+/* v1.3 */
+#ptabs{display:flex;gap:2px;background:var(--bg);border:1px solid var(--line);border-radius:9px;padding:3px;margin-left:8px}
+#ptabs button{padding:6px 12px;border-radius:7px;font-weight:600;font-size:12.5px;color:var(--muted)}
+#ptabs button.on{background:var(--panel3);color:var(--text);box-shadow:0 0 0 1px var(--line2)}
+.tb-btn:disabled{opacity:.4;cursor:default}
+.cartb{position:relative}
+.cartn{position:absolute;top:-5px;right:-5px;min-width:17px;height:17px;border-radius:9px;background:var(--green);color:#052b14;font-size:10px;font-weight:700;display:grid;place-items:center;padding:0 4px}
+.cartn[hidden]{display:none}
+#pages{position:fixed;left:0;right:0;top:var(--top);bottom:0;z-index:20;background:var(--bg);overflow:auto}
+#pages[hidden]{display:none}
+.pg-wrap{max-width:1180px;margin:0 auto;padding:22px 20px 60px}
+.pg-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:14px}
+.pg-head h1,.pp-info h1,.pf-title h1{margin:0 0 4px;font-size:26px;letter-spacing:-.02em}
+.pg-head p{margin:0;font-size:13px}
+.chips-row{display:flex;gap:6px;overflow-x:auto;padding-bottom:6px;margin-bottom:10px}
+.pchip{white-space:nowrap;padding:7px 12px;border-radius:20px;border:1px solid var(--line);background:var(--panel);font-size:12px;font-weight:500;color:var(--muted)}
+.pchip:hover{color:var(--text)} .pchip.on{border-color:var(--cyan);color:var(--cyan);background:rgba(47,214,238,.08)}
+.cmp-add{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.cmp-add select{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:8px 10px;color:var(--text);min-width:220px;flex:1;max-width:340px}
+.cmp-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+table.cmp{border-collapse:collapse;width:100%;min-width:640px;font-size:12.5px}
+.cmp th,.cmp td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.cmp tbody th{color:var(--muted);font-weight:600;font-size:11.5px;width:150px;position:sticky;left:0;background:var(--panel)}
+.cmp thead th{position:relative;background:var(--panel2);vertical-align:bottom}
+.cmp-name{font-weight:700;font-size:13px;padding-right:20px;line-height:1.3}
+.cmp-tag{display:inline-block;margin-top:5px;font-size:10px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:2px 6px;border-radius:5px;color:var(--muted);background:#2a3037}
+.cmp-tag.in{color:var(--cyan);background:rgba(47,214,238,.12)}
+.cmp-x{position:absolute;top:6px;right:6px}
+.cmp td.best{color:var(--green);font-weight:600}
+.cmp td.worst{color:#f0b073}
+.cmp td{font-family:var(--mono);font-size:12px}
+.cmp ul{margin:0;padding-left:15px;font-family:var(--sans);font-size:12px;line-height:1.45}
+.pl li::marker{color:var(--green)} .cl li::marker{color:var(--amber)}
+.cmp-act{display:flex;gap:6px;align-items:center}
+.dots{color:var(--amber);letter-spacing:1px} .dots i{color:#3a414a;font-style:normal}
+.mimg{width:100%;height:42px;object-fit:cover;border-radius:6px;display:block;margin-bottom:6px}
+.note{font-size:11.5px;color:var(--muted);line-height:1.5;margin:10px 2px}
+.empty{padding:30px;text-align:center;color:var(--muted);border:1px dashed var(--line2);border-radius:12px}
+.gplus{width:24px;height:24px;border-radius:50%;background:var(--green);color:#052b14;font-weight:800;font-size:15px;display:grid;place-items:center;line-height:1;flex:none;box-shadow:0 0 0 3px rgba(74,222,128,.15)}
+.gplus:hover{filter:brightness(1.1);transform:scale(1.06)} .gplus.big{width:32px;height:32px;font-size:18px}
+.trk-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:12px}
+.tstat{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:3px}
+.tstat small{font-size:11px;color:var(--muted);font-weight:600;letter-spacing:.04em}
+.tstat b{font-family:var(--mono);font-size:20px}
+.nextup{display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:linear-gradient(90deg,rgba(47,214,238,.1),transparent);border:1px solid rgba(47,214,238,.35);border-radius:12px;padding:12px 14px;margin-bottom:12px}
+.nextup span{font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--cyan)}
+.nextup em{font-style:normal;color:var(--muted);font-size:12px;flex:1}
+.nextup.done{color:var(--green);font-weight:600}
+.kanban{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.kcol{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px;min-height:120px}
+.khead{display:flex;align-items:center;gap:6px;font-weight:700;font-size:12.5px;padding:2px 4px 10px}
+.khead span{margin-left:auto;font-family:var(--mono);color:var(--muted);font-weight:500}
+.kcard{display:flex;align-items:center;gap:8px;background:var(--panel2);border:1px solid var(--line);border-radius:9px;padding:9px 10px;margin-bottom:6px;cursor:pointer}
+.kcard b{display:block;font-size:12.5px;font-weight:600;line-height:1.3}.kcard small{font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.kbtns{display:flex;gap:4px;flex:none}.kbtns button{padding:5px 8px;border-radius:6px;border:1px solid var(--line2);font-size:11px;font-weight:600;color:var(--muted)}
+.kbtns .adv{color:var(--green);border-color:rgba(74,222,128,.4)}
+.kempty{font-size:12px;color:var(--dim);padding:10px 4px}
+.pf-hero{background-size:cover;background-position:center 40%;min-height:380px;display:flex;align-items:flex-end}
+.pf-hero .pg-wrap{width:100%;padding-bottom:20px}
+.pf-title small{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);font-weight:700}
+.pf-title span{color:#c8cfd8;font-size:13px}
+.pf-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:18px}
+.pfs{background:rgba(24,27,32,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.pfs small{font-size:11px;color:var(--muted);font-weight:600}.pfs b{font-family:var(--mono);font-size:22px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.pfs span{font-size:11.5px;color:#aeb6c1;line-height:1.35}
+.pf-tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:6px 0 16px}
+.pft{position:relative;text-align:left;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:4px;transition:.15s}
+.pft:hover{border-color:var(--line2);transform:translateY(-1px)}
+.pft.on{border-color:var(--cyan);box-shadow:inset 0 0 0 1px var(--cyan)}
+.pft .ic{font-size:20px}.pft b{font-size:14px}.pft small{color:var(--muted);font-size:11.5px;line-height:1.35}
+.pft em{position:absolute;right:12px;top:12px;font-style:normal;color:var(--dim);font-size:18px}
+.pf-detail h3{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:16px 2px 8px;display:flex;gap:8px}
+.pf-detail h3 span{font-family:var(--mono);color:var(--cyan)}
+.prow{display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--panel);border:1px solid var(--line);border-radius:10px;margin-bottom:6px;cursor:pointer}
+.prow:hover{border-color:var(--line2)} .prow b{display:block;font-size:13px;font-weight:600} .prow small{font-size:11px;color:var(--muted);font-family:var(--mono)}
+.prow .pr{font-family:var(--mono);font-size:12px;display:flex;align-items:center;gap:8px;white-space:nowrap} .prow em{font-style:normal;color:var(--dim)}
+.pbar{display:inline-block;width:60px;height:5px;background:#15181c;border-radius:3px;overflow:hidden}.pbar i{display:block;height:100%;background:var(--amber)}
+.pf-split{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:6px}
+.pf-split div{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 12px;display:flex;flex-direction:column}
+.pf-split small{font-size:11px;color:var(--muted)}.pf-split b{font-family:var(--mono);font-size:17px}.pf-split span{font-size:11px;color:var(--muted)}
+.back{color:var(--cyan);font-weight:600;margin-bottom:12px;font-size:13px}
+.pp-top{display:grid;grid-template-columns:1.1fr 1fr;gap:20px;align-items:center;margin-bottom:16px}
+.pp-img{aspect-ratio:16/10;border-radius:14px;overflow:hidden;background:radial-gradient(ellipse at center,#20252c,#121417);border:1px solid var(--line)}
+.pp-img img{width:100%;height:100%;object-fit:cover;display:block}
+.pp-info small{font-size:11px;color:var(--cyan);font-weight:700;letter-spacing:.06em}
+.pp-info p{color:#c8cfd8;line-height:1.55;margin:4px 0 14px}
+.pp-btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.pp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.pp-grid .card{margin:0}.pp-grid .wide{grid-column:1/-1}
+.pp-grid .spec span:nth-child(even){white-space:nowrap}
+.conn{display:flex;gap:12px;padding:7px 0;border-bottom:1px solid var(--line);font-size:12.5px}.conn b{width:110px;flex:none;color:var(--cyan);font-weight:600}
+.pp-mats{display:flex;gap:10px;flex-wrap:wrap}.pp-mats div{display:flex;flex-direction:column;gap:2px;width:150px}.pp-mats img{width:100%;height:50px;object-fit:cover;border-radius:7px}.pp-mats b{font-size:11px;color:var(--muted)}.pp-mats span{font-size:12.5px}
+.pop-sub2{font-size:11px;color:var(--muted);margin-top:2px}
+.pop-status{display:flex;gap:4px;padding:0 12px 10px}
+.pop-status button{flex:1;padding:6px 4px;border-radius:7px;border:1px solid var(--line);font-size:11px;font-weight:600;color:var(--muted);white-space:nowrap}
+.pop-status button.on{border-color:var(--green);color:var(--green);background:rgba(74,222,128,.08)}
+.pop-status.big{padding:0}.pop-status.big button{padding:9px 6px;font-size:12px}
+.pop-main{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:0 12px 10px}
+.pop-main .tb-btn{justify-content:center;height:36px}
+.pop-mini{display:flex;border-top:1px solid var(--line)}
+.pop-mini button{flex:1;padding:9px 0;font-size:14px;color:var(--muted)}.pop-mini button:hover:not(:disabled){background:var(--panel3);color:var(--text)}
+.pop-mini button.on{color:var(--cyan)}.pop-mini button:disabled{opacity:.3}.pop-mini .danger:hover{color:var(--red)}
+.pcolors{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.pcolors button,.pcolors label{width:26px;height:26px;border-radius:50%;border:2px solid var(--panel);box-shadow:0 0 0 1px var(--line2);cursor:pointer}
+.pcolors button.on{box-shadow:0 0 0 2px var(--cyan)} .pcolors input{opacity:0;width:100%;height:100%}
+.pcolors .pc-reset{width:auto;border-radius:6px;padding:0 8px;font-size:11px;color:var(--muted);background:none}
+#editbar{position:absolute;left:50%;transform:translateX(-50%);bottom:74px;z-index:9;background:rgba(18,20,23,.62);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:8px 10px;max-width:calc(100% - 24px);box-shadow:0 12px 30px rgba(0,0,0,.35)}
+#editbar[hidden]{display:none}
+.eb-top{display:flex;align-items:center;gap:8px;font-size:12px;margin-bottom:6px;white-space:nowrap;overflow:hidden}
+.eb-top b{overflow:hidden;text-overflow:ellipsis}
+.dot{width:9px;height:9px;border-radius:50%;flex:none}.dot.ok{background:var(--green);box-shadow:0 0 8px var(--green)}.dot.bad{background:var(--red);box-shadow:0 0 8px var(--red)}
+.eb-msg{color:var(--green);font-size:11.5px}.eb-msg.bad{color:var(--red)}
+.eb-mount{margin-left:auto;color:var(--muted);font-size:11px}
+.eb-row{display:flex;gap:4px;align-items:stretch;overflow-x:auto}
+.eb-row>button{display:flex;flex-direction:column;align-items:center;gap:1px;padding:5px 8px;border-radius:8px;font-size:15px;color:var(--text);min-width:50px;border:1px solid transparent}
+.eb-row>button span{font-size:9.5px;font-weight:600;color:var(--muted);white-space:nowrap}
+.eb-row>button:hover{background:rgba(255,255,255,.06)} .eb-row>button.on{border-color:rgba(47,214,238,.5);color:var(--cyan)}
+.eb-row .done{background:var(--cyan);color:#062028}.eb-row .done span{color:#062028}
+.eb-grp{display:grid;grid-template-columns:repeat(2,28px);gap:2px;margin-right:4px}
+.eb-grp button{height:20px;border-radius:5px;background:rgba(255,255,255,.06);font-size:10px}
+.eb-grp button:hover{background:rgba(47,214,238,.2)}
+.eb-areas{display:flex;gap:4px;flex-wrap:wrap;align-items:center;margin-top:6px;font-size:11px;color:var(--muted)}
+.eb-areas button{padding:5px 9px;border-radius:14px;border:1px solid var(--line2);font-size:11px;color:var(--text)}
+.eb-areas button:hover{border-color:var(--cyan);color:var(--cyan)}
+.eb-hint{font-size:10.5px;color:var(--dim);margin-top:5px;text-align:center}
+.vsel{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:9px 10px;color:var(--text);font-size:13px}
+.mtype{display:flex;flex-direction:column;gap:5px}
+.mtype button{text-align:left;padding:9px 11px;border-radius:8px;border:1px solid var(--line);background:var(--panel2);font-size:12.5px;display:flex;justify-content:space-between;gap:8px}
+.mtype button.on{border-color:var(--cyan);box-shadow:inset 3px 0 0 var(--cyan)}
+.mtype button small{color:var(--muted);font-family:var(--mono);font-size:10.5px;white-space:nowrap}
+.mtype button.ev small{color:var(--green)}
+.shead{display:none}
+#mchips{display:none}
+@media (max-width:1180px){ #ptabs button{padding:6px 9px} }
+@media (max-width:860px){
+  #ptabs,#bUndo,#bRedo{display:none}
+  #pages{bottom:58px}
+  aside .tabs{display:none}
+  .shead{display:flex;align-items:center;padding:12px 14px 8px;font-weight:700;font-size:15px;border-bottom:1px solid var(--line)}
+  .shead::before{content:'';position:absolute;left:50%;top:6px;width:36px;height:4px;border-radius:2px;background:#3a414a;transform:translateX(-50%)}
+  .shead .x{margin-left:auto}
+  aside{position:fixed}
+  #mchips{display:flex;gap:6px;justify-content:center}
+  #mchips button{padding:6px 12px;border-radius:16px;font-size:12px;font-weight:600;color:var(--text)}
+  #mchips button.on{color:var(--cyan)}
+  #editbar{bottom:150px;padding:6px 8px}
+  .eb-row>button{min-width:44px;padding:4px 5px}
+  .pg-wrap{padding:16px 14px 40px}
+  .trk-stats,.pf-stats,.pf-tiles,.pf-split{grid-template-columns:1fr 1fr}
+  .kanban,.pp-top,.pp-grid{grid-template-columns:1fr}
+  .pf-hero{min-height:330px}
+  .pfs b{font-size:18px}
+  .pp-grid .spec span:nth-child(even){white-space:normal}
 }
 </style>
 <script type="importmap">
@@ -309,19 +465,21 @@ table.bom{width:100%;border-collapse:collapse;font-size:11.5px}
     <span>NOMADFORGE <b>3D</b></span>
   </div>
   <input id="buildName" spellcheck="false" title="Build name">
+  <nav id="ptabs"><button data-go="build" class="on">Build</button><button data-go="compare">Compare</button><button data-go="tracker">Tracker</button><button data-go="profile">Profile</button></nav>
   <div class="spacer"></div>
-  <button class="tb-btn hide-m" id="bNew" title="Start a new build">New</button>
-  <button class="tb-btn" id="bBuilds" title="Saved builds">Builds</button>
-  <button class="tb-btn hide-m" id="bImport">Import</button>
-  <button class="tb-btn hide-m" id="bExport">Export JSON</button>
+  <button class="tb-btn icon" id="bUndo" title="Undo (Ctrl+Z)" disabled>↶</button>
+  <button class="tb-btn icon" id="bRedo" title="Redo (Ctrl+Shift+Z)" disabled>↷</button>
+  <button class="tb-btn icon cartb" data-go="tracker" title="Cart — parts you still need"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2.5 3h3l2.6 12.2a1.5 1.5 0 0 0 1.5 1.2h8.6a1.5 1.5 0 0 0 1.5-1.1L22 8H6.4"/></svg><span class="cartn" hidden>0</span></button>
+  <button class="tb-btn" id="bBuilds" title="Saved builds, import & export">Builds</button>
   <button class="tb-btn primary" id="bSave">Save</button>
   <button class="tb-btn icon" id="bSettings" title="Settings &amp; About"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></button>
   <button class="tb-btn icon hide-m on" id="tL" title="Toggle catalog panel"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="1.5" y="2" width="13" height="12" rx="2"/><path d="M6 2v12"/></svg></button>
-  <button class="tb-btn icon hide-m on" id="tR" title="Toggle tracker panel"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="1.5" y="2" width="13" height="12" rx="2"/><path d="M10 2v12"/></svg></button>
+  <button class="tb-btn icon hide-m on" id="tR" title="Toggle stats panel"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="1.5" y="2" width="13" height="12" rx="2"/><path d="M10 2v12"/></svg></button>
 </header>
 
 <main id="main">
   <aside id="left">
+    <div class="shead"><span id="sheetTitleL">Parts</span><button class="x sclose">✕</button></div>
     <div class="tabs">
       <button data-tab="vehicle" class="on">Vehicle</button>
       <button data-tab="catalog">Catalog</button>
@@ -337,7 +495,9 @@ table.bom{width:100%;border-collapse:collapse;font-size:11.5px}
     <div id="hud" class="glass"></div>
     <div id="cams" class="glass"></div>
     <div id="pop" class="glass" hidden></div>
+    <div id="editbar" hidden></div>
     <div id="bottom">
+      <div id="mchips" class="glass"><button data-sheet="left:vehicle">🚐 Vehicle</button><button data-sheet="left:finish">🎨 Finishes</button><button data-sheet="right:stats">📊 Stats</button></div>
       <div id="phaseBar" class="glass"></div>
       <div id="explodeBox" class="glass">
         <label for="explode">Exploded</label>
@@ -349,16 +509,19 @@ table.bom{width:100%;border-collapse:collapse;font-size:11.5px}
   </section>
 
   <aside id="right">
-    <div class="tabs"><button class="on" style="cursor:default">Build Tracker</button></div>
+    <div class="shead"><span>Build Stats</span><button class="x sclose">✕</button></div>
+    <div class="tabs"><button class="on" style="cursor:default">Build Stats</button></div>
     <div class="pane" id="tracker"></div>
   </aside>
 </main>
+<section id="pages" hidden><div id="pg-compare" hidden></div><div id="pg-tracker" hidden></div><div id="pg-profile" hidden></div><div id="pg-part" hidden></div></section>
 
 <nav id="mnav">
-  <button data-m="vehicle"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="6" width="12" height="8" rx="1.5"/><path d="M14 9h2.5l1.5 2.5V14h-4"/><circle cx="6" cy="15" r="1.6"/><circle cx="15" cy="15" r="1.6"/></svg>Vehicle</button>
-  <button data-m="catalog"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="11" y="3" width="6" height="6" rx="1"/><rect x="3" y="11" width="6" height="6" rx="1"/><path d="M14 11v6M11 14h6"/></svg>Catalog</button>
-  <button data-m="finish"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10" cy="10" r="7"/><circle cx="7.5" cy="8" r="1.2"/><circle cx="12.5" cy="8" r="1.2"/><circle cx="10" cy="12.8" r="1.2"/></svg>Finishes</button>
-  <button data-m="tracker"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 17V9M8 17V4M13 17v-6M18 17V7"/></svg>Tracker</button>
+  <button data-go="build"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="6" width="12" height="8" rx="1.5"/><path d="M14 9h2.5l1.5 2.5V14h-4"/><circle cx="6" cy="15" r="1.6"/><circle cx="15" cy="15" r="1.6"/></svg>Build</button>
+  <button data-sheet="left:catalog"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="11" y="3" width="6" height="6" rx="1"/><rect x="3" y="11" width="6" height="6" rx="1"/><path d="M14 11v6M11 14h6"/></svg>Parts</button>
+  <button data-go="compare"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10 3v14M4 6h12M4 6l-2.5 6h5zM16 6l-2.5 6h5z"/></svg>Compare</button>
+  <button data-go="tracker" class="cartb"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5h12M4 10h12M4 15h7"/><path d="M14 14l1.5 1.5L18.5 12"/></svg>Tracker<span class="cartn" hidden>0</span></button>
+  <button data-go="profile"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10" cy="7" r="3.2"/><path d="M3.5 17c.8-3.2 3.4-5 6.5-5s5.7 1.8 6.5 5"/></svg>Profile</button>
 </nav>
 
 <div id="modal" hidden><div class="mbox"><div class="mhead"><span id="mTitle"></span><button class="x" id="mClose">✕</button></div><div class="mbody" id="mBody"></div><div class="mfoot" id="mFoot"></div></div></div>
@@ -380,27 +543,27 @@ const fmtN = (n,d=0) => Number(n).toLocaleString('en-US',{maximumFractionDigits:
 const lb2kg = n => n*0.45359;
 
 const VEHICLES = {
-  sprinter:{name:'Sprinter High-Roof Extended',tag:'2025 · 170" WB · VS30',group:'Cargo Vans',kind:'van',cab:'sprinter',
-    Wi:70.4,W:79.7,f:27,overF:39,wheelR:15.3,tireW:8.6,curb:5950,gvwr:9050,
+  sprinter:{name:'Mercedes-Benz Sprinter',tag:'Cargo van · 144 / 170 / 170 EXT',group:'Cargo Vans',kind:'van',cab:'sprinter',
+    Wi:70.4,ww:53.1,W:79.7,f:27,overF:39,wheelR:15.3,tireW:8.6,curb:5950,gvwr:9050,
     wbs:[{label:'144"',wb:144,L:133,OL:233.5},{label:'170"',wb:170,L:173,OL:274.3},{label:'170" EXT',wb:170,L:188,OL:290}],wbDef:2,
     roofs:[{label:'Standard',H:67.7},{label:'High',H:79.1}],roofDef:1},
-  transit:{name:'Transit Medium-Roof',tag:'2025 · 148" WB · T-250',group:'Cargo Vans',kind:'van',cab:'transit',
-    Wi:70.2,W:81.3,f:26.8,overF:40,wheelR:15,tireW:9,curb:5450,gvwr:9070,
+  transit:{name:'Ford Transit',tag:'Cargo van · 130 / 148 / 148 EL',group:'Cargo Vans',kind:'van',cab:'transit',
+    Wi:70.2,ww:54.8,W:81.3,f:26.8,overF:40,wheelR:15,tireW:9,curb:5450,gvwr:9070,
     wbs:[{label:'130"',wb:129.9,L:128,OL:219.9},{label:'148"',wb:147.6,L:143.6,OL:235.5},{label:'148" EL',wb:147.6,L:172.2,OL:263.9}],wbDef:1,
     roofs:[{label:'Low',H:56.9},{label:'Medium',H:72},{label:'High',H:81.5}],roofDef:1},
-  promaster:{name:'ProMaster High-Roof',tag:'2025 · 159" WB · 3500',group:'Cargo Vans',kind:'van',cab:'promaster',
-    Wi:75.6,W:80.3,f:21,overF:37.6,wheelR:14.6,tireW:8.9,curb:5100,gvwr:9350,
+  promaster:{name:'Ram ProMaster',tag:'Cargo van · 136 / 159 / 159 EXT',group:'Cargo Vans',kind:'van',cab:'promaster',
+    Wi:75.6,ww:55.8,W:80.3,f:21,overF:37.6,wheelR:14.6,tireW:8.9,curb:5100,gvwr:9350,
     wbs:[{label:'136"',wb:136,L:125,OL:213.2},{label:'159"',wb:159,L:145.9,OL:236},{label:'159" EXT',wb:159,L:160.2,OL:250.6}],wbDef:1,
     roofs:[{label:'Low',H:65},{label:'High',H:76}],roofDef:1},
-  pickup:{name:'HD Pickup + Slide-in Camper',tag:'2025 · 1-ton crew cab',group:'Overland & Alt Rigs',kind:'pickup',cab:'pickup',
+  pickup:{name:'1-Ton Pickup + Camper',tag:'F-350 · Ram 3500 · Silverado 3500HD',group:'Overland & Alt Rigs',kind:'pickup',cab:'pickup',
     Wi:84,W:90,f:38,overF:40,wheelR:16.6,tireW:10.5,curb:8100,gvwr:11550,bedW:80,
     wbs:[{label:"6¾' bed",wb:159.8,L:81,OL:250},{label:"8' bed",wb:176,L:96,OL:266}],wbDef:1,
     roofs:[{label:'Low-profile',H:66},{label:'Full-height',H:76}],roofDef:1},
-  skoolie:{name:'Type A Short Bus',tag:'2025 · cutaway chassis',group:'Overland & Alt Rigs',kind:'bus',cab:'bus',
-    Wi:86,W:92,f:30,overF:33,wheelR:15.8,tireW:9,curb:10300,gvwr:14200,
+  skoolie:{name:'Type A Short Bus',tag:'Ford E-450 · Chevy Express 4500',group:'Overland & Alt Rigs',kind:'bus',cab:'bus',
+    Wi:86,ww:70,W:92,f:30,overF:33,wheelR:15.8,tireW:9,curb:10300,gvwr:14200,
     wbs:[{label:'158" WB',wb:158,L:180,OL:272},{label:'176" WB',wb:176,L:204,OL:296}],wbDef:1,
     roofs:[{label:'Stock',H:76},{label:'+12" Raise',H:88}],roofDef:0},
-  box:{name:'4x4 Cab-Over Box Truck',tag:'2025 · Class 5 COE 4WD',group:'Overland & Alt Rigs',kind:'box',cab:'coe',
+  box:{name:'4x4 Cab-Over Box Truck',tag:'Isuzu NPS · Fuso FG 4x4',group:'Overland & Alt Rigs',kind:'box',cab:'coe',
     Wi:92,W:96,f:47,overF:42,wheelR:19,tireW:11,curb:9800,gvwr:14500,
     wbs:[{label:"14' box",wb:150,L:168,OL:256},{label:"16' box",wb:176,L:192,OL:280}],wbDef:1,
     roofs:[{label:'Std 84"',H:84},{label:'Tall 96"',H:96}],roofDef:0},
@@ -420,6 +583,49 @@ const CABS = {
   coe:{prof:C=>[[5,27],[C-2,27],[C,35],[C,60],[C-5,94],[C-12,98],[8,98],[5,95]],ws:[3,4],belt:70,top:98,floor:52,width:80,
     grille:[[-27,42],[27,42],[27,57],[-27,57]],lights:[26,38,33,40],lower:[27,37],slats:5},
 };
+// Year / model-type data. mpg values are typical real-world estimates (heavy vans have no EPA rating).
+const MODELS = {
+  sprinter:{make:'Mercedes-Benz',model:'Sprinter',years:[2014,2026],def:0,
+    gens:[{from:2014,to:2018,cab:'sprinter14',label:'NCV3'},{from:2019,to:2026,cab:'sprinter',label:'VS30'}],
+    types:[{id:'s2500',label:'2500 · diesel',gvwr:9050,curb:5950,fuel:'Diesel',mpg:19,tank:24.5},
+           {id:'s3500xd',label:'3500XD · diesel',gvwr:11030,curb:5919,fuel:'Diesel',mpg:17,tank:24.5},
+           {id:'esprinter',label:'eSprinter · 113 kWh',from:2024,gvwr:9370,curb:6450,ev:true,kwh:113,range:[252]},
+           {id:'esprinter81',label:'eSprinter · 81 kWh',from:2025,gvwr:9370,curb:6100,ev:true,kwh:81,range:[161]}]},
+  transit:{make:'Ford',model:'Transit',years:[2015,2026],def:1,
+    gens:[{from:2015,to:2019,cab:'transit15',label:'1st gen'},{from:2020,to:2026,cab:'transit',label:'2020+ refresh'}],
+    types:[{id:'t150',label:'T-150 · 3.5L V6',gvwr:8670,curb:5250,fuel:'Gas',mpg:16,tank:25},
+           {id:'t250',label:'T-250 · 3.5L V6',gvwr:9070,curb:5450,fuel:'Gas',mpg:15,tank:25},
+           {id:'t350',label:'T-350 · 3.5L EcoBoost',gvwr:9500,curb:5650,fuel:'Gas',mpg:14,tank:25},
+           {id:'etransit',label:'E-Transit · 89 kWh',from:2024,gvwr:9500,curb:6250,ev:true,kwh:89,range:[159,148,143]},
+           {id:'etransit68',label:'E-Transit · 68 kWh',from:2022,to:2023,gvwr:9500,curb:6100,ev:true,kwh:68,range:[126,118,112]}]},
+  promaster:{make:'Ram',model:'ProMaster',years:[2014,2026],def:0,
+    gens:[{from:2014,to:2022,cab:'promaster14',label:'1st gen'},{from:2023,to:2026,cab:'promaster',label:'2023+ refresh'}],
+    types:[{id:'pm3500',label:'3500 · 3.6L V6',gvwr:9350,curb:5100,fuel:'Gas',mpg:15,tank:24},
+           {id:'pm1500',label:'1500 · 3.6L V6',gvwr:8550,curb:4950,fuel:'Gas',mpg:16,tank:24},
+           {id:'pmev',label:'ProMaster EV · 110 kWh',from:2024,gvwr:9500,curb:6480,ev:true,kwh:110,range:[164]}]},
+  pickup:{make:'',model:'1-ton pickup + camper',years:[2017,2026],def:0,gens:[{from:2017,to:2026,label:''}],
+    types:[{id:'f350',label:'Ford F-350 Super Duty · 6.7L diesel',cab:'pickup',gvwr:11550,curb:8100,fuel:'Diesel',mpg:12,tank:48},
+           {id:'ram3500',label:'Ram 3500 · 6.7L Cummins',from:2019,cab:'ram',gvwr:11550,curb:8200,fuel:'Diesel',mpg:12,tank:32},
+           {id:'silverado',label:'Chevrolet Silverado 3500HD · 6.6L Duramax',from:2020,cab:'silverado',gvwr:11550,curb:8150,fuel:'Diesel',mpg:12,tank:36}]},
+  skoolie:{make:'',model:'Type A short bus',years:[2015,2026],def:0,gens:[{from:2015,to:2026,label:''}],
+    types:[{id:'e450',label:'Ford E-450 cutaway · 7.3L V8',from:2020,cab:'bus',gvwr:14500,curb:10300,fuel:'Gas',mpg:9,tank:55},
+           {id:'e450v10',label:'Ford E-450 cutaway · 6.8L V10',to:2019,cab:'bus',gvwr:14500,curb:10300,fuel:'Gas',mpg:8,tank:55},
+           {id:'express',label:'Chevrolet Express 4500 cutaway · 6.6L V8',cab:'bus_chevy',gvwr:14200,curb:10300,fuel:'Gas',mpg:9,tank:57}]},
+  box:{make:'',model:'4x4 cab-over box truck',years:[2015,2026],def:0,gens:[{from:2015,to:2026,label:''}],
+    types:[{id:'nps',label:'Isuzu NPS 4x4',cab:'coe',gvwr:14500,curb:9800,fuel:'Gas',mpg:10,tank:30},
+           {id:'fuso',label:'Mitsubishi Fuso FG 4x4 · 3.0L diesel',cab:'coe_fuso',gvwr:14050,curb:9300,fuel:'Diesel',mpg:13,tank:26}]},
+};
+CABS.transit15=Object.assign({},CABS.transit,{grille:[[-27,26],[27,26],[24,40],[-24,40]],lights:[23,36,37,46],slats:3});
+CABS.sprinter14=Object.assign({},CABS.sprinter,{prof:C=>[[0,13],[C-6,13],[C-1,16],[C,29],[C-.4,38],[C-6,44],[C-36,50.5],[C-63,81],[C-69,84],[0,84]],grille:[[-16,30],[16,30],[15.5,41],[-15.5,41]],lights:[18,34,37,45],slats:3});
+CABS.promaster14=Object.assign({},CABS.promaster,{grille:[[-24,23],[24,23],[23,36],[-23,36]],slats:3});
+CABS.ram=Object.assign({},CABS.pickup,{grille:[[-28,37],[28,37],[28,57],[-28,57]],lights:[28,38.5,46,55],slats:1});
+CABS.silverado=Object.assign({},CABS.pickup,{grille:[[-30,35],[30,35],[29,53],[-29,53]],lights:[25,38,50,57],slats:2,bar:45});
+CABS.bus_chevy=Object.assign({},CABS.bus,{grille:[[-18,27],[18,27],[18,41],[-18,41]],slats:2,lights:[20,34,35,42]});
+CABS.coe_fuso=Object.assign({},CABS.coe,{grille:[[-30,44],[30,44],[30,53],[-30,53]],lights:[28,38,34,42],slats:3});
+function typeOK(t,y){ return y>=(t.from||0) && y<=(t.to||9999); }
+function vModel(s=S){ const M_=MODELS[s.vehicle]; const t=M_.types.find(x=>x.id===s.mtype); return (t&&typeOK(t,s.year))? t : (M_.types.find(x=>typeOK(x,s.year))||M_.types[M_.def||0]); }
+function vGen(s=S){ const M_=MODELS[s.vehicle]; return M_.gens.find(g=>s.year>=g.from&&s.year<=g.to)||M_.gens[M_.gens.length-1]; }
+function vTitle(s=S){ const M_=MODELS[s.vehicle], t=vModel(s); return M_.make? `${s.year} ${M_.make} ${M_.model}` : `${s.year} ${t.label.split(' · ')[0]}`; }
 const PAINTS = [['#E9E9E4','Arctic White'],['#9AA3AB','Silver'],['#2B2F33','Graphite'],['#6B7A5A','Sage'],['#C9B48A','Sand'],['#1F3B5C','Navy'],['#8A3324','Rust'],['#E0A526','School Bus']];
 
 const PHASES = {1:'Insulation & Framing',2:'Electrical & Plumbing',3:'Cabinetry & Finish',4:'Exterior Gear'};
@@ -427,7 +633,12 @@ const PHASES = {1:'Insulation & Framing',2:'Electrical & Plumbing',3:'Cabinetry 
 // cost (USD), wt (lb), phase, draw (Wh/day), solarW, ah, invW, altA, fresh/grey (gal), mats (material slots)
 const CATALOG = [
  {id:'shell',name:'Shell Prep',items:[
-  {id:'insul',name:'Thinsulate Insulation + Sound Deadener',zone:'insul',cost:850,wt:35,phase:1},
+  {id:'insul',name:'Thinsulate SM600L Insulation',zone:'insul',cost:850,wt:35,phase:1,rv:5.2,thick:1.6},
+  {id:'insul_wool',name:'Sheep Wool Insulation (2")',zone:'insul',cost:750,wt:45,phase:1,rv:7,thick:2},
+  {id:'insul_polyiso',name:'Polyiso Foam Board (1")',zone:'insul',cost:350,wt:30,phase:1,rv:6,thick:1},
+  {id:'insul_xps',name:'XPS Foam Board (1")',zone:'insul',cost:320,wt:35,phase:1,rv:5,thick:1},
+  {id:'insul_foam',name:'Closed-Cell Spray Foam (pro)',zone:'insul',cost:2000,wt:70,phase:1,rv:9.75,thick:1.5},
+  {id:'insul_reflectix',name:'Reflectix Foil Bubble Wrap',zone:'insul',cost:120,wt:10,phase:1,rv:1,thick:.3},
   {id:'frame',name:'Subfloor & Wall Furring Frame',zone:'frame',cost:450,wt:110,phase:1},
   {id:'panel',name:'Wall & Ceiling Paneling + LED Strips',zone:'panel',cost:950,wt:120,phase:3,mats:['wall'],draw:120},
   {id:'floor',name:'Finished Flooring',zone:'floor',cost:380,wt:60,phase:3,mats:['floor']},
@@ -528,22 +739,22 @@ let uidN = 1; const uid = () => 'p' + (Date.now().toString(36)) + (uidN++);
 
 function freshState(){
   const v = VEHICLES.transit;
-  return {name:'Transit Off-Grid Build', vehicle:'transit', wbIdx:v.wbDef, roofIdx:v.roofDef, paint:'#E9E9E4',
+  return {name:'Transit Off-Grid Build', vehicle:'transit', year:2025, mtype:'t250', wbIdx:v.wbDef, roofIdx:v.roofDef, paint:'#E9E9E4',
     items: DEFAULT_ITEMS.map(cid=>({iid:uid(), cid, mats:{}})),
     defaults:{cabinet:'birch',counter:'butcher',wall:'cedar',floor:'lvp'},
     settings:{sunHours:4.5, driveHours:1, fullWater:true, cargo:350}};
 }
 let S = freshState();
-const view = {mode:'cutaway', layers:{body:'solid',roof:'hidden',cab:'solid',walls:'solid'}, grid:true, dims:false, hidden:new Set(), phase:0, explode:0, sel:null, preset:'ext', roofBeforeTop:null};
+const view = {mode:'cutaway', layers:{body:'solid',roof:'hidden',cab:'solid',walls:'solid'}, grid:true, dims:false, hidden:new Set(), phase:0, explode:0, sel:null, preset:'ext', roofBeforeTop:null, statusView:'all', clusterPick:false};
 
 function store(k,v){try{localStorage.setItem(k,JSON.stringify(v));return true}catch(e){return false}}
 function load(k){try{const s=localStorage.getItem(k);return s?JSON.parse(s):null}catch(e){return null}}
 function sanitize(o){
   if(!o||typeof o!=='object'||!VEHICLES[o.vehicle]) return null;
   const d = freshState(), v = VEHICLES[o.vehicle];
-  const items = Array.isArray(o.items)? o.items.filter(i=>i&&(ITEM[i.cid]||(i.cid==='custom'&&i.spec&&typeof i.spec==='object'))).map(i=>{const n={iid:String(i.iid||uid()),cid:i.cid,mats:(i.mats&&typeof i.mats==='object')?i.mats:{}}; if(i.cid==='custom') n.spec=Object.assign({},i.spec,{name:String(i.spec.name||'Custom part').slice(0,60)}); return n;}) : [];
+  const items = Array.isArray(o.items)? o.items.filter(i=>i&&(ITEM[i.cid]||(i.cid==='custom'&&i.spec&&typeof i.spec==='object'))).map(i=>{const n={iid:String(i.iid||uid()),cid:i.cid,mats:(i.mats&&typeof i.mats==='object')?i.mats:{}}; if(['need','have','installed'].includes(i.status)) n.status=i.status; if(i.pos&&typeof i.pos==='object') n.pos={x:+i.pos.x||0,y:+i.pos.y||0,z:+i.pos.z||0,r:((+i.pos.r||0)%4+4)%4}; if(/^#[0-9a-f]{6}$/i.test(i.color||'')) n.color=i.color; if(i.cid==='custom') n.spec=Object.assign({},i.spec,{name:String(i.spec.name||'Custom part').slice(0,60)}); return n;}) : [];
   const seen=new Set(); const uniq=[]; for(const i of items){const z=IT(i).zone; if(seen.has(z)) continue; seen.add(z); uniq.push(i);}
-  return {name:String(o.name||'Untitled Build').slice(0,60), vehicle:o.vehicle,
+  return {name:String(o.name||'Untitled Build').slice(0,60), vehicle:o.vehicle, year:Math.min(Math.max(+o.year||2025,MODELS[o.vehicle].years[0]),MODELS[o.vehicle].years[1]), mtype:typeof o.mtype==='string'?o.mtype:'',
     wbIdx:Math.min(Math.max(0,o.wbIdx|0),v.wbs.length-1), roofIdx:Math.min(Math.max(0,o.roofIdx|0),v.roofs.length-1),
     paint:/^#[0-9a-f]{6}$/i.test(o.paint)?o.paint:d.paint, items:uniq,
     defaults:Object.assign({},d.defaults,o.defaults||{}), settings:Object.assign({},d.settings,o.settings||{})};
@@ -639,6 +850,7 @@ const M = {
   screen:new THREE.MeshStandardMaterial({color:'#0b2a30',emissive:'#2FD6EE',emissiveIntensity:.8}),
   liner:std('#0c0d0f',{roughness:.95,side:THREE.DoubleSide}), grille:std('#0f1113',{roughness:.35,metalness:.4}), chrome:std('#cfd5dc',{metalness:1,roughness:.18}),
   drl:new THREE.MeshStandardMaterial({color:'#ffffff',emissive:'#e8f4ff',emissiveIntensity:1.4}),
+  marker:std('#E8891C',{emissive:'#5a2a00',roughness:.4}), plate:std('#F2F2EE',{roughness:.5}),
 };
 const ghostMat = new THREE.MeshBasicMaterial({color:'#2FD6EE',transparent:true,opacity:.06,depthWrite:false,side:THREE.DoubleSide});
 const ghostMatW = new THREE.MeshBasicMaterial({color:'#F5B440',transparent:true,opacity:.05,depthWrite:false,side:THREE.DoubleSide});
@@ -727,7 +939,7 @@ let servicesGroup = null, dimsGroup = null;
 function makeCtx(){
   const v=VEHICLES[S.vehicle], wbo=v.wbs[S.wbIdx], H=v.roofs[S.roofIdx].H;
   const c={v,kind:v.kind,L:wbo.L,W:v.W,Wi:v.Wi,H,f:v.f,wb:wbo.wb,T:wbo.OL};
-  c.CL=c.T-c.L; c.cab=CABS[v.cab]; c.xf=c.T-v.overF; c.xr=c.xf-c.wb; c.wheelR=v.wheelR;
+  c.CL=c.T-c.L; c.year=S.year; c.model=vModel(); c.gen=vGen(); c.cab=CABS[c.model.cab||c.gen.cab||v.cab]||CABS[v.cab]; c.gvwr=c.model.gvwr; c.curb=c.model.curb; c.xf=c.T-v.overF; c.xr=c.xf-c.wb; c.wheelR=v.wheelR;
   c.trackW = v.bedW || (c.kind==='bus'||c.kind==='box' ? 82 : c.W);
   c.roofY=c.f+H; c.roofTop=c.roofY+(c.kind==='box'?1.8:3.6); c.ceilY=c.f+H-1.6; c.fy=c.f+1; c.zi=c.Wi/2-.8;
   c.cabover = c.kind==='pickup';
@@ -752,6 +964,29 @@ const matOf = (inst,slot) => (inst.mats&&inst.mats[slot]) || S.defaults[slot];
 /* =====================================================================
    VEHICLE SHELL
    ===================================================================== */
+function shellDetails(c,g,lw,rw){
+  const {L,W,f}=c;
+  if(c.kind==='van'||c.kind==='bus'){
+    for(const s of [-1,1]){ const p=s<0?lw:rw, zo=s*(W/2+.15), zz=s>0?[W/2,W/2+.5]:[-W/2-.5,-W/2];
+      // character crease & lower rub strip
+      L_(B(1,L-1,f+c.H*.42,f+c.H*.42+.6,zz[0]-(s>0?.2:0),zz[1]-(s>0?0:-.2),paintMat,p),'body',s);
+      L_(B(1,L-1,f-6.5,f-2.5,s>0?W/2:-W/2-.7,s>0?W/2+.7:-W/2,M.black,p),'body',s);
+      // amber side marker
+      L_(B(c.xr+c.wheelR+6,c.xr+c.wheelR+9,f-1,f+.5,s>0?W/2+.6:-W/2-.9,s>0?W/2+.9:-W/2-.6,M.marker,p),'body',s);
+      // mud flaps
+      B(c.xr-c.wheelR-4.5,c.xr-c.wheelR-4,4,c.wheelR+2,s*(c.trackW/2-6)-4,s*(c.trackW/2-6)+4,M.rubber,g);
+    }
+    // fuel door (driver side, behind cab)
+    L_(B(L-14,L-6.5,f+8,f+15,-W/2-.4,-W/2-.1,paintMat,lw),'body',-1);
+    // third brake light, license plate, rear step, exhaust
+    L_(B(-1.9,-.6,c.roofY-2.5,c.roofY-1.2,-7,7,M.tail,g),'body','rear');
+    L_(B(-2.6,-2.2,c.wheelR*.7+10,c.wheelR*.7+16,-6,6,M.plate,g),'body','rear');
+    B(-7,-3,c.wheelR*.7+7.6,c.wheelR*.7+9.2,-12,12,M.dark,g);
+    Cyl(1.3,5,M.steel,'x',-3,c.wheelR*.55,c.W*.28,g,14);
+  }
+  if(c.kind==='pickup'){ L_(B(-3.8,-3.4,34,40,-6,6,M.plate,g),'body','rear'); }
+  if(c.kind==='box'){ L_(B(-2.8,-2.4,c.wheelR+10,c.wheelR+16,-6,6,M.plate,g),'body','rear'); }
+}
 function L_(m,layer,side){ layerize(m,layer); if(side!==undefined) m.userData.side=side; return m; }
 function wheel(c,x,z,parent){
   const R=c.wheelR, w=c.v.tireW||9.5, rr=R*.6;
@@ -889,6 +1124,8 @@ function buildShell(c){
     const tl = c.kind==='bus' ? [f-4,f+8] : [f-2,f+30];
     for(const s of [-1,1]) L_(B(-.8,.6,tl[0],tl[1],s>0?W/2-3.4:-W/2+.2,s>0?W/2-.2:-W/2+3.4,M.tail,g),'body','rear');
   }
+  if(c.kind==='van'||c.kind==='bus') for(const b of wellBoxes(c)){ const m=B(b.x0,b.x1,b.y0,b.y1,b.z0,b.z1,M.floorPan,g); m.userData.well=true; }
+  shellDetails(c,g,lw,rw);
   buildCab(c,g);
 }
 function buildCab(c,g){
@@ -932,6 +1169,7 @@ function buildCab(c,g){
   const gm=mesh(gg,M.grille); cg.add(gm); L_(gm,'cab');
   const gw=Math.min(...cb.grille.map(q=>Math.abs(q[0])))-1.5, gy0=cb.grille[0][1], gy1=cb.grille[2][1];
   for(let i=1;i<=cb.slats;i++){ const y=gy0+(gy1-gy0)*i/(cb.slats+1); L_(B(gx+.1,gx+.6,y-.4,y+.4,-gw,gw,M.chrome,cg),'cab'); }
+  if(cb.bar) L_(B(gx-.2,gx+1.4,cb.bar-2.2,cb.bar+2.2,-gw-2,gw+2,paintMat,cg),'cab');
   const [z0,z1,y0,y1]=cb.lights, lx=frontAt((y0+y1)/2);
   for(const sd of [-1,1]){
     const ls=new THREE.Shape([new THREE.Vector2(z0,y0),new THREE.Vector2(z1,y0+1.5),new THREE.Vector2(z1,y1),new THREE.Vector2(z0+2,y1)]);
@@ -987,9 +1225,9 @@ function cabBox(c,inst,x0,x1,y0,y1,z0,z1,g,front){ // cabinet carcass with front
 const BUILD = {
   insul(c,inst,g){
     const zo=c.W/2-1.6, zin=c.zi+.6;
-    const l=B(1,c.L-1,c.f+.5,c.roofY-.4,-zo,-zin,M.insul,g); L_(l,'walls',-1); reg(l,0,0,-30);
-    const r=B(1,c.L-1,c.f+.5,c.roofY-.4,zin,zo,M.insul,g); L_(r,'walls',1); reg(r,0,0,30);
-    const ce=B(1,c.L-1,c.ceilY+.7,c.roofY-.2,-zin,zin,M.insul,g); L_(ce,'walls','top'); reg(ce,0,42,0);
+    const l=B(1,c.L-1,c.f+.5,c.roofY-.4,-zo,-zin,insMat(inst),g); L_(l,'walls',-1); reg(l,0,0,-30);
+    const r=B(1,c.L-1,c.f+.5,c.roofY-.4,zin,zo,insMat(inst),g); L_(r,'walls',1); reg(r,0,0,30);
+    const ce=B(1,c.L-1,c.ceilY+.7,c.roofY-.2,-zin,zin,insMat(inst),g); L_(ce,'walls','top'); reg(ce,0,42,0);
   },
   frame(c,inst,g){
     const sub=B(.5,c.L-.5,c.f,c.f+.75,-c.zi-.6,c.zi+.6,'birch',g); L_(sub,'walls'); reg(sub,0,-8,0);
@@ -1439,12 +1677,26 @@ function rebuild(){
   const c=makeCtx(); C=c;
   root.position.set(-c.T/2*IN,0,0); root.updateMatrixWorld(true);
   buildShell(c);
-  const order=[...S.items].sort((a,b)=>(IT(a).zone==='galleyD'?-1:0)-(IT(b).zone==='galleyD'?-1:0));
+  const prio=i=>{ const z=IT(i).zone; return z==='galleyD'?0:z==='galleyP'?1:(z==='sink'||z==='cook'||i.cid==='fresh20')?3:2; };
+  const order=[...S.items].sort((a,b)=>prio(a)-prio(b));
+  c.parentMap={};
   for(const inst of order){
-    const it=IT(inst), g=new THREE.Group(); g.userData.iid=inst.iid; root.add(g);
+    const it=IT(inst), g=new THREE.Group(), before=Object.assign({},c.ports);
+    root.add(g);
     try{ BUILD[inst.cid](c,inst,g); }catch(e){ console.error('build',inst.cid,e); }
     g.traverse(o=>{o.userData.iid=inst.iid;});
-    instGroups.set(inst.iid,g);
+    g.updateMatrixWorld(true); const cb=groupBox(g); root.remove(g);
+    const c0=isFinite(cb.x0)&&cb.x1>cb.x0 ? V3((cb.x0+cb.x1)/2,(cb.y0+cb.y1)/2,(cb.z0+cb.z1)/2) : V3(0,0,0);
+    const par=parentOf(inst,c), pw=par&&instGroups.get(par.iid), host=pw?pw.userData.inner:root;
+    const w=new THREE.Group(); w.userData={iid:inst.iid,wrap:true,c0,inner:g};
+    const off=Object.assign({x:0,y:0,z:0,r:0},inst.pos||{});
+    w.position.set(c0.x+off.x,c0.y+off.y,c0.z+off.z); w.rotation.y=(off.r||0)*Math.PI/2; g.position.set(-c0.x,-c0.y,-c0.z);
+    w.add(g); host.add(w); if(par) c.parentMap[inst.iid]=par;
+    w.updateMatrixWorld(true);
+    if(inst.pos||par) for(const k in c.ports){ if(c.ports[k]!==before[k]){ const p=c.ports[k].clone().applyMatrix4(g.matrixWorld); c.ports[k]=V3((p.x-root.position.x)/IN,p.y/IN,p.z/IN); } }
+    instGroups.set(inst.iid,w);
+    if(inst.color) g.traverse(o=>{ if(o.isMesh&&o.userData.iid===inst.iid&&!NOPAINT.has(o.material)){ if(o.userData.solid) o.userData.solid=tinted(o.userData.solid,inst.color); o.material=tinted(o.material,inst.color); } });
+    g.traverse(o=>{ if(o.isMesh&&!o.userData.layer&&o.userData.iid===inst.iid) o.userData.mat0=o.material; });
     if(!g.userData.ex && !g.children.some(ch=>ch.userData.ex)) autoExplode(c,it,g);
   }
   buildServices(c); buildDims(c);
@@ -1505,7 +1757,10 @@ function applyVisibility(){
     o.material = mode==='ghost' ? (Lr==='walls'?ghostMatW:ghostMat) : o.userData.solid;
     o.castShadow = mode==='solid';
   });
-  for(const inst of S.items){ const g=instGroups.get(inst.iid); if(g) g.visible = !view.hidden.has(inst.iid) && phaseOK(IT(inst)); }
+  for(const inst of S.items){ const g=instGroups.get(inst.iid); if(!g) continue; const st=statusOf(inst);
+    g.visible = !view.hidden.has(inst.iid) && phaseOK(IT(inst)) && !(view.statusView==='owned'&&st==='need');
+    const gh = view.statusView==='ghost'&&st==='need';
+    g.userData.inner.traverse(o=>{ if(o.isMesh&&o.userData.iid===inst.iid&&!o.userData.layer&&o.userData.mat0) o.material=gh?ghostPlan:o.userData.mat0; }); }
   if(servicesGroup) servicesGroup.visible = !view.phase || view.phase>=2;
   if(dimsGroup) dimsGroup.visible = view.dims;
   grid.visible=gridFine.visible=view.grid;
@@ -1521,15 +1776,15 @@ function updateCamSide(){
 /* =====================================================================
    CALCULATIONS
    ===================================================================== */
-function calc(){
+function calc(items=S.items){
   const c=C, v=c.v, st=S.settings;
   let cost=0,wt=0,solarW=0,ah=0,invW=0,alt=0,fresh=0,grey=0; const loads=[]; const byPhase={1:0,2:0,3:0,4:0};
-  for(const inst of S.items){ const it=IT(inst);
+  for(const inst of items){ const it=IT(inst);
     cost+=it.cost; wt+=it.wt; byPhase[it.phase]+=it.cost; solarW+=it.solarW||0; ah+=it.ah||0; invW=Math.max(invW,it.invW||0); alt+=it.altA||0;
     fresh+=it.fresh||0; grey+=it.grey||0; if(it.draw) loads.push([it.name.replace(/ \(.*\)/,''),it.draw]); }
   if(ah) loads.push(['Phones, laptop, pump & misc.',180]);
   const water = st.fullWater? fresh*8.34 : 0;
-  const payload = v.gvwr - v.curb;
+  const payload = c.gvwr - c.curb;
   const total = wt + water + (+st.cargo||0);
   const harvest = solarW*st.sunHours*.75, altWh = alt*13.8*st.driveHours, draw = loads.reduce((a,l)=>a+l[1],0);
   const usable = ah*12.8*.9, net = harvest+altWh-draw;
@@ -1540,7 +1795,7 @@ function calc(){
   const score = Math.round((ah?pScore:0)+wScore);
   const warns=[];
   const has=z=>c.has(z), cid=z=>has(z)?.cid;
-  if(total>payload) warns.push(['bad',`Over payload by ${fmtN(total-payload)} lb — exceeds GVWR of ${fmtN(v.gvwr)} lb.`]); else if(total>payload*.85) warns.push(['',`Within 15% of payload capacity (${fmtN(payload-total)} lb left).`]);
+  if(total>payload) warns.push(['bad',`Over payload by ${fmtN(total-payload)} lb — exceeds GVWR of ${fmtN(c.gvwr)} lb.`]); else if(total>payload*.85) warns.push(['',`Within 15% of payload capacity (${fmtN(payload-total)} lb left).`]);
   if(cid('cook')==='induction' && invW<1800) warns.push(['bad','Induction cooktop needs an inverter of at least 1800 W.']);
   if(has('ac') && invW<3000) warns.push(['bad','Rooftop A/C needs the 3000 W inverter.']);
   if(has('ac') && ah<400) warns.push(['','A/C on battery really wants 400 Ah or more.']);
@@ -1563,19 +1818,23 @@ const VSVG = {
   box:'<svg width="46" height="26" viewBox="0 0 46 26" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 19V4h27v15zM31 19V9h6l5 5v5z"/><circle cx="10" cy="21" r="2.8" fill="#1E2228"/><circle cx="37" cy="21" r="2.8" fill="#1E2228"/></svg>',
 };
 function renderVehicle(){
-  const v=VEHICLES[S.vehicle], wbo=v.wbs[S.wbIdx], H=v.roofs[S.roofIdx].H;
+  const v=VEHICLES[S.vehicle], wbo=v.wbs[S.wbIdx], H=v.roofs[S.roofIdx].H, M_=MODELS[S.vehicle], t=vModel(), gen=vGen();
   let h='';
   for(const grp of ['Cargo Vans','Overland & Alt Rigs']){
     h+=`<div class="h">${grp}</div>`;
     for(const [k,o] of Object.entries(VEHICLES)) if(o.group===grp)
       h+=`<button class="vcard ${k===S.vehicle?'on':''}" data-v="${k}">${VSVG[o.kind]}<div><div class="t">${o.name}</div><div class="s">${o.tag}</div></div></button>`;
   }
+  const ys=[]; for(let y=M_.years[1];y>=M_.years[0];y--) ys.push(y);
+  h+=`<div class="h">Model year</div><select class="vsel" id="ySel">${ys.map(y=>`<option ${y===S.year?'selected':''}>${y}</option>`).join('')}</select>`;
+  if(gen.label) h+=`<p class="muted" style="font-size:11px;margin:6px 2px 0">${M_.make} ${M_.model} · ${gen.label} body (${gen.from}–${gen.to})</p>`;
+  h+=`<div class="h">Model type &amp; powertrain</div><div class="mtype">${M_.types.filter(x=>typeOK(x,S.year)).map(x=>`<button data-mt="${x.id}" class="${x.id===t.id?'on':''} ${x.ev?'ev':''}"><span>${x.label}</span><small>${x.ev?`EV · ${x.range[Math.min(S.roofIdx,x.range.length-1)]} mi`:`${fmtN(x.gvwr)} lb GVWR`}</small></button>`).join('')}</div>`;
   h+=`<div class="h">Wheelbase / Length</div><div class="seg" id="wbSeg">${v.wbs.map((w,i)=>`<button data-i="${i}" class="${i===S.wbIdx?'on':''}">${w.label}</button>`).join('')}</div>`;
   h+=`<div class="h">Roof Height</div><div class="seg" id="roofSeg">${v.roofs.map((r,i)=>`<button data-i="${i}" class="${i===S.roofIdx?'on':''}">${r.label}</button>`).join('')}</div>`;
   h+=`<div class="h">Exterior Paint</div><div class="swatches">${PAINTS.map(([c,n])=>`<div class="sw ${c.toLowerCase()===S.paint.toLowerCase()?'on':''}" data-c="${c}" title="${n}" style="background:${c}"></div>`).join('')}
       <label class="sw" title="Custom color" style="background:conic-gradient(#f87171,#facc15,#4ade80,#22d3ee,#818cf8,#f472b6,#f87171)"><input type="color" id="paintPick" value="${S.paint}"></label></div>`;
-  const pl=v.gvwr-v.curb;
-  h+=`<div class="h">Platform Specs</div><div class="spec">
+  const pl=t.gvwr-t.curb;
+  h+=`<div class="h">${vTitle()} specs</div><div class="spec">
     <span>Cargo length</span><span>${fmtN(wbo.L,1)}" · ${fmtN(wbo.L*2.54)} cm</span>
     <span>Cargo width</span><span>${fmtN(v.Wi,1)}" · ${fmtN(v.Wi*2.54)} cm</span>
     <span>Cargo height</span><span>${fmtN(H,1)}" · ${fmtN(H*2.54)} cm</span>
@@ -1583,18 +1842,22 @@ function renderVehicle(){
     <span>Overall height</span><span>${fmtN(v.f+H+(v.kind==='box'?1.8:3.6),1)}"</span>
     <span>Width (no mirrors)</span><span>${fmtN(v.W,1)}"</span>
     <span>Wheelbase</span><span>${wbo.wb}"</span>
-    <span>Curb weight</span><span>${fmtN(v.curb)} lb</span>
-    <span>GVWR</span><span>${fmtN(v.gvwr)} lb</span>
+    <span>Powertrain</span><span>${t.ev?`Electric · ${t.kwh} kWh`:`${t.fuel} · ${t.tank} gal`}</span>
+    <span>${t.ev?'Range (EPA/est.)':'Fuel economy (est.)'}</span><span>${t.ev?`${t.range[Math.min(S.roofIdx,t.range.length-1)]} mi`:`≈${t.mpg} mpg`}</span>
+    <span>Curb weight</span><span>${fmtN(t.curb)} lb</span>
+    <span>GVWR</span><span>${fmtN(t.gvwr)} lb</span>
     <span>Payload</span><span style="color:var(--cyan)">${fmtN(pl)} lb · ${fmtN(lb2kg(pl))} kg</span></div>
-    <p class="muted" style="font-size:11px;line-height:1.45;margin:10px 2px 0">Dimensions are from 2025 published specs; cargo figures are at the floor. Weights vary by trim — confirm payload against your door-jamb sticker.</p>`;
+    <p class="muted" style="font-size:11px;line-height:1.45;margin:10px 2px 0">Dimensions from published specs; cargo figures are at the floor. Weights vary by trim and options — confirm payload on your door-jamb sticker. Gas/diesel mpg is a typical real-world estimate.</p>`;
   $('#p-vehicle').innerHTML=h;
 }
 $('#p-vehicle').addEventListener('click',e=>{
-  const vb=e.target.closest('[data-v]'); if(vb){ const k=vb.dataset.v; if(k!==S.vehicle){ const v=VEHICLES[k]; S.vehicle=k; S.wbIdx=v.wbDef; S.roofIdx=v.roofDef; commit(); goPreset(view.preset||'ext',true);} return; }
+  const vb=e.target.closest('[data-v]'); if(vb){ const k=vb.dataset.v; if(k!==S.vehicle){ const v=VEHICLES[k], M_=MODELS[k]; S.vehicle=k; S.wbIdx=v.wbDef; S.roofIdx=v.roofDef; S.year=Math.min(Math.max(S.year||2025,M_.years[0]),M_.years[1]); S.mtype=''; S.items.forEach(i=>i.pos=null); commit(); goPreset(view.preset||'ext',true);} return; }
+  const mt=e.target.closest('[data-mt]'); if(mt){ S.mtype=mt.dataset.mt; commit(); toast(`<b>${vTitle()}</b> · ${vModel().label}`); return; }
   const sb=e.target.closest('#wbSeg button'); if(sb){ S.wbIdx=+sb.dataset.i; commit(); return; }
   const rb=e.target.closest('#roofSeg button'); if(rb){ S.roofIdx=+rb.dataset.i; commit(); return; }
   const sw=e.target.closest('.sw[data-c]'); if(sw){ setPaint(sw.dataset.c); }
 });
+$('#p-vehicle').addEventListener('change',e=>{ if(e.target.id==='ySel'){ S.year=+e.target.value; if(!typeOK(vModel(),S.year)) S.mtype=''; commit(); toast(`<b>${vTitle()}</b>`); } });
 $('#p-vehicle').addEventListener('input',e=>{ if(e.target.id==='paintPick') setPaint(e.target.value,true); });
 function setPaint(c,live){ S.paint=c; paintMat.color.set(c); if(!live) renderVehicle(); else document.querySelectorAll('.sw[data-c]').forEach(s=>s.classList.remove('on')); save(); }
 
@@ -1606,7 +1869,7 @@ function sizeCm(sz){ const [w,d,h]=sz; return `${Math.round(w*2.54)}×${Math.rou
 function itemMeta(it){ const m=[fmt$(it.cost),`${it.wt} lb`]; m.push(it.sz?sizeTxt(it.sz):'sized to vehicle'); if(it.draw) m.push(`${it.draw} Wh/d`); if(it.solarW) m.push(`+${it.solarW} W`); if(it.ah) m.push(`${it.ah} Ah`); if(it.fresh) m.push(`${it.fresh} gal`); return m.join(' · '); }
 function itemRow(it,badge){
   const inst=S.items.find(s=>s.cid===it.id), occ=!inst&&S.items.find(s=>IT(s).zone===it.zone);
-  return `<div class="item ${inst?'in':''}" data-add="${it.id}"><div class="grow"><div class="nm">${it.name}${badge?` <span class="tag ${badge[0]}">${badge[1]}</span>`:''}</div><div class="mt">${itemMeta(it)}</div></div><div class="st">${inst?`<span class="tag ok">P${it.phase}</span><button class="x" data-rm="${inst.iid}" title="Remove">✕</button>`:occ?`<span class="tag swap">swap</span>`:`<span class="plus">＋</span>`}</div></div>`;
+  return `<div class="item ${inst?'in':''}" data-add="${it.id}"><div class="grow"><div class="nm">${it.name}${badge?` <span class="tag ${badge[0]}">${badge[1]}</span>`:''}</div><div class="mt">${itemMeta(it)}</div></div><div class="st">${inst?`<span class="tag ok">P${it.phase}</span><button class="x" data-rm="${inst.iid}" title="Remove">✕</button>`:occ?`<span class="tag swap">swap</span><button class="gplus" data-cart="${it.id}" title="Swap in & add to cart">＋</button>`:`<button class="gplus" data-cart="${it.id}" title="Add to cart">＋</button>`}</div></div>`;
 }
 function renderCatalog(){
   let h=`<div class="search"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="q" type="search" enterkeyhint="search" placeholder="Search any part — “100Ah lithium”, “Maxxair”…" value="${esc(qText)}" autocomplete="off"></div>
@@ -1628,6 +1891,7 @@ $('#p-catalog').addEventListener('input',e=>{ if(e.target.id==='q'){ qText=e.tar
 $('#p-catalog').addEventListener('keydown',e=>{ if(e.target.id==='q'&&e.key==='Enter'){ e.preventDefault(); qText=e.target.value; renderSearch(); if(qText.trim()) onlineSearch(qText.trim()); } });
 $('#p-catalog').addEventListener('click',e=>{
   const rm=e.target.closest('[data-rm]'); if(rm){ e.stopPropagation(); removeInst(rm.dataset.rm); return; }
+  const ct=e.target.closest('[data-cart]'); if(ct){ e.stopPropagation(); addToCart(ct.dataset.cart); return; }
   const ce=e.target.closest('[data-ce]'); if(ce){ e.stopPropagation(); customDlg(S.items.find(i=>i.iid===ce.dataset.ce)); return; }
   if(e.target.closest('#addCustom')){ customDlg(null, qText.trim()?prefillFrom(qText.trim()):null); return; }
   if(e.target.closest('#qOnline')){ onlineSearch(qText.trim()); return; }
@@ -1958,8 +2222,7 @@ let exCur=0;
    SELECTION + POPOVER
    ===================================================================== */
 const ray=new THREE.Raycaster(), mouse=new THREE.Vector2(); let down=null;
-renderer.domElement.addEventListener('pointerdown',e=>{ down={x:e.clientX,y:e.clientY}; });
-renderer.domElement.addEventListener('pointerup',e=>{
+const _oldPointerUp=(e=>{
   if(!down) return; const moved=Math.hypot(e.clientX-down.x,e.clientY-down.y); down=null; if(moved>6) return;
   const r=renderer.domElement.getBoundingClientRect();
   mouse.set(((e.clientX-r.left)/r.width)*2-1, -((e.clientY-r.top)/r.height)*2+1);
@@ -1975,42 +2238,6 @@ renderer.domElement.addEventListener('pointerup',e=>{
   deselect();
 });
 function chainVisible(o){ while(o){ if(!o.visible) return false; o=o.parent; } return true; }
-let popMode=null;
-function select(iid){ view.sel=iid; popMode=null; selHelper.visible=true; selDimsDirty=true; renderPop(); }
-function deselect(){ view.sel=null; selHelper.visible=false; $('#pop').hidden=true; clearSelDims(); }
-function renderPop(){
-  const inst=S.items.find(i=>i.iid===view.sel); if(!inst){deselect();return;}
-  const it=IT(inst), variants=it.custom?[]:ZONE[it.zone];
-  let sub='';
-  if(popMode==='swap'){ sub=`<div class="sublbl">Variants for this zone</div>`+variants.map(id=>`<button class="vrow ${id===inst.cid?'on':''}" data-var="${id}"><span>${ITEM[id].name}</span><span>${fmt$(ITEM[id].cost)}</span></button>`).join(''); }
-  if(popMode==='mat'){ for(const slot of it.mats||[]){ const cur=matOf(inst,slot); sub+=`<div class="sublbl">${SLOT_NAME[slot]}</div><div class="msw">${MATS[slot].map(([k,n])=>`<button data-ms="${slot}" data-mk="${k}" class="${k===cur?'on':''}"><img src="${swatch(k)}" alt=""><span>${n}</span></button>`).join('')}</div>`; } }
-  let placed=''; const g=instGroups.get(inst.iid);
-  if(g){ const bb=new THREE.Box3().setFromObject(g); if(!bb.isEmpty()){ const s=bb.getSize(V3(0,0,0)).divideScalar(IN); placed=`${fmtN(s.x,1)} L × ${fmtN(s.z,1)} W × ${fmtN(s.y,1)} H in`; } }
-  const spec = it.sz ? `${sizeTxt(it.sz)} <span class="muted">(${sizeCm(it.sz)})</span>` : 'Sized to this vehicle';
-  $('#pop').innerHTML=`<div class="pop-h"><b>${esc(it.name)}</b><button class="x" data-a="close">✕</button></div>
-    <div class="pop-meta">${fmt$(it.cost)} · ${it.wt} lb · Phase ${it.phase}${it.draw?' · '+it.draw+' Wh/d':''}</div>
-    <div class="pop-dims"><div><span>Spec size</span><b>${spec}</b></div>${placed?`<div><span>As placed</span><b>${placed}</b></div>`:''}${inst.spec&&inst.spec.url?`<div><span>Source</span><b><a href="${esc(inst.spec.url)}" target="_blank" rel="noopener" style="color:var(--cyan)">open link ↗</a></b></div>`:''}</div>
-    <div class="pop-act">
-      <button data-a="hide">👁 Hide Part</button>
-      ${it.custom?`<button data-a="edit">✎ Edit Specs</button>`:`<button data-a="swap" ${variants.length<2?'disabled':''} class="${popMode==='swap'?'on':''}">⇄ Swap Variant</button>`}
-      <button data-a="mat" ${it.mats?'':'disabled'} class="${popMode==='mat'?'on':''}">◐ Change Material</button>
-      <button data-a="remove" class="danger">✕ Remove</button>
-    </div><div class="pop-sub">${sub}</div>`;
-  $('#pop').hidden=false; placePop();
-}
-$('#pop').addEventListener('click',e=>{
-  const inst=S.items.find(i=>i.iid===view.sel); if(!inst) return;
-  const a=e.target.closest('[data-a]');
-  if(a){ const act=a.dataset.a;
-    if(act==='close') deselect();
-    else if(act==='hide'){ view.hidden.add(inst.iid); applyVisibility(); renderToolbar(); deselect(); toast(`Hidden · tap <b>👁</b> in the toolbar to restore`); }
-    else if(act==='remove'){ removeInst(inst.iid); }
-    else if(act==='edit'){ customDlg(inst); }
-    else { popMode = popMode===act?null:act; renderPop(); }
-    return; }
-  const v=e.target.closest('[data-var]'); if(v){ if(v.dataset.var!==inst.cid){ inst.cid=v.dataset.var; commit(); select(inst.iid); popMode='swap'; renderPop(); toast(`Swapped → <b>${IT(inst).name}</b>`);} return; }
-  const m=e.target.closest('[data-ms]'); if(m){ inst.mats=inst.mats||{}; inst.mats[m.dataset.ms]=m.dataset.mk; commit(); select(inst.iid); popMode='mat'; renderPop(); }
-});
 /* ---------- selected-part dimensions in 3D ---------- */
 const selDims=new THREE.Group(); scene.add(selDims); let selDimsDirty=false;
 const selDimMat=new THREE.LineBasicMaterial({color:'#F5B440',depthTest:false,transparent:true});
@@ -2046,8 +2273,8 @@ function placePop(){
    ===================================================================== */
 function addItem(cid){
   const it=ITEM[cid]; const ex=S.items.find(i=>IT(i).zone===it.zone);
-  if(ex){ if(ex.cid===cid){ view.hidden.delete(ex.iid); applyVisibility(); select(ex.iid); return; } const old=ITEM[ex.cid].name; ex.cid=cid; commit(); toast(`Swapped <b>${old}</b> → <b>${it.name}</b>`); }
-  else { const inst={iid:uid(),cid,mats:{}}; S.items.push(inst); commit(); toast(`Added <b>${it.name}</b>`); }
+  if(ex){ if(ex.cid===cid){ view.hidden.delete(ex.iid); applyVisibility(); select(ex.iid); return; } const old=ITEM[ex.cid].name; ex.cid=cid; ex.status='need'; ex.pos=null; commit(); toast(`Swapped <b>${old}</b> → <b>${it.name}</b>`); }
+  else { const inst={iid:uid(),cid,mats:{},status:'need'}; S.items.push(inst); commit(); toast(`Added <b>${it.name}</b>`); }
   if(view.phase && it.phase>view.phase){ view.phase=0; applyVisibility(); renderPhases(); }
 }
 function removeInst(iid){
@@ -2055,7 +2282,7 @@ function removeInst(iid){
   S.items.splice(i,1); view.hidden.delete(iid); deselect(); commit(); toast(`Removed <b>${n}</b>`);
 }
 function save(){ store('nomadforge.current',S); }
-function commit(){ rebuild(); renderVehicle(); renderCatalog(); renderFinish(); renderTracker(); renderToolbar(); save(); }
+function commit(){ rebuild(); renderVehicle(); renderCatalog(); renderFinish(); renderTracker(); renderToolbar(); save(); histPush(); updCart(); if(MV&&!instGroups.has(MV.iid)) moveEnd(); if(curPage!=='build'&&curPage!=='part') renderOpenPage(); }
 
 /* =====================================================================
    MODAL, SAVE/LOAD, EXPORT
@@ -2077,7 +2304,7 @@ function exportCSV(){
   exportText('Bill of Materials — CSV',csv,'Copy and paste into Sheets, Excel or Numbers.');
 }
 function buildJSON(){ const k=lastCalc; const v=C.v; return JSON.stringify({app:'NomadForge 3D',version:1,exported:new Date().toISOString(),build:S,
-  summary:{vehicle:v.name,wheelbase:v.wbs[S.wbIdx].label,roof:v.roofs[S.roofIdx].label,cost_usd:k.cost,conversion_weight_lb:k.wt,total_added_lb:Math.round(k.total),payload_lb:k.payload,solar_w:k.solarW,battery_ah:k.ah,daily_harvest_wh:Math.round(k.harvest),daily_draw_wh:k.draw,autonomy_days:k.days===Infinity?'unlimited':+k.days.toFixed(1),fresh_gal:k.fresh,grey_gal:k.grey},bom:bomRows()},null,2); }
+  summary:{vehicle:vTitle(),model_type:vModel().label,wheelbase:v.wbs[S.wbIdx].label,roof:v.roofs[S.roofIdx].label,cost_usd:k.cost,conversion_weight_lb:k.wt,total_added_lb:Math.round(k.total),payload_lb:k.payload,solar_w:k.solarW,battery_ah:k.ah,daily_harvest_wh:Math.round(k.harvest),daily_draw_wh:k.draw,autonomy_days:k.days===Infinity?'unlimited':+k.days.toFixed(1),fresh_gal:k.fresh,grey_gal:k.grey},bom:bomRows()},null,2); }
 function exportJSON(){ exportText('Export Build — JSON',buildJSON(),'Save this text anywhere. Paste it into <b>Import</b> to restore the build on any device.'); }
 function importDlg(){
   modal('Import Build',`<p class="muted" style="margin:0 0 10px;font-size:12px">Paste a NomadForge JSON export, or choose a .json file.</p><textarea id="imTxt" spellcheck="false" placeholder='{ "app": "NomadForge 3D", ... }'></textarea><input type="file" id="imFile" accept=".json,application/json" style="margin-top:10px;font-size:12px">`,
@@ -2090,47 +2317,41 @@ function buildsDlg(){
   const list=load('nomadforge.builds')||{}; const names=Object.keys(list).sort((a,b)=>(list[b].t||0)-(list[a].t||0));
   const body = names.length ? `<div class="blist">${names.map(n=>{const b=list[n],v=VEHICLES[b.s.vehicle]; return `<div class="bitem"><div class="grow"><div>${n.replace(/</g,'&lt;')}</div><div>${v?v.name:''} · ${b.s.items.length} parts · ${new Date(b.t).toLocaleDateString()}</div></div><button class="tb-btn" data-load="${encodeURIComponent(n)}">Load</button><button class="x" data-del="${encodeURIComponent(n)}" title="Delete">✕</button></div>`;}).join('')}</div>`
     : `<p class="muted">No saved builds yet. Use <b>Save</b> to store the current configuration in this browser.</p>`;
-  modal('Saved Builds',body+`<p class="muted" style="font-size:11px;margin:12px 0 0">Builds are stored in this browser only — use Export JSON to move them between devices.</p>`,`<button class="tb-btn" id="mNew">New build</button><button class="tb-btn" id="mImp">Import JSON</button><button class="tb-btn primary" id="mSaveAs">Save current</button>`);
+  modal('Saved Builds',body+`<p class="muted" style="font-size:11px;margin:12px 0 0">Builds are stored in this browser only — use Export JSON to move them between devices.</p>`,`<button class="tb-btn" id="mNew">New build</button><button class="tb-btn" id="mImp">Import JSON</button><button class="tb-btn" id="mExp">Export JSON</button><button class="tb-btn primary" id="mSaveAs">Save current</button>`);
   $('#mBody').onclick=e=>{ const l=e.target.closest('[data-load]'), d=e.target.closest('[data-del]');
     if(l){ const s=sanitize(list[decodeURIComponent(l.dataset.load)].s); if(s){ loadState(s); closeModal(); toast(`Loaded <b>${s.name}</b>`);} }
     if(d){ delete list[decodeURIComponent(d.dataset.del)]; store('nomadforge.builds',list); buildsDlg(); } };
-  $('#mNew').onclick=()=>{ newBuild(); closeModal(); }; $('#mImp').onclick=importDlg; $('#mSaveAs').onclick=()=>{ saveBuild(); buildsDlg(); };
+  $('#mNew').onclick=()=>{ newBuild(); closeModal(); }; $('#mImp').onclick=importDlg; $('#mExp').onclick=exportJSON; $('#mSaveAs').onclick=()=>{ saveBuild(); buildsDlg(); };
 }
 function saveBuild(){ const list=load('nomadforge.builds')||{}; list[S.name]={t:Date.now(),s:JSON.parse(JSON.stringify(S))}; if(store('nomadforge.builds',list)) toast(`Saved <b>${S.name}</b>`); else toast('Storage unavailable here — use Export JSON instead'); }
 function newBuild(){ const s=freshState(); s.items=[]; s.name='New Build'; loadState(s); toast('Started a blank build'); }
 function loadState(s){ S=s; paintMat.color.set(S.paint); view.hidden.clear(); deselect(); $('#buildName').value=S.name; commit(); goPreset(view.preset==='top'?'top':'ext'); }
-$('#bSave').onclick=saveBuild; $('#bBuilds').onclick=buildsDlg; $('#bImport').onclick=importDlg; $('#bExport').onclick=exportJSON; $('#bNew').onclick=newBuild;
+$('#bSave').onclick=saveBuild; $('#bBuilds').onclick=buildsDlg;
 $('#buildName').value=S.name; $('#buildName').addEventListener('input',e=>{ S.name=e.target.value.slice(0,60)||'Untitled Build'; save(); });
 $('#tL').onclick=()=>{ $('#main').classList.toggle('noL'); $('#tL').classList.toggle('on'); };
 $('#tR').onclick=()=>{ $('#main').classList.toggle('noR'); $('#tR').classList.toggle('on'); };
-// mobile nav
-document.querySelectorAll('#mnav button').forEach(b=>b.onclick=()=>{
-  const m=b.dataset.m, isOpen=b.classList.contains('on');
-  document.querySelectorAll('#mnav button').forEach(x=>x.classList.remove('on')); $('#left').classList.remove('open'); $('#right').classList.remove('open');
-  if(isOpen) return; b.classList.add('on');
-  if(m==='tracker') $('#right').classList.add('open'); else { setTab(m); $('#left').classList.add('open'); }
-});
-
 /* =====================================================================
    SETTINGS · ABOUT · LATEST UPDATE
    ===================================================================== */
 const APP = {
-  version:'1.2.0', released:'Nov 16, 2026',
+  version:'1.3.0', released:'Nov 16, 2026',
   repo:'https://github.com/mrsirwithpizza101/nomadforge-3d',
   get releases(){ return this.repo+'/releases/latest'; },
   about:'NomadForge 3D is an interactive 3D configurator and build planner for off-grid camper vans and overland rigs. Pick a base vehicle, snap modular interior and exterior components into place, try finishes in real time, and x-ray or explode the build to inspect hidden wiring, plumbing and clearances — while live trackers keep your cost, payload, power and water budgets honest.',
   latest:[
-    'One-tap view modes — Exterior, Cutaway, X-Ray and Interior — make it easy to see inside the build.',
-    'Cutaway mode automatically opens the wall facing you and lifts the roof as you orbit around the vehicle.',
-    'Every catalog part now lists its real-world size in inches and centimeters.',
-    'Selecting a part draws its length, width and height in 3D and shows its spec and as-placed size.',
-    'Vehicles are rebuilt from 2025 published specs with accurate lengths, heights, wheelbases and interior vs. exterior widths.',
-    'Each van has its own modern front end, wheel arches, roof profile and high-roof fairing.',
-    'The box truck is now a 4x4 cab-over, the skoolie a Type A cutaway bus, and the pickup a 1-ton crew cab.',
-    'A new part search finds the closest catalog module for brand names, models and specs like “100Ah lithium” or “Maxxair fan”.',
-    'In the Android app, Search Online pulls live web results and pre-fills a part’s size, weight and price when it can.',
-    'You can add any custom part with its own size, weight, cost, power and water specs, and place it anywhere in the build.',
-    'The toolbar, catalog and part details have a cleaner, more compact layout.',
+    'Pick the exact model year and model type — trim, GVWR and gas, diesel or EV powertrain — for every vehicle.',
+    'Vehicles get generation-specific front ends plus lifelike details like rub strips, wheel wells, side markers, plates and mud flaps.',
+    'Tap any part to see what it is, its measurements, its status, and buttons for View more and Move.',
+    'View more opens a full breakdown of the part on your vehicle: photo, measurements, location, energy, cost, connections, pros and cons.',
+    'Move shrinks the card into a compact editing bar so you can drag, nudge, rotate or switch sides with live fit checks.',
+    'Parts can’t go through walls, wheel wells, the ceiling or each other — the app keeps placements physically realistic.',
+    'Group parts into a cluster and tap Automate to get compact, weight-balanced or spread-out layouts for any area.',
+    'Recolor any part, and swap finishes, variants and equipment from the same card.',
+    'A green plus on every part adds it to your cart, your project and your profile.',
+    'The new Compare tab puts parts or materials side by side with cost, weight, energy, insulation R-values and what each does to your build.',
+    'The new Profile shows your parts, total cost, driving range and vehicle over a render of your build, with tiles that drill into each one.',
+    'The new Tracker shows what you need to buy, what you have and what’s installed, with a next-step suggestion and 3D preview modes.',
+    'Undo and redo, plus a cleaner mobile layout: bottom-bar sheets no longer repeat the same tab name at the top.',
   ],
 };
 function settingsDlg(){
@@ -2166,6 +2387,11 @@ if(load('nomadforge.hud')===false) $('#hud').hidden=true;
 // keyboard
 addEventListener('keydown',e=>{
   if(e.target.matches('input,textarea,select')) return;
+  if((e.ctrlKey||e.metaKey)&&(e.key==='z'||e.key==='Z')){ e.shiftKey?redo():undo(); e.preventDefault(); return; }
+  if(MV){ const k=e.key;
+    if(k==='ArrowLeft'){ nudge('x',-1); e.preventDefault(); return; } if(k==='ArrowRight'){ nudge('x',1); e.preventDefault(); return; }
+    if(k==='ArrowUp'){ MV.mount==='wall'?nudge('y',1):nudge('z',-1); e.preventDefault(); return; } if(k==='ArrowDown'){ MV.mount==='wall'?nudge('y',-1):nudge('z',1); e.preventDefault(); return; }
+    if(k==='r'||k==='R'){ rotatePart(); return; } if(k==='Enter'||k==='Escape'){ moveEnd(); return; } }
   const p=PRESETS.find(x=>x[2]===e.key); if(p){ goPreset(p[0]); return; }
   if(e.key==='Escape'){ deselect(); closeModal(); }
   if(e.key==='g') { view.grid=!view.grid; applyVisibility(); renderToolbar(); }
@@ -2175,6 +2401,625 @@ addEventListener('keydown',e=>{
   if(view.sel && e.key==='h'){ view.hidden.add(view.sel); applyVisibility(); renderToolbar(); deselect(); }
   if(view.sel && (e.key==='Delete'||e.key==='Backspace')) removeInst(view.sel);
 });
+
+const ghostPlan=new THREE.MeshBasicMaterial({color:'#7FB2FF',transparent:true,opacity:.22,depthWrite:false});
+const INS_COL={insul:'#C9CDD2',insul_wool:'#E6DFCB',insul_polyiso:'#D7DCE2',insul_xps:'#9EC3E6',insul_foam:'#E8D27A',insul_reflectix:'#C0C6CE'}, INS_M={};
+function insMat(inst){ return INS_M[inst.cid] ||= std(INS_COL[inst.cid]||'#C9CDD2',{roughness:/reflectix|polyiso/.test(inst.cid)?.35:1,metalness:inst.cid==='insul_reflectix'?.6:0}); }
+['insul_wool','insul_polyiso','insul_xps','insul_foam','insul_reflectix'].forEach(k=>BUILD[k]=BUILD.insul);
+Object.assign(ITEM.insul_wool,{kw:'insulation sheep wool havelock natural batts'}); Object.assign(ITEM.insul_polyiso,{kw:'insulation polyiso foam board rigid foil'}); Object.assign(ITEM.insul_xps,{kw:'insulation xps foam board rigid pink blue floor'}); Object.assign(ITEM.insul_foam,{kw:'insulation spray foam closed cell'}); Object.assign(ITEM.insul_reflectix,{kw:'insulation reflectix foil bubble radiant barrier'});
+ITEM.insul.kw='insulation thinsulate sm600l 3m synthetic sound deadener';
+/* =====================================================================
+   v1.3 — PART INFO, STATUS, UNDO, COLOR, MOVE, PAGES
+   ===================================================================== */
+// [description, pros, cons, install difficulty 1-5]
+const INFO = {
+  insul:['3M Thinsulate SM600L synthetic batts (≈1.6") on walls and ceiling.','Hydrophobic — doesn’t hold moisture|Excellent sound damping|Easy, itch-free install','Costs more per R than foam board|Loses R-value if compressed',2],
+  insul_wool:['Sheep-wool batts (2") stuffed into wall and ceiling cavities.','Buffers humidity naturally|Non-toxic and easy to fit','Heavier than synthetics|Lower R per inch',2],
+  insul_polyiso:['Foil-faced polyiso board (1") cut to fit, gaps sealed with foam.','Most R-value per dollar|Rigid — great on flat panels','Loses R-value in hard cold|Fiddly on curved walls; gaps can trap moisture',3],
+  insul_xps:['XPS rigid foam board (1"), the classic under-subfloor choice.','Steady R-5 even in cold|Strong enough to put a floor on','Rigid — awkward around ribs|Lower R than polyiso',3],
+  insul_foam:['Closed-cell spray foam (~1.5"), professionally applied.','Highest R per inch plus air sealing|Fills every void','Expensive pro install|Permanent — hard to remove or inspect for rust',5],
+  insul_reflectix:['Foil bubble wrap — a radiant barrier, not real insulation.','Very cheap and light|Fine for window covers','Only about R-1 without an air gap|Can cause condensation on bare metal',1],
+  frame:['Plywood subfloor over furring strips, plus wall and ceiling battens.','Solid anchor points for everything|Flattens the ribbed floor','Adds ~110 lb|Eats about 1" of height',3],
+  panel:['Finished wall and ceiling paneling with LED strip lighting.','Makes it feel like home|Hides wiring and insulation','Solid wood gets heavy|Plan access panels first',3],
+  floor:['Top floor finish laid over the subfloor.','Durable and easy to clean','Some finishes get slippery when wet',2],
+  bed_fixed:['Fixed transverse platform bed over a tall gear garage.','Bed always ready|Huge garage for bikes and bins','Uses the most floor space|Tight headroom in low roofs',3],
+  bed_murphy:['Bed that folds up against the wall to free the floor.','Open floor by day|Lower, easier platform','Make and fold it every day|Hinge hardware adds cost',4],
+  bed_lift:['Electric bed that lifts to the ceiling.','Full standing room by day|Garage underneath when raised','Expensive|Needs a tall roof and 12V power',5],
+  dinette:['Two benches and a table that convert into a bed.','Seats four for meals|Storage under the benches','Convert it every night|Narrower bed',3],
+  swivel:['Swivel bases so the cab seats face the living area.','Adds two lounge seats cheaply','Check seat-belt and airbag clearance|Raises seats 1–2"',2],
+  galley_d:['Main kitchen cabinet on the driver side with drawers and uppers.','Long counter|Lots of storage','Heavy|Covers driver-side windows',4],
+  galley_p:['Entry galley beside the sliding door.','Cook with the door open|Good airflow','Narrows the entry|Short counter',4],
+  sink:['Deep stainless sink with high-arc faucet and 12V pump.','Deep basin for dishes|Durable','Needs fresh and grey tanks|Lines must be winterized',3],
+  induction:['2-burner induction cooktop running from the inverter.','No propane or fumes|Fast and easy to clean','Big battery and inverter draw|Needs induction cookware',2],
+  propane:['Propane 2-burner range with oven.','No battery drain|Oven for baking','Needs LP locker, vent and CO alarm|Adds moisture inside',4],
+  fridge85:['85 L 12V compressor fridge/freezer.','Efficient compressor|Fits under a counter','Small freezer|Needs ventilation space',2],
+  fridge130:['130 L upright 12V fridge/freezer.','Home-style capacity|Separate freezer','More power and weight|Takes tall space',2],
+  okit:['Kitchen drawer that slides out of the rear doors.','Cook outside, keep smells out|Uses garage space','Weather dependent|Heavy-duty slides cost more',3],
+  wetbath:['Enclosed wet bath with shower and cassette toilet.','Private bathroom|Hot showers anywhere','Uses ~7 sq ft|Needs water heating and drainage',5],
+  toilet:['Composting toilet on a slide-out under the bed.','No black tank|Hidden when not in use','Regular emptying|Needs a small vent fan',2],
+  oshower:['Hose and mixing valve at the rear doors.','Rinse gear and people outside|Cheap','Uses fresh water fast|Needs a hot-water source',2],
+  solar200:['One ~200 W panel on the roof.','Cheap starter array|Low profile','≈700 Wh/day in good sun|Not enough for induction or A/C',3],
+  solar400:['Two panels, ~400 W total.','Covers fridge, fans and devices most days|Good value','Winter output drops a lot|Adds roof height',3],
+  solar800:['Four panels, ~800 W — most of the roof.','Can run induction in summer|Fast recharge','Covers most of the roof|Heavier and more drag',4],
+  bat200:['One 200 Ah LiFePO4 battery (~2.3 kWh usable).','Light and long-lived|Enough for basics','No induction or A/C|About 1 day of reserve',3],
+  bat400:['Two 200 Ah LiFePO4 batteries (~4.6 kWh usable).','Runs induction cooking|2–3 day reserve','Heavier and pricier',3],
+  bat800:['Four 200 Ah LiFePO4 batteries (~9.2 kWh usable).','Runs A/C for hours|Long cloudy-day reserve','200 lb|Slow to recharge without big solar',4],
+  inv2000:['2000 W pure-sine inverter/charger.','Runs induction and small appliances|Built-in shore charger','Idle draw|Too small for A/C',3],
+  inv3000:['3000 W pure-sine inverter/charger.','Runs A/C, microwave and induction|Shore-power charger','Higher idle draw|Needs thick cables and fusing',4],
+  dcdc:['50 A battery-to-battery charger from the alternator.','Charges while you drive|Works in any weather','Long heavy cable runs|Can strain small alternators',3],
+  shore:['30 A shore-power inlet on the body.','Plug in at campgrounds|Fast charging','Needs a hole cut in the body',2],
+  fresh20:['20 gal fresh-water tank inside the galley.','Inside = freeze-protected|Easy install','Takes cabinet space|167 lb when full',2],
+  fresh40:['40 gal tank over the wheel well.','Lots of water|Uses awkward wheel-well space','334 lb when full|Must be strapped down',3],
+  grey:['16 gal grey tank under the floor.','Frees interior space|Easy dumping','Can freeze outside|Exposed to road debris',3],
+  fan:['12V roof vent fan with rain hood.','Pulls out heat and moisture|Tiny power draw','Roof hole to cut and seal',3],
+  ac:['12V rooftop air conditioner.','Real cooling off-grid|Quiet DC compressor','Huge battery draw|Heavy, adds drag',4],
+  heater:['2 kW diesel air heater.','Heats on very little fuel and power|Dry heat','Exhaust runs under the body|Some noise',3],
+  hydronic:['Diesel boiler with radiant floor loops and hot water.','Even, silent heat plus hot water|Warm floors','Expensive and complex|More plumbing to winterize',5],
+  rack:['Full-length roof rack with side ladder.','Platform for solar and gear|Rooftop deck','More aero drag|Adds height',3],
+  awning:['Retractable side awning.','Instant shade and rain cover','Adds drag|Can be damaged in wind',2],
+  carrier:['Swing-out bike rack and spare-tire carrier.','Carries bikes and a full-size spare','Swing it to open rear doors|Adds rear weight',3],
+  armor:['Off-road bumper, skid plates and rock sliders.','Protects the underside|Winch and light mounts','160 lb up front|Lower fuel economy',4],
+  windows:['Window flares and bunk windows.','Light and views|Flares add bed width','Thermal loss|Body cutting required',4],
+};
+// material properties: [lb per sq ft, $ per sq ft, durability 1-5, moisture resistance 1-5, R per inch, pros, cons]
+const MATINFO = {
+  birch:[1.5,3.5,4,3,0,'Strong, stable, classic look|Easy to finish','Needs sealing near water'],
+  sage:[1.5,4,3,3,0,'Calm color, hides fingerprints','Painted edges chip'],
+  walnut:[1.6,7,4,3,0,'Rich, premium look','Most expensive cabinet option|Darkens small spaces'],
+  whitelam:[1.9,3,4,4,0,'Wipe-clean, brightens the space','Heavier|Chipped edges hard to repair'],
+  hexply:[1.6,6,5,5,0,'Tough phenolic texture, near waterproof|Great for garages','Industrial look'],
+  butcher:[4.5,25,4,2,0,'Warm look, cut-friendly','Heavy|Needs oiling, hates standing water'],
+  bamboo:[3,20,4,3,0,'Lighter than oak|Sustainable','Can dent'],
+  slate:[3.5,40,5,5,0,'Very durable and stain-proof','Pricey'],
+  corian:[4.5,45,5,5,0,'Seamless, integrates sinks','Heaviest and priciest'],
+  cedar:[.8,4.5,4,4,1,'Smells great, resists mold','Darker cabin'],
+  shiplap:[1,2.5,3,3,1,'Bright, inexpensive','Dents easily'],
+  tweed:[.7,5,3,2,.5,'Soft, quiet, hides imperfections','Stains; absorbs odors'],
+  felt:[.3,1.5,2,3,.3,'Lightest option, follows curves','Lint and wear over time'],
+  coin:[1,3,5,5,0,'Grippy, nearly indestructible','Utilitarian look; traps dirt'],
+  lvp:[1,3.5,4,5,0,'Waterproof, looks like wood','Can be slippery when wet'],
+  teak:[1.5,12,4,4,0,'Marine look, great grip','Expensive'],
+};
+const AERO = {rack:.04,solar:.015,ac:.03,fan:.003,awning:.01,armor:.015,carrier:.015,windows:.005};
+const MOUNT = {bed:'floor',galleyD:'floor',galleyP:'floor',fridge:'floor',bath:'floor',okit:'floor',battery:'floor',fresh:'floor',heater:'floor',
+  sink:'counter',cook:'counter',inverter:'wall',dcdc:'wall',oshower:'wall',solar:'roof',fan:'roof',ac:'roof',grey:'under'};
+const MOUNT_NAME = {floor:'Floor-mounted',counter:'On the countertop',wall:'Wall-mounted',ceiling:'Ceiling-mounted',roof:'Roof-mounted',under:'Under the floor',fixed:'Fixed to the vehicle'};
+const SKIPZ = new Set(['insul','frame','panel','floor','hydronic','windows','rack','awning','carrier','armor','shore','swivel']);
+const STATUS = [['need','Need to buy','🛒'],['have','Have — not installed','📦'],['installed','Installed','✅']];
+const statusOf = inst => inst.status||'need';
+function mountOf(inst){ const it=IT(inst); if(it.custom) return ({aisle:'floor',driver:'floor',passenger:'floor',underbed:'floor',wall:'wall',ceiling:'ceiling',roof:'roof',under:'under'})[(inst.spec||{}).place]||'fixed'; if(inst.cid==='fresh20'&&C&&C.has('galleyD')) return 'counter'; return MOUNT[it.zone]||'fixed'; }
+function parentOf(inst,c){ const z=IT(inst).zone; if(z==='sink'||z==='cook') return c.has('galleyD')||c.has('galleyP')||null; if(inst.cid==='fresh20') return c.has('galleyD')||null; return null; }
+
+/* ---------- undo / redo ---------- */
+let HIST=[], FUT=[], lastSnap=null, noHist=false;
+function histPush(){ const j=JSON.stringify(S); if(lastSnap&&j!==lastSnap&&!noHist){ HIST.push(lastSnap); if(HIST.length>60) HIST.shift(); FUT=[]; } lastSnap=j; updHist(); }
+function updHist(){ const u=$('#bUndo'), r=$('#bRedo'); if(u) u.disabled=!HIST.length; if(r) r.disabled=!FUT.length; }
+function undo(){ if(!HIST.length) return; FUT.push(lastSnap); const s=sanitize(JSON.parse(HIST.pop())); if(!s) return; S=s; lastSnap=JSON.stringify(S); noHist=true; paintMat.color.set(S.paint); commit(); noHist=false; toast('Undone'); }
+function redo(){ if(!FUT.length) return; HIST.push(lastSnap); const s=sanitize(JSON.parse(FUT.pop())); if(!s) return; S=s; lastSnap=JSON.stringify(S); noHist=true; paintMat.color.set(S.paint); commit(); noHist=false; toast('Redone'); }
+
+/* ---------- per-part color ---------- */
+const NOPAINT = new Set(); const COLORED={};
+function initNoPaint(){ ['glass','frosted','steel','chrome','alu','rubber','led','head','drl','tail','screen','water','tank','wireR','wireB','wireAC','pipeF','pipeG','pex','red','blueTerm','black','marker','plate','liner','grille'].forEach(k=>M[k]&&NOPAINT.add(M[k])); }
+function tinted(mat,hex){ const k=mat.uuid+hex; if(!COLORED[k]){ const m=mat.clone(); m.color=new THREE.Color(hex); COLORED[k]=m; } return COLORED[k]; }
+const PART_COLORS=['#F2F2EE','#2B2E33','#7E8E71','#3E5A5E','#B5643C','#C9B48A','#1F3B5C','#8A3324','#D9A441','#6D6875'];
+
+/* ---------- geometry helpers for move/physics ---------- */
+const _bb=new THREE.Box3();
+function toLocalBox(b){ const o=root.position; return {x0:(b.min.x-o.x)/IN,x1:(b.max.x-o.x)/IN,y0:b.min.y/IN,y1:b.max.y/IN,z0:b.min.z/IN,z1:b.max.z/IN}; }
+function meshBoxes(obj,skipIids){ const out=[]; obj.updateMatrixWorld(true);
+  obj.traverse(o=>{ if(!o.isMesh||o.userData.service||o.userData.soft) return; if(skipIids&&skipIids.has(o.userData.iid)) return; if(!chainVisible(o)) return;
+    _bb.setFromObject(o); if(_bb.isEmpty()) return; const b=toLocalBox(_bb); b.iid=o.userData.iid; out.push(b); }); return out; }
+function groupBox(g){ _bb.setFromObject(g); return toLocalBox(_bb); }
+const hit3=(a,b,t=.3)=>a.x0<b.x1-t&&a.x1>b.x0+t&&a.y0<b.y1-t&&a.y1>b.y0+t&&a.z0<b.z1-t&&a.z1>b.z0+t;
+const shiftB=(b,dx,dy,dz)=>({x0:b.x0+dx,x1:b.x1+dx,y0:b.y0+dy,y1:b.y1+dy,z0:b.z0+dz,z1:b.z1+dz,iid:b.iid});
+function wellBoxes(c){ if(!(c.kind==='van'||c.kind==='bus')) return []; const ww=c.v.ww||c.Wi-18, d=(c.Wi-ww)/2, r=c.wheelR+3;
+  return [-1,1].map(s=>({x0:c.xr-r,x1:c.xr+r,y0:c.f,y1:c.fy+11,z0:s<0?-c.Wi/2:c.Wi/2-d,z1:s<0?-c.Wi/2+d:c.Wi/2,iid:'well'})); }
+function descendants(iid){ const set=new Set([iid]); let grew=true; while(grew){ grew=false; for(const i of S.items){ const p=C&&parentOf(i,C); if(p&&set.has(p.iid)&&!set.has(i.iid)){ set.add(i.iid); grew=true; } } } return set; }
+function rotOf(g){ let r=0, o=g.parent; while(o&&o!==root){ if(o.userData.wrap) r+=o.rotation.y; o=o.parent; } return r; }
+
+/* ---------- move session ---------- */
+let MV=null; // {iid, mount, parent, boxes, obst, off, off0, wrapper, prot, ok, msg}
+const cluster=new Set();
+function moveBegin(iid){
+  const inst=S.items.find(i=>i.iid===iid); if(!inst) return;
+  const m=mountOf(inst); if(m==='fixed'){ toast('This part is fixed to the vehicle — it can’t be moved'); return; }
+  const g=instGroups.get(iid); if(!g) return;
+  if(view.mode==='exterior'){ setMode('cutaway'); }
+  MV={iid,mount:m,inst,wrapper:g,parent:C.parentMap[iid]||null}; mvPrepare();
+  view.sel=iid; $('#pop').hidden=true; selHelper.visible=true; renderEditBar(); applyVisibility();
+}
+function mvPrepare(){
+  const iid=MV.iid, desc=descendants(iid), g=instGroups.get(iid); MV.wrapper=g;
+  MV.off=Object.assign({x:0,y:0,z:0,r:0},MV.inst.pos||{}); MV.off0=Object.assign({},MV.off);
+  MV.boxes=meshBoxes(g); MV.prot=rotOf(g);
+  const skip=new Set(desc); const par=MV.parent; if(par) skip.add(par.iid);
+  for(const inst of S.items){ if(SKIPZ.has(IT(inst).zone)) skip.add(inst.iid); if(MV.mount==='roof'&&IT(inst).zone==='rack') skip.add(inst.iid); }
+  let obst=meshBoxes(root,skip).filter(b=>b.iid&&!desc.has(b.iid)).concat(wellBoxes(C));
+  const start=obst.filter(o=>MV.boxes.some(b=>hit3(b,o))); MV.ignore=new Set(start);
+  MV.obst=obst.filter(o=>!MV.ignore.has(o));
+  MV.parentBox = par && instGroups.get(par.iid) ? groupBox(instGroups.get(par.iid)) : null;
+  MV.ok=true; MV.msg='Fits';
+}
+function mvValidate(boxes){
+  const c=C, m=MV.mount, U=boxes.reduce((a,b)=>({x0:Math.min(a.x0,b.x0),x1:Math.max(a.x1,b.x1),y0:Math.min(a.y0,b.y0),y1:Math.max(a.y1,b.y1),z0:Math.min(a.z0,b.z0),z1:Math.max(a.z1,b.z1)}),{x0:1e9,x1:-1e9,y0:1e9,y1:-1e9,z0:1e9,z1:-1e9});
+  if(m==='floor'||m==='ceiling'){
+    if(U.x0<-.2||U.x1>c.L+.2) return [false,'Would stick out past the '+(U.x0<0?'rear doors':'cab')];
+    if(U.z0<-c.zi-.8||U.z1>c.zi+.8) return [false,'Would go through the '+(U.z0<0?'driver':'passenger')+' wall'];
+    if(U.y1>c.ceilY+1) return [false,'Too tall for the ceiling here'];
+  } else if(m==='wall'){
+    if(U.x0<-.2||U.x1>c.L+.2) return [false,'Off the end of the wall'];
+    if(U.y0<c.fy-.5) return [false,'Can’t go below the floor'];
+    if(U.y1>c.ceilY+.5) return [false,'Can’t go above the ceiling'];
+  } else if(m==='roof'){
+    if(U.x0<-1.5||U.x1>c.roofEndX+1.5) return [false,'Would hang off the roof'];
+    if(U.z0<-c.W/2+.5||U.z1>c.W/2-.5) return [false,'Would hang over the side of the roof'];
+  } else if(m==='under'){
+    if(U.x0<0||U.x1>c.L) return [false,'Must stay under the cargo floor'];
+    if(Math.abs(U.z0)>c.W/2-5||Math.abs(U.z1)>c.W/2-5) return [false,'Too close to the wheels/body sides'];
+    if(U.y0<8) return [false,'Needs at least 8 in of ground clearance'];
+  } else if(m==='counter' && MV.parentBox){
+    const P=MV.parentBox; if(U.x0<P.x0-1||U.x1>P.x1+1||U.z0<P.z0-1||U.z1>P.z1+1) return [false,'Must stay on its cabinet'];
+  }
+  for(const o of MV.obst) for(const b of boxes) if(hit3(b,o)){ const n=o.iid==='well'?'the wheel well':(S.items.find(i=>i.iid===o.iid)?IT(S.items.find(i=>i.iid===o.iid)).name:'another part'); return [false,'Collides with '+n]; }
+  return [true,'Fits — no collisions'];
+}
+function applyOff(off){ const g=MV.wrapper, c0=g.userData.c0; g.position.set(c0.x+off.x,c0.y+off.y,c0.z+off.z); g.rotation.y=off.r*Math.PI/2; }
+function candBoxes(off){ // translation relative to current (rotation must equal MV.off.r)
+  const dx=off.x-MV.off.x, dy=off.y-MV.off.y, dz=off.z-MV.off.z, cs=Math.cos(MV.prot), sn=Math.sin(MV.prot);
+  const rx=dx*cs+dz*sn, rz=-dx*sn+dz*cs; return MV.boxes.map(b=>shiftB(b,rx,dy,rz)); }
+function mvTry(off,commitIt){
+  let ok,msg;
+  if(off.r!==MV.off.r){ const prev=Object.assign({},MV.off); applyOff(off); MV.wrapper.updateMatrixWorld(true); const bx=meshBoxes(MV.wrapper); [ok,msg]=mvValidate(bx); if(!ok){ applyOff(prev); MV.wrapper.updateMatrixWorld(true); } else { MV.off=off; MV.boxes=bx; } }
+  else { const bx=candBoxes(off); [ok,msg]=mvValidate(bx); if(ok){ MV.boxes=bx; MV.off=off; applyOff(off); } }
+  MV.ok=ok; MV.msg=msg; renderEditBar(); selHelper.material.color.set(ok?'#2FD6EE':'#F27474');
+  if(ok&&commitIt) mvSave(); else if(!ok) toast('✕ '+msg);
+  return ok;
+}
+function mvSave(){ const o=MV.off; MV.inst.pos=(o.x||o.y||o.z||o.r)?{x:Math.round(o.x*2)/2,y:Math.round(o.y*2)/2,z:Math.round(o.z*2)/2,r:o.r%4}:null; const iid=MV.iid; commit(); if(MV&&MV.iid===iid){ MV.inst=S.items.find(i=>i.iid===iid); MV.parent=C.parentMap[iid]||null; mvPrepare(); renderEditBar(); } }
+function moveEnd(){ MV=null; cluster.clear(); autoState=null; $('#editbar').hidden=true; selHelper.material.color.set('#2FD6EE'); controls.enabled=true; if(view.sel) renderPop(); applyVisibility(); }
+let snapIn=1;
+function nudge(ax,dir){ if(!MV) return; const o=Object.assign({},MV.off), step=snapIn*dir;
+  if(ax==='x') o.x+=step; else if(ax==='z'){ if(MV.mount==='wall') return; o.z+=step; } else if(ax==='y'){ if(MV.mount!=='wall'){ toast('Only wall-mounted parts move up and down — floor parts stay on the floor'); return; } o.y+=step; }
+  mvTry(o,true); }
+function rotatePart(){ if(!MV) return; if(MV.mount==='wall'||MV.mount==='counter'&&!['sink','cook'].includes(IT(MV.inst).zone)){ toast('Wall parts can’t rotate — use “Other side” instead'); return; } const o=Object.assign({},MV.off); o.r=(o.r+1)%4; mvTry(o,true); }
+function flipSide(){ if(!MV) return; if(!['floor','wall','roof'].includes(MV.mount)){ toast('This part can’t switch sides'); return; } const c0=MV.wrapper.userData.c0, o=Object.assign({},MV.off); o.z=-2*c0.z-o.z; o.r=(o.r+2)%4; mvTry(o,true); }
+function resetPart(){ if(!MV) return; MV.inst.pos=null; mvSave(); toast('Back to its default spot'); }
+
+/* ---------- drag ---------- */
+let drag=null; const _plane=new THREE.Plane(), _hit=V3(0,0,0);
+function pickInst(e){ const r=renderer.domElement.getBoundingClientRect(); mouse.set(((e.clientX-r.left)/r.width)*2-1, -((e.clientY-r.top)/r.height)*2+1); ray.setFromCamera(mouse,camera);
+  for(const h of ray.intersectObjects(root.children,true)){ const o=h.object; if(!o.isMesh||o.userData.service||!chainVisible(o)) continue; if(o.userData.layer&&effMode(o)!=='solid') continue; if(o.userData.iid) return {iid:o.userData.iid,point:h.point}; if(!o.userData.layer) continue; break; } return null; }
+function dragStart(e,p){
+  controls.enabled=false; const wall=MV.mount==='wall';
+  if(wall) _plane.setFromNormalAndCoplanarPoint(V3(0,0,1),p.point); else _plane.setFromNormalAndCoplanarPoint(V3(0,1,0),p.point);
+  drag={start:p.point.clone(),off:Object.assign({},MV.off),id:e.pointerId,wall,moved:false}; renderer.domElement.setPointerCapture?.(e.pointerId);
+}
+function dragMove(e){
+  const r=renderer.domElement.getBoundingClientRect(); mouse.set(((e.clientX-r.left)/r.width)*2-1, -((e.clientY-r.top)/r.height)*2+1); ray.setFromCamera(mouse,camera);
+  if(!ray.ray.intersectPlane(_plane,_hit)) return;
+  let dx=(_hit.x-drag.start.x)/IN, dy=(_hit.y-drag.start.y)/IN, dz=(_hit.z-drag.start.z)/IN;
+  const pr=MV.prot, cs=Math.cos(-pr), sn=Math.sin(-pr); const lx=dx*cs+dz*sn, lz=-dx*sn+dz*cs; // root → parent frame
+  const q=v=>Math.round(v/snapIn)*snapIn, o=Object.assign({},drag.off);
+  o.x=drag.off.x+q(lx); if(drag.wall) o.y=drag.off.y+q(dy); else o.z=drag.off.z+q(lz);
+  if(o.x!==MV.off.x||o.y!==MV.off.y||o.z!==MV.off.z){ drag.moved=true; const bx=candBoxes(o), [ok,msg]=mvValidate(bx); MV.ok=ok; MV.msg=msg; selHelper.material.color.set(ok?'#2FD6EE':'#F27474'); if(ok){ MV.boxes=bx; MV.off=o; applyOff(o); } renderEditBar(); }
+}
+function dragEnd(){ const moved=drag&&drag.moved; drag=null; controls.enabled=true; if(moved){ MV.ok=true; mvSave(); } }
+
+/* ---------- automate (cluster arrange) ---------- */
+let autoState=null; const STRATS=[['compact','Compact — tight against the wall'],['balanced','Balanced — heavy parts low, centered between the axles'],['spread','Spread out — even spacing']];
+const AREAS=[['driver','Driver side'],['passenger','Passenger side'],['rear','Rear'],['center','Middle'],['all','Whole floor']];
+function autoArrange(area){
+  const c=C; const ids=[...new Set([...(MV?[MV.iid]:[]),...cluster])].filter(id=>{ const i=S.items.find(x=>x.iid===id); return i&&mountOf(i)==='floor'&&!c.parentMap[id]; });
+  if(!ids.length){ toast('Add floor parts to the cluster first'); return; }
+  if(!autoState||autoState.area!==area) autoState={area,k:0}; else autoState.k=(autoState.k+1)%STRATS.length;
+  const strat=STRATS[autoState.k][0];
+  const A={driver:[0,c.L,-c.zi,-c.zi+c.Wi*.48],passenger:[0,c.L,c.zi-c.Wi*.48,c.zi],rear:[0,c.L*.42,-c.zi,c.zi],center:[c.L*.28,c.L*.78,-c.zi,c.zi],all:[0,c.L,-c.zi,c.zi]}[area];
+  const skip=new Set(); ids.forEach(id=>descendants(id).forEach(x=>skip.add(x))); S.items.forEach(i=>{ if(SKIPZ.has(IT(i).zone)) skip.add(i.iid); });
+  const obst=meshBoxes(root,skip).filter(b=>b.iid).concat(wellBoxes(c));
+  const mem=ids.map(id=>{ const inst=S.items.find(i=>i.iid===id), g=instGroups.get(id), b=groupBox(g), c0=g.userData.c0, cur=Object.assign({x:0,y:0,z:0,r:0},inst.pos||{});
+    const odd=cur.r%2, w0=odd?b.z1-b.z0:b.x1-b.x0, d0=odd?b.x1-b.x0:b.z1-b.z0; return {inst,c0,cur,w0,d0,y0:b.y0,y1:b.y1,wt:IT(inst).wt}; });
+  if(strat==='balanced') mem.sort((a,b)=>b.wt-a.wt); else mem.sort((a,b)=>b.w0*b.d0-a.w0*a.d0);
+  const placed=[]; let fails=0; const tx=Math.min(A[1],Math.max(A[0],(c.xr+c.xf)/2)), wallZ=A[3]>0&&A[2]>0?A[3]:A[2];
+  mem.forEach((m,idx)=>{
+    let best=null;
+    for(const r of [0,1]){ const w=r?m.d0:m.w0, d=r?m.w0:m.d0; if(w>A[1]-A[0]+.1||d>A[3]-A[2]+.1) continue;
+      const cands=[]; for(let x=A[0]+w/2;x<=A[1]-w/2+.01;x+=2) for(let z=A[2]+d/2;z<=A[3]-d/2+.01;z+=2) cands.push([x,z]);
+      let score;
+      if(strat==='balanced') score=([x,z])=>Math.abs(x-tx)+Math.abs(z)*1.5;
+      else if(strat==='spread'){ const t=A[0]+(idx+.5)*(A[1]-A[0])/mem.length; score=([x,z])=>Math.abs(x-t)+Math.abs(z-wallZ)*.3; }
+      else score=([x,z])=>x*.6+Math.abs(z-wallZ)*1.4;
+      cands.sort((p,q)=>score(p)-score(q));
+      for(const [x,z] of cands){ const box={x0:x-w/2,x1:x+w/2,y0:m.y0,y1:m.y1,z0:z-d/2,z1:z+d/2};
+        if(obst.some(o=>hit3(box,o,.4))||placed.some(o=>hit3(box,o,.2))) continue;
+        const s=score([x,z]); if(!best||s<best.s) best={x,z,r,box,s}; break; } }
+    if(!best){ fails++; return; }
+    placed.push(best.box);
+    const rr=(m.cur.r+best.r)%4; m.inst.pos={x:Math.round((best.x-m.c0.x)*2)/2,y:m.cur.y||0,z:Math.round((best.z-m.c0.z)*2)/2,r:rr};
+    if(best.r){ // rotating about the center keeps the center, so recompute offset from c0
+      m.inst.pos.x=Math.round((best.x-m.c0.x)*2)/2; m.inst.pos.z=Math.round((best.z-m.c0.z)*2)/2; }
+  });
+  const keep=MV&&MV.iid; commit(); if(keep){ MV.inst=S.items.find(i=>i.iid===keep); mvPrepare(); }
+  toast(`${STRATS[autoState.k][1]}${fails?` · ${fails} part${fails>1?'s':''} didn’t fit`:''} — tap again for another layout`);
+  renderEditBar();
+}
+
+/* ---------- edit bar ---------- */
+let showAreas=false;
+function renderEditBar(){
+  const eb=$('#editbar'); if(!MV){ eb.hidden=true; return; }
+  const it=IT(MV.inst), m=MV.mount;
+  eb.innerHTML=`<div class="eb-top"><span class="dot ${MV.ok?'ok':'bad'}"></span><b>${esc(it.name)}</b><span class="eb-msg ${MV.ok?'':'bad'}">${esc(MV.msg)}</span><span class="eb-mount">${MOUNT_NAME[m]}</span></div>
+  <div class="eb-row">
+    <div class="eb-grp" title="Nudge"><button data-n="x,-1" title="Toward rear">◀</button><button data-n="x,1" title="Toward front">▶</button>${m==='wall'?`<button data-n="y,1" title="Raise">⤒</button><button data-n="y,-1" title="Lower">⤓</button>`:`<button data-n="z,-1" title="Toward driver side">▲</button><button data-n="z,1" title="Toward passenger side">▼</button>`}</div>
+    <button data-e="rot" title="Rotate 90° (R)">⟳<span>Rotate</span></button>
+    <button data-e="flip" title="Move to the other side">⇋<span>Other side</span></button>
+    <button data-e="snap" title="Step size">${snapIn}"<span>Step</span></button>
+    <button data-e="cluster" class="${cluster.size?'on':''}" title="Tap other parts to group them">⧉<span>Cluster ${cluster.size?cluster.size+1:''}</span></button>
+    <button data-e="auto" class="${showAreas?'on':''}" title="Auto-arrange the cluster">✨<span>Automate</span></button>
+    <button data-e="undo" title="Undo">↶<span>Undo</span></button>
+    <button data-e="reset" title="Back to default spot">⟲<span>Reset</span></button>
+    <button data-e="done" class="done">✓<span>Done</span></button>
+  </div>
+  ${showAreas?`<div class="eb-areas"><span>Arrange ${cluster.size+1} part${cluster.size?'s':''} in:</span>${AREAS.map(([k,n])=>`<button data-area="${k}">${n}</button>`).join('')}</div>`:''}
+  <div class="eb-hint">${cluster.size?'Tap parts to add/remove them from the cluster · ':''}Drag the part in 3D · arrows nudge · R rotates</div>`;
+  eb.hidden=false;
+}
+$('#editbar').addEventListener('click',e=>{
+  const n=e.target.closest('[data-n]'); if(n){ const [a,d]=n.dataset.n.split(','); nudge(a,+d); return; }
+  const ar=e.target.closest('[data-area]'); if(ar){ autoArrange(ar.dataset.area); return; }
+  const b=e.target.closest('[data-e]'); if(!b) return; const k=b.dataset.e;
+  if(k==='rot') rotatePart(); else if(k==='flip') flipSide(); else if(k==='reset') resetPart(); else if(k==='done') moveEnd();
+  else if(k==='undo'){ const id=MV.iid; undo(); if(MV&&instGroups.has(id)){ MV.inst=S.items.find(i=>i.iid===id); mvPrepare(); renderEditBar(); } }
+  else if(k==='snap'){ snapIn=snapIn===1?6:snapIn===6?.5:1; renderEditBar(); }
+  else if(k==='cluster'){ view.clusterPick=!view.clusterPick; toast(view.clusterPick?'Tap parts to add them to the cluster':'Cluster picking off'); renderEditBar(); }
+  else if(k==='auto'){ showAreas=!showAreas; renderEditBar(); }
+});
+
+/* ---------- pointer handling (select / drag / cluster) ---------- */
+renderer.domElement.addEventListener('pointerdown',e=>{
+  down={x:e.clientX,y:e.clientY};
+  if(MV){ const p=pickInst(e); if(p&&(p.iid===MV.iid||descendants(MV.iid).has(p.iid))){ dragStart(e,p); e.stopPropagation(); } }
+},true);
+renderer.domElement.addEventListener('pointermove',e=>{ if(drag) dragMove(e); });
+renderer.domElement.addEventListener('pointerup',e=>{
+  if(drag){ dragEnd(); down=null; return; }
+  if(!down) return; const moved=Math.hypot(e.clientX-down.x,e.clientY-down.y); down=null; if(moved>6) return;
+  const p=pickInst(e);
+  if(MV){ if(p&&p.iid!==MV.iid){ const inst=S.items.find(i=>i.iid===p.iid);
+      if(view.clusterPick||cluster.size){ if(mountOf(inst)!=='floor'||C.parentMap[p.iid]){ toast('Only floor parts can join a cluster'); return; } cluster.has(p.iid)?cluster.delete(p.iid):cluster.add(p.iid); renderEditBar(); toast(`Cluster: ${cluster.size+1} parts`); return; }
+      moveEnd(); select(p.iid); } return; }
+  if(p) select(p.iid); else deselect();
+});
+
+/* ---------- item card ---------- */
+let popMode=null;
+function select(iid){ view.sel=iid; popMode=null; selHelper.visible=true; selDimsDirty=true; renderPop(); }
+function deselect(){ if(MV) moveEnd(); view.sel=null; selHelper.visible=false; $('#pop').hidden=true; clearSelDims(); }
+function placedSize(iid){ const g=instGroups.get(iid); if(!g) return null; _bb.setFromObject(g); if(_bb.isEmpty()) return null; const s=_bb.getSize(V3(0,0,0)).divideScalar(IN); return s; }
+function renderPop(){
+  if(MV){ $('#pop').hidden=true; return; }
+  const inst=S.items.find(i=>i.iid===view.sel); if(!inst){deselect();return;}
+  const it=IT(inst), variants=it.custom?[]:ZONE[it.zone], m=mountOf(inst), st=statusOf(inst);
+  let sub='';
+  if(popMode==='swap') sub=`<div class="sublbl">Swap for</div>`+variants.map(id=>`<button class="vrow ${id===inst.cid?'on':''}" data-var="${id}"><span>${ITEM[id].name}</span><span>${fmt$(ITEM[id].cost)}</span></button>`).join('');
+  if(popMode==='mat') for(const slot of it.mats||[]){ const cur=matOf(inst,slot); sub+=`<div class="sublbl">${SLOT_NAME[slot]}</div><div class="msw">${MATS[slot].map(([k,n])=>`<button data-ms="${slot}" data-mk="${k}" class="${k===cur?'on':''}"><img src="${swatch(k)}" alt=""><span>${n}</span></button>`).join('')}</div>`; }
+  if(popMode==='color') sub=`<div class="sublbl">Part color</div><div class="pcolors">${PART_COLORS.map(c=>`<button data-pc="${c}" style="background:${c}" class="${inst.color===c?'on':''}"></button>`).join('')}<label style="background:conic-gradient(#f87171,#facc15,#4ade80,#22d3ee,#818cf8,#f472b6,#f87171)"><input type="color" id="pcPick" value="${inst.color||'#888888'}"></label><button data-pc="" class="pc-reset">Reset</button></div>`;
+  const ps=placedSize(inst.iid);
+  $('#pop').innerHTML=`<div class="pop-h"><div><b>${esc(it.name)}</b><div class="pop-sub2">${esc(CAT_NAME[it.cat]||(CATALOG.find(c=>c.id===it.cat)||{}).name||'')} · ${MOUNT_NAME[m]}</div></div><button class="x" data-a="close">✕</button></div>
+    <div class="pop-dims">
+      <div><span>Size</span><b>${it.sz?sizeTxt(it.sz):ps?`${fmtN(ps.x,1)}×${fmtN(ps.z,1)}×${fmtN(ps.y,1)} in`:'—'}</b></div>
+      <div><span></span><b class="muted">${it.sz?sizeCm(it.sz):ps?`${Math.round(ps.x*2.54)}×${Math.round(ps.z*2.54)}×${Math.round(ps.y*2.54)} cm`:''}</b></div>
+      <div><span>Weight · Cost</span><b>${it.wt} lb · ${fmt$(it.cost)}</b></div>
+      ${it.draw?`<div><span>Power</span><b>${it.draw} Wh/day</b></div>`:''}
+    </div>
+    <div class="pop-status">${STATUS.map(([k,n,ic])=>`<button data-st="${k}" class="${st===k?'on':''}" title="${n}">${ic} ${k==='need'?'Need':k==='have'?'Have':'Installed'}</button>`).join('')}</div>
+    <div class="pop-main"><button class="tb-btn" data-a="more">View more</button><button class="tb-btn primary" data-a="move" ${m==='fixed'?'disabled title="Fixed to the vehicle"':''}>✥ Move</button></div>
+    <div class="pop-mini">
+      ${it.custom?`<button data-a="edit" title="Edit specs">✎</button>`:`<button data-a="swap" ${variants.length<2?'disabled':''} class="${popMode==='swap'?'on':''}" title="Swap variant">⇄</button>`}
+      <button data-a="mat" ${it.mats?'':'disabled'} class="${popMode==='mat'?'on':''}" title="Finish / material">◐</button>
+      <button data-a="color" class="${popMode==='color'?'on':''}" title="Color">🎨</button>
+      <button data-a="cmp" title="Compare alternatives">⚖</button>
+      <button data-a="hide" title="Hide">👁</button>
+      <button data-a="remove" class="danger" title="Remove">🗑</button>
+    </div><div class="pop-sub">${sub}</div>`;
+  $('#pop').hidden=false; placePop();
+}
+$('#pop').addEventListener('click',e=>{
+  const inst=S.items.find(i=>i.iid===view.sel); if(!inst) return;
+  const st=e.target.closest('[data-st]'); if(st){ inst.status=st.dataset.st; commit(); renderPop(); toast(`${STATUS.find(s=>s[0]===inst.status)[2]} ${STATUS.find(s=>s[0]===inst.status)[1]}`); return; }
+  const a=e.target.closest('[data-a]');
+  if(a){ const act=a.dataset.a;
+    if(act==='close') deselect();
+    else if(act==='more') go('part-'+inst.iid);
+    else if(act==='move') moveBegin(inst.iid);
+    else if(act==='hide'){ view.hidden.add(inst.iid); applyVisibility(); renderToolbar(); deselect(); toast(`Hidden · tap <b>👁</b> in the toolbar to restore`); }
+    else if(act==='remove') removeInst(inst.iid);
+    else if(act==='edit') customDlg(inst);
+    else if(act==='cmp'){ const it=IT(inst); cmpState.mode='parts'; cmpState.ids=it.custom?['custom:'+inst.iid]:(ZONE[it.zone].length>1?ZONE[it.zone].slice(0,4):[it.id]); go('compare'); }
+    else { popMode = popMode===act?null:act; renderPop(); }
+    return; }
+  const v=e.target.closest('[data-var]'); if(v){ if(v.dataset.var!==inst.cid){ const old=IT(inst).name; inst.cid=v.dataset.var; inst.status='need'; commit(); select(inst.iid); popMode='swap'; renderPop(); toast(`Swapped <b>${old}</b> → <b>${ITEM[inst.cid].name}</b>`);} return; }
+  const m=e.target.closest('[data-ms]'); if(m){ inst.mats=inst.mats||{}; inst.mats[m.dataset.ms]=m.dataset.mk; commit(); select(inst.iid); popMode='mat'; renderPop(); return; }
+  const pc=e.target.closest('[data-pc]'); if(pc){ inst.color=pc.dataset.pc||null; commit(); select(inst.iid); popMode='color'; renderPop(); }
+});
+$('#pop').addEventListener('change',e=>{ if(e.target.id==='pcPick'){ const inst=S.items.find(i=>i.iid===view.sel); if(inst){ inst.color=e.target.value; commit(); select(inst.iid); popMode='color'; renderPop(); } } });
+
+/* =====================================================================
+   PAGES — router
+   ===================================================================== */
+let curPage='build';
+function go(p){ if(('#'+p)!==location.hash) location.hash=p; else route(); }
+function route(){
+  const h=(location.hash||'').slice(1)||'build';
+  const pg = h.startsWith('part-') ? 'part' : (['compare','tracker','profile'].includes(h)?h:'build');
+  if(MV&&pg!=='build') moveEnd();
+  curPage=pg; document.body.dataset.page=pg;
+  $('#pages').hidden = pg==='build';
+  document.querySelectorAll('[data-go]').forEach(b=>b.classList.toggle('on',b.dataset.go===pg||(pg==='part'&&b.dataset.go==='build')));
+  ['compare','tracker','profile','part'].forEach(k=>$('#pg-'+k).hidden=k!==pg);
+  closeSheets();
+  if(pg==='compare') renderCompare(); else if(pg==='tracker') renderInstallTracker(); else if(pg==='profile') renderProfile(); else if(pg==='part') renderPartPage(h.slice(5));
+  if(pg!=='build') $('#pages').scrollTop=0; else resize();
+}
+addEventListener('hashchange',route);
+document.addEventListener('click',e=>{ const b=e.target.closest('[data-goback]'); if(b){ history.length>1?history.back():go('build'); return; } const g=e.target.closest('[data-go]'); if(g){ e.preventDefault(); go(g.dataset.go); if(g.dataset.tab2) setTimeout(()=>{ innerWidth<=860?openSheet('left',g.dataset.tab2):setTab(g.dataset.tab2); },60); } });
+function renderOpenPage(){ if(curPage==='compare') renderCompare(); else if(curPage==='tracker') renderInstallTracker(); else if(curPage==='profile') renderProfile(true); }
+
+/* ---------- snapshots ---------- */
+function snapshot(prepare){
+  const cp=camera.position.clone(), ct=controls.target.clone(), vis=[];
+  const restore=prepare(vis);
+  controls.update(); renderer.render(scene,camera);
+  let url=''; try{ url=renderer.domElement.toDataURL('image/jpeg',.86); }catch(err){}
+  vis.forEach(([o,v])=>o.visible=v); if(restore) restore(); camera.position.copy(cp); controls.target.copy(ct); controls.update(); renderer.render(scene,camera);
+  return url;
+}
+function snapPart(iid){ const g=instGroups.get(iid); if(!g) return '';
+  return snapshot(vis=>{ const keep=new Set(); g.traverse(o=>keep.add(o)); let o=g; while(o){ keep.add(o); o=o.parent; }
+    root.traverse(o=>{ if(o.isMesh||o.isSprite||o.isLine){ vis.push([o,o.visible]); if(!keep.has(o)) o.visible=false; } });
+    vis.push([selHelper,selHelper.visible],[selDims,selDims.visible],[grid,grid.visible],[gridFine,gridFine.visible]); selHelper.visible=false; selDims.visible=false; grid.visible=gridFine.visible=false;
+    _bb.setFromObject(g); const ctr=_bb.getCenter(V3(0,0,0)), sz=_bb.getSize(V3(0,0,0)).length();
+    controls.target.copy(ctr); camera.position.copy(ctr).add(V3(.85,.6,1).normalize().multiplyScalar(Math.max(.6,sz*1.6))); camera.lookAt(ctr); }); }
+function snapBuild(){ return snapshot(vis=>{ const pm=view.mode; view.mode='exterior'; applyVisibility(); vis.push([selHelper,selHelper.visible],[selDims,selDims.visible]); selHelper.visible=false; selDims.visible=false;
+  const c=C, Tm=c.T*IN, tgt=V3(((c.T*.48)-c.T/2)*IN,(c.f+c.H*.35)*IN,0); controls.target.copy(tgt); camera.position.copy(tgt).add(V3(Tm*.75,Tm*.3+.4,Tm*.95)); camera.lookAt(tgt);
+  return ()=>{ view.mode=pm; applyVisibility(); }; }); }
+
+/* ---------- range model ---------- */
+function rangeEst(items=S.items){
+  const c=C, t=c.model, k=calc(items);
+  const base = t.ev ? (t.range[Math.min(S.roofIdx,t.range.length-1)]) : t.mpg*t.tank;
+  const wPen = Math.min(.3, .35*k.total/t.curb);
+  const aero=[]; for(const i of items){ const it=IT(i); let a=AERO[it.zone]; if(it.custom){ const pl=(i.spec||{}).place; a=pl==='roof'?.015:pl==='rear'?.005:0; } if(it.zone==='solar'&&items.some(x=>IT(x).zone==='rack')) a=.004; if(a) aero.push([it.name,a,i.iid]); }
+  const aPen=Math.min(.25,aero.reduce((s,a)=>s+a[1],0));
+  const factor=Math.max(.45,1-wPen-aPen);
+  return {base, range:base*factor, ev:!!t.ev, mpg:t.ev?null:t.mpg*factor, mpg0:t.mpg, wPen, aPen, aero, unit:t.ev?'mi (EV)':'mi', fuel:t.ev?'Electric':t.fuel, tank:t.tank, kwh:t.kwh};
+}
+
+/* =====================================================================
+   COMPARE PAGE
+   ===================================================================== */
+const cmpState={mode:'parts',ids:['insul','insul_wool','insul_polyiso','insul_foam'],slot:'cabinet'};
+const CMP_PRESETS=[['Insulation',()=>ZONE.insul.slice(0,4)],['Batteries',()=>ZONE.battery],['Solar',()=>ZONE.solar],['Fridges',()=>ZONE.fridge],['Inverters',()=>ZONE.inverter],['Cooking',()=>ZONE.cook],['Beds',()=>ZONE.bed],['Bathroom',()=>ZONE.bath],['Water tanks',()=>ZONE.fresh],['Heating & cooling',()=>['heater','hydronic','ac','fan']]];
+const MAT_PRESETS=[['cabinet','Cabinet materials'],['counter','Countertops'],['wall','Walls & ceiling'],['floor','Flooring']];
+function cmpItem(id){ if(id.startsWith('custom:')){ const inst=S.items.find(i=>i.iid===id.slice(7)); return inst?Object.assign({},IT(inst),{id}):null; } return ITEM[id]; }
+function itemsWith(id){ const it=cmpItem(id); if(!it) return S.items; if(it.custom) return S.items; const out=S.items.filter(i=>IT(i).zone!==it.zone); out.push({iid:'tmp-'+id,cid:id,mats:{}}); return out; }
+function heatLoss(rv){ const c=C, area=(2*c.L*c.H+c.L*c.Wi)/144; return rv? area*40/rv : null; }
+function renderCompare(){
+  const c=C, base=calc(), baseR=rangeEst();
+  let h=`<div class="pg-wrap"><div class="pg-head"><div><h1>Compare</h1><p class="muted">Line up parts or materials side by side — see cost, weight, energy, insulation and what each does to <b>your</b> build.</p></div>
+    <div class="seg" id="cmpMode"><button data-cm="parts" class="${cmpState.mode==='parts'?'on':''}">Parts</button><button data-cm="materials" class="${cmpState.mode==='materials'?'on':''}">Materials</button></div></div>`;
+  if(cmpState.mode==='parts'){
+    h+=`<div class="chips-row">${CMP_PRESETS.map(([n],i)=>`<button class="pchip" data-cp="${i}">${n}</button>`).join('')}</div>
+      <div class="cmp-add"><select id="cmpAdd"><option value="">＋ Add a part to compare…</option>${CATALOG.map(cat=>`<optgroup label="${cat.name}">${cat.items.map(i=>`<option value="${i.id}">${i.name}</option>`).join('')}</optgroup>`).join('')}${S.items.filter(i=>i.cid==='custom').length?`<optgroup label="Custom parts">${S.items.filter(i=>i.cid==='custom').map(i=>`<option value="custom:${i.iid}">${esc(IT(i).name)}</option>`).join('')}</optgroup>`:''}</select>
+      <select id="cmpBuild"><option value="">＋ From my build…</option>${S.items.map(i=>`<option value="${i.cid==='custom'?'custom:'+i.iid:i.cid}">${esc(IT(i).name)}</option>`).join('')}</select></div>`;
+    const cols=cmpState.ids.map(cmpItem).filter(Boolean);
+    if(!cols.length){ h+=`<div class="empty">Pick a category above or add parts to compare.</div></div>`; $('#pg-compare').innerHTML=h; return; }
+    const data=cols.map(it=>{ const items=itemsWith(it.id), k=calc(items), r=rangeEst(items), inB=S.items.some(i=>(i.cid==='custom'?'custom:'+i.iid:i.cid)===it.id), info=INFO[it.id]||['','',''];
+      return {it,k,r,inB,info,rv:it.rv||0}; });
+    const isIns=cols.some(it=>it.zone==='insul');
+    const row=(label,vals,better,fmt)=>{ const nums=vals.map(v=>typeof v==='number'&&isFinite(v)?v:null), valid=nums.filter(v=>v!==null);
+      const best=better&&valid.length>1?(better==='low'?Math.min(...valid):Math.max(...valid)):null, worst=better&&valid.length>1?(better==='low'?Math.max(...valid):Math.min(...valid)):null;
+      return `<tr><th>${label}</th>${vals.map((v,i)=>`<td class="${best!==null&&nums[i]===best&&best!==worst?'best':''}${worst!==null&&nums[i]===worst&&best!==worst?' worst':''}">${fmt?fmt(v,i):v}</td>`).join('')}</tr>`; };
+    h+=`<div class="cmp-scroll"><table class="cmp"><thead><tr><th></th>${data.map((d,i)=>`<th><div class="cmp-name">${esc(d.it.name)}</div><div class="cmp-tag ${d.inB?'in':''}">${d.inB?'In your build':'Alternative'}</div><button class="x cmp-x" data-cx="${i}" title="Remove from comparison">✕</button></th>`).join('')}</tr></thead><tbody>`;
+    h+=row('Price',data.map(d=>d.it.cost),'low',v=>fmt$(v));
+    h+=row('Weight',data.map(d=>d.it.wt),'low',v=>`${v} lb <span class="muted">· ${fmtN(lb2kg(v))} kg</span>`);
+    h+=row('Size',data.map(d=>d.it.sz?sizeTxt(d.it.sz):'Sized to vehicle'));
+    h+=row('Energy use',data.map(d=>d.it.draw||0),'low',v=>v?`${v} Wh/day <span class="muted">· ${fmtN(v*365/1000)} kWh/yr</span>`:'None');
+    if(data.some(d=>d.it.solarW||d.it.ah||d.it.invW)) h+=row('Energy supply',data.map(d=>d.it.solarW?d.it.solarW*S.settings.sunHours*.75:d.it.ah?d.it.ah*12.8*.9:d.it.invW||0),'high',(v,i)=>{ const it=data[i].it; return it.solarW?`≈${fmtN(v)} Wh/day`:it.ah?`${fmtN(v)} Wh usable`:it.invW?`${fmtN(v)} W continuous`:'—'; });
+    if(isIns){ h+=row('R-value',data.map(d=>d.rv||null),'high',v=>v?`R-${fmtN(v,1)}`:'—');
+      h+=row('Heat loss @ 40°F ΔT',data.map(d=>heatLoss(d.rv)),'low',v=>v?`${fmtN(v)} BTU/hr`:'—');
+      h+=row('Thickness',data.map(d=>d.it.thick||null),null,v=>v?`${v}"`:'—'); }
+    h+=row('Off-grid days (your build)',data.map(d=>d.k.ah?(d.k.days===Infinity?999:d.k.days):0),'high',v=>v>=999?'∞ self-sustaining':v?fmtN(v,1)+' days':'—');
+    h+=row('Payload used',data.map(d=>d.k.total/d.k.payload*100),'low',v=>`${fmtN(v)}%`);
+    h+=row('Driving range',data.map(d=>d.r.range),'high',v=>`${fmtN(v)} mi`);
+    h+=row('Build cost if chosen',data.map(d=>d.k.cost),'low',(v)=>`${fmt$(v)} <span class="muted">${v-base.cost?`(${v>base.cost?'+':'−'}${fmt$(Math.abs(v-base.cost))})`:''}</span>`);
+    h+=row('Install difficulty',data.map(d=>d.info[3]||null),'low',v=>v?`<span class="dots">${'●'.repeat(v)}<i>${'●'.repeat(5-v)}</i></span>`:'—');
+    h+=`<tr><th>Pros</th>${data.map(d=>`<td><ul class="pl">${(d.info[1]||'').split('|').filter(Boolean).map(x=>`<li>${x}</li>`).join('')}</ul></td>`).join('')}</tr>`;
+    h+=`<tr><th>Cons</th>${data.map(d=>`<td><ul class="cl">${(d.info[2]||'').split('|').filter(Boolean).map(x=>`<li>${x}</li>`).join('')}</ul></td>`).join('')}</tr>`;
+    h+=`<tr><th></th>${data.map(d=>`<td class="cmp-act">${d.it.custom?'':d.inB?'<span class="muted">✓ In build</span>':`<button class="tb-btn" data-use="${d.it.id}">Use in build</button>`}${d.it.custom||d.inB?'':`<button class="gplus big" data-cart="${d.it.id}" title="Add to cart">＋</button>`}</td>`).join('')}</tr>`;
+    h+=`</tbody></table></div>`;
+    if(isIns) h+=`<p class="note">R-values: Thinsulate SM600L ≈ R-5.2 per 1.6" layer; wool ≈ R-3.5/in; polyiso ≈ R-6/in (drops in hard cold); XPS ≈ R-5/in; closed-cell spray foam ≈ R-6.5/in; Reflectix ≈ R-1. Heat loss assumes walls + ceiling of your cargo area at a 40°F inside/outside difference, before thermal bridging.</p>`;
+    h+=`<p class="note">Range and off-grid days are estimates for your current build with that part swapped in. Fuel economy figures are typical real-world estimates.</p>`;
+  } else {
+    h+=`<div class="chips-row">${MAT_PRESETS.map(([k,n])=>`<button class="pchip ${cmpState.slot===k?'on':''}" data-ms2="${k}">${n}</button>`).join('')}</div>`;
+    const slot=cmpState.slot, list=MATS[slot], area=matArea(slot);
+    h+=`<p class="muted" style="margin:0 0 12px">About <b>${fmtN(area)} sq ft</b> of ${SLOT_NAME[slot].toLowerCase()} in your current build.</p>`;
+    const vals=list.map(([k,n])=>({k,n,p:MATINFO[k]}));
+    const row=(label,arr,better,fmt)=>{ const valid=arr.filter(v=>typeof v==='number'); const best=better?(better==='low'?Math.min(...valid):Math.max(...valid)):null;
+      return `<tr><th>${label}</th>${arr.map(v=>`<td class="${best!==null&&v===best?'best':''}">${fmt?fmt(v):v}</td>`).join('')}</tr>`; };
+    const stars=v=>`<span class="dots">${'●'.repeat(v)}<i>${'●'.repeat(5-v)}</i></span>`;
+    h+=`<div class="cmp-scroll"><table class="cmp"><thead><tr><th></th>${vals.map(v=>`<th><img class="mimg" src="${swatch(v.k)}" alt=""><div class="cmp-name">${v.n}</div><div class="cmp-tag ${S.defaults[slot]===v.k?'in':''}">${S.defaults[slot]===v.k?'In your build':'Alternative'}</div></th>`).join('')}</tr></thead><tbody>`;
+    h+=row('Weight',vals.map(v=>v.p[0]),'low',v=>`${v} lb/sq ft`);
+    h+=row('Cost',vals.map(v=>v.p[1]),'low',v=>`$${v}/sq ft`);
+    h+=row('For your build',vals.map(v=>Math.round(v.p[1]*area)),'low',v=>`${fmt$(v)}`);
+    h+=row('Added weight',vals.map(v=>Math.round(v.p[0]*area)),'low',v=>`${v} lb`);
+    h+=row('Durability',vals.map(v=>v.p[2]),'high',stars);
+    h+=row('Moisture resistance',vals.map(v=>v.p[3]),'high',stars);
+    if(slot==='wall') h+=row('Extra insulation',vals.map(v=>v.p[4]),'high',v=>v?`≈R-${v}`:'—');
+    h+=`<tr><th>Pros</th>${vals.map(v=>`<td><ul class="pl">${v.p[5].split('|').map(x=>`<li>${x}</li>`).join('')}</ul></td>`).join('')}</tr>`;
+    h+=`<tr><th>Cons</th>${vals.map(v=>`<td><ul class="cl">${v.p[6].split('|').map(x=>`<li>${x}</li>`).join('')}</ul></td>`).join('')}</tr>`;
+    h+=`<tr><th></th>${vals.map(v=>`<td class="cmp-act">${S.defaults[slot]===v.k?'<span class="muted">✓ In build</span>':`<button class="tb-btn" data-applymat="${slot}:${v.k}">Use in build</button>`}</td>`).join('')}</tr></tbody></table></div>
+      <p class="note">Weights and prices are typical figures for van-grade material at common thicknesses; your supplier’s numbers will vary.</p>`;
+  }
+  h+='</div>'; $('#pg-compare').innerHTML=h;
+}
+function matArea(slot){ const c=C;
+  if(slot==='wall') return (2*c.L*(c.H-4)+c.L*c.Wi)/144;
+  if(slot==='floor') return c.L*c.Wi/144;
+  let a=0; for(const inst of S.items){ const it=IT(inst); if(!(it.mats||[]).includes(slot)) continue; const s=placedSize(inst.iid); if(!s) continue;
+    a+= slot==='counter' ? (s.x*Math.min(s.z,26))/144 : (2*(s.x*s.y+s.z*s.y)+s.x*s.z)/144*.6; }
+  return Math.max(4,a); }
+$('#pg-compare').addEventListener('click',e=>{
+  const cm=e.target.closest('[data-cm]'); if(cm){ cmpState.mode=cm.dataset.cm; renderCompare(); return; }
+  const cp=e.target.closest('[data-cp]'); if(cp){ cmpState.ids=CMP_PRESETS[+cp.dataset.cp][1]().slice(0,4); renderCompare(); return; }
+  const ms=e.target.closest('[data-ms2]'); if(ms){ cmpState.slot=ms.dataset.ms2; renderCompare(); return; }
+  const cx=e.target.closest('[data-cx]'); if(cx){ cmpState.ids.splice(+cx.dataset.cx,1); renderCompare(); return; }
+  const u=e.target.closest('[data-use]'); if(u){ addItem(u.dataset.use); renderCompare(); return; }
+  const ct=e.target.closest('[data-cart]'); if(ct){ addToCart(ct.dataset.cart); renderCompare(); return; }
+  const am=e.target.closest('[data-applymat]'); if(am){ const [slot,k]=am.dataset.applymat.split(':'); S.defaults[slot]=k; S.items.forEach(i=>{ if(i.mats) delete i.mats[slot]; }); commit(); renderCompare(); toast(`<b>${SLOT_NAME[slot]}</b> → ${MATNAME[k]}`); }
+});
+$('#pg-compare').addEventListener('change',e=>{ if(e.target.id==='cmpAdd'||e.target.id==='cmpBuild'){ const v=e.target.value; if(v&&!cmpState.ids.includes(v)){ cmpState.ids.push(v); if(cmpState.ids.length>4) cmpState.ids.shift(); } renderCompare(); } });
+
+/* =====================================================================
+   INSTALL TRACKER PAGE
+   ===================================================================== */
+let trkPhase=0;
+function renderInstallTracker(){
+  const by={need:[],have:[],installed:[]}; for(const i of S.items){ if(trkPhase&&IT(i).phase!==trkPhase) continue; by[statusOf(i)].push(i); }
+  const all=S.items, n=all.length, cnt=k=>all.filter(i=>statusOf(i)===k).length, cost=k=>all.filter(i=>statusOf(i)===k).reduce((s,i)=>s+IT(i).cost,0);
+  const pct=n?cnt('installed')/n*100:0;
+  const next=[...all].filter(i=>statusOf(i)!=='installed').sort((a,b)=>IT(a).phase-IT(b).phase||(statusOf(a)==='have'?-1:1))[0];
+  let h=`<div class="pg-wrap"><div class="pg-head"><div><h1>Install Tracker</h1><p class="muted">What you have, what you still need, and what’s already in the van.</p></div>
+    <div class="seg" id="sv3d" title="How parts show in 3D"><button data-sv="all" class="${view.statusView==='all'?'on':''}">Show all in 3D</button><button data-sv="ghost" class="${view.statusView==='ghost'?'on':''}">Ghost “need”</button><button data-sv="owned" class="${view.statusView==='owned'?'on':''}">Only what I have</button></div></div>
+    <div class="trk-stats">
+      <div class="tstat"><small>Installed</small><b>${cnt('installed')} / ${n}</b><div class="bar"><i style="width:${pct}%;background:var(--green)"></i></div></div>
+      <div class="tstat"><small>Have, ready to install</small><b>${cnt('have')}</b><span class="muted">${fmt$(cost('have'))}</span></div>
+      <div class="tstat"><small>🛒 Need to buy</small><b>${cnt('need')}</b><span class="muted">${fmt$(cost('need'))} to go</span></div>
+      <div class="tstat"><small>Spent so far</small><b>${fmt$(cost('have')+cost('installed'))}</b><span class="muted">of ${fmt$(all.reduce((s,i)=>s+IT(i).cost,0))}</span></div>
+    </div>
+    ${next?`<div class="nextup"><span>Next up</span><b>${esc(IT(next).name)}</b><em>Phase ${IT(next).phase} · ${PHASES[IT(next).phase]} · ${statusOf(next)==='have'?'ready to install':'buy it first'}</em><button class="tb-btn primary" data-adv="${next.iid}">${statusOf(next)==='have'?'Mark installed':'Mark bought'}</button></div>`:n?`<div class="nextup done">🎉 Everything is installed.</div>`:''}
+    <div class="chips-row">${[0,1,2,3,4].map(p=>`<button class="pchip ${trkPhase===p?'on':''}" data-tp="${p}">${p?`Phase ${p} · ${PHASES[p]}`:'All phases'}</button>`).join('')}</div>
+    <div class="kanban">${STATUS.map(([k,nm,ic])=>`<div class="kcol"><div class="khead">${ic} ${nm}<span>${by[k].length}</span></div>${by[k].sort((a,b)=>IT(a).phase-IT(b).phase).map(i=>{ const it=IT(i); return `<div class="kcard"><div class="grow" data-go="part-${i.iid}"><b>${esc(it.name)}</b><small>P${it.phase} · ${fmt$(it.cost)} · ${it.wt} lb</small></div><div class="kbtns">${k!=='need'?`<button data-back="${i.iid}" title="Move back">◀</button>`:''}${k!=='installed'?`<button class="adv" data-adv="${i.iid}" title="${k==='need'?'Mark bought':'Mark installed'}">${k==='need'?'Bought ▶':'Installed ✓'}</button>`:''}</div></div>`; }).join('')||'<div class="kempty">Nothing here</div>'}</div>`).join('')}</div></div>`;
+  $('#pg-tracker').innerHTML=h;
+}
+$('#pg-tracker').addEventListener('click',e=>{
+  const sv=e.target.closest('[data-sv]'); if(sv){ view.statusView=sv.dataset.sv; applyVisibility(); renderInstallTracker(); return; }
+  const tp=e.target.closest('[data-tp]'); if(tp){ trkPhase=+tp.dataset.tp; renderInstallTracker(); return; }
+  const ad=e.target.closest('[data-adv]'); if(ad){ const i=S.items.find(x=>x.iid===ad.dataset.adv); i.status=statusOf(i)==='need'?'have':'installed'; commit(); renderInstallTracker(); toast(i.status==='have'?`📦 Bought <b>${esc(IT(i).name)}</b>`:`✅ Installed <b>${esc(IT(i).name)}</b>`); return; }
+  const bk=e.target.closest('[data-back]'); if(bk){ const i=S.items.find(x=>x.iid===bk.dataset.back); i.status=statusOf(i)==='installed'?'have':'need'; commit(); renderInstallTracker(); }
+});
+
+/* =====================================================================
+   PROFILE PAGE
+   ===================================================================== */
+let pfTile='parts', pfImg='', pfImgKey='';
+function renderProfile(keepImg){
+  const c=C, k=calc(), r=rangeEst(), t=c.model, M_=MODELS[S.vehicle];
+  const key=JSON.stringify([S.vehicle,S.year,S.mtype,S.wbIdx,S.roofIdx,S.paint,S.items.map(i=>[i.cid,i.pos,i.color])]);
+  if(!keepImg||key!==pfImgKey||!pfImg){ pfImg=snapBuild(); pfImgKey=key; }
+  const cnt=s=>S.items.filter(i=>statusOf(i)===s).length, spent=S.items.filter(i=>statusOf(i)!=='need').reduce((a,i)=>a+IT(i).cost,0);
+  const tiles=[['parts','🧩','All parts',`${S.items.length}`,`${cnt('need')} in cart · ${cnt('installed')} installed`],
+    ['cost','💵','Total cost',fmt$(k.cost),`${fmt$(spent)} spent · ${fmt$(k.cost-spent)} to go`],
+    ['range','⛽','Range',`${fmtN(r.range)} mi`,r.ev?`${t.label.split(' · ')[1]||'EV'} · est. from ${fmtN(r.base)} mi`:`${r.fuel} · ≈${fmtN(r.mpg,1)} mpg × ${r.tank} gal`],
+    ['vehicle','🚐','Vehicle',vTitle(),`${t.label} · ${c.v.roofs[S.roofIdx].label} roof · ${c.v.wbs[S.wbIdx].label}`]];
+  let h=`<div class="pf-hero" style="background-image:linear-gradient(180deg,rgba(18,20,23,.15) 0%,rgba(18,20,23,.55) 55%,#121417 100%),url('${pfImg}')">
+      <div class="pg-wrap"><div class="pf-title"><small>Current project</small><h1>${esc(S.name)}</h1><span>${vTitle()} · ${esc(t.label)}</span></div>
+      <div class="pf-stats">${tiles.map(([id,ic,n,v,s])=>`<div class="pfs"><small>${ic} ${n}</small><b>${v}</b><span>${s}</span></div>`).join('')}</div></div></div>
+    <div class="pg-wrap"><div class="pf-tiles">${tiles.map(([id,ic,n])=>`<button class="pft ${pfTile===id?'on':''}" data-pt="${id}"><span class="ic">${ic}</span><b>${n}</b><small>${{parts:'Every part, grouped by system',cost:'Where the money goes',range:'What costs you miles',vehicle:'Specs & parts that change the vehicle'}[id]}</small><em>›</em></button>`).join('')}</div>
+    <div class="pf-detail">${pfDetail(pfTile,k,r)}</div></div>`;
+  $('#pg-profile').innerHTML=h;
+}
+function pRow(i,right){ const it=IT(i); return `<div class="prow" data-go="part-${i.iid}"><span class="pst">${STATUS.find(s=>s[0]===statusOf(i))[2]}</span><div class="grow"><b>${esc(it.name)}</b><small>Phase ${it.phase} · ${it.wt} lb</small></div><span class="pr">${right}</span><em>›</em></div>`; }
+function pfDetail(tile,k,r){
+  const c=C, t=c.model;
+  if(tile==='parts'){ const groups={}; S.items.forEach(i=>{ const it=IT(i); const n=(CATALOG.find(x=>x.id===it.cat)||{name:CAT_NAME[it.cat]||'Custom'}).name; (groups[n]||=[]).push(i); });
+    return Object.keys(groups).length? Object.entries(groups).map(([n,list])=>`<h3>${n}<span>${list.length}</span></h3>${list.map(i=>pRow(i,fmt$(IT(i).cost))).join('')}`).join('') : '<div class="empty">No parts yet — add some from the Parts catalog.</div>'; }
+  if(tile==='cost'){ const tot=k.cost||1, list=[...S.items].sort((a,b)=>IT(b).cost-IT(a).cost);
+    return `<div class="pf-split">${[1,2,3,4].map(p=>`<div><small>Phase ${p}</small><b>${fmt$(k.byPhase[p])}</b><span>${PHASES[p]}</span></div>`).join('')}</div>`+list.map(i=>pRow(i,`${fmt$(IT(i).cost)} <span class="pbar"><i style="width:${IT(i).cost/tot*100}%"></i></span>`)).join(''); }
+  if(tile==='range'){ const lost=r.base-r.range, wl=r.base*r.wPen;
+    return `<div class="pf-split"><div><small>Base range</small><b>${fmtN(r.base)} mi</b><span>${r.ev?`${t.kwh} kWh battery`:`${r.mpg0} mpg × ${r.tank} gal`}</span></div><div><small>Your build</small><b>${fmtN(r.range)} mi</b><span>−${fmtN(lost)} mi (${fmtN(lost/r.base*100)}%)</span></div><div><small>Weight penalty</small><b>−${fmtN(wl)} mi</b><span>${fmtN(k.total)} lb added</span></div><div><small>Drag penalty</small><b>−${fmtN(r.base*r.aPen)} mi</b><span>roof & exterior gear</span></div></div>
+      <h3>Parts that cost you miles</h3>`+[...S.items].map(i=>{ const it=IT(i), a=(r.aero.find(x=>x[2]===i.iid)||[0,0])[1], w=it.wt/(k.total||1)*wl; return [i,a*r.base+w]; }).sort((a,b)=>b[1]-a[1]).slice(0,12).map(([i,m])=>pRow(i,`−${fmtN(m,1)} mi`)).join('')+
+      `<p class="note">Estimate: about 0.35% less range per 1% of vehicle weight added, plus drag for roof and exterior gear. ${r.ev?'EV figures start from the manufacturer’s published range for your roof height.':'Fuel economy is a typical real-world figure — heavy vans don’t get EPA ratings.'} Taking the roof rack or awning off for long drives is the easiest way to win miles back.</p>`; }
+  const v=c.v, wbo=v.wbs[S.wbIdx];
+  const ext=S.items.filter(i=>{ const z=IT(i).zone; return ['rack','awning','carrier','armor','windows','solar','fan','ac','shore','grey'].includes(z)||(IT(i).custom&&['roof','rear','under'].includes((i.spec||{}).place)); });
+  return `<div class="spec" style="margin-bottom:14px">
+    <span>Vehicle</span><span>${vTitle()}</span><span>Model type</span><span>${t.label}</span><span>Powertrain</span><span>${t.ev?`Electric · ${t.kwh} kWh`:`${t.fuel} · ${t.tank} gal tank`}</span>
+    <span>Wheelbase · Roof</span><span>${wbo.label} · ${v.roofs[S.roofIdx].label}</span><span>Overall length</span><span>${fmtN(wbo.OL,1)} in</span><span>Cargo L × W × H</span><span>${fmtN(wbo.L,1)} × ${fmtN(v.Wi,1)} × ${fmtN(v.roofs[S.roofIdx].H,1)} in</span>
+    <span>GVWR · Curb</span><span>${fmtN(t.gvwr)} · ${fmtN(t.curb)} lb</span><span>Payload</span><span style="color:var(--cyan)">${fmtN(t.gvwr-t.curb)} lb</span></div>
+    <h3>Parts that change the vehicle<span>${ext.length}</span></h3>${ext.map(i=>pRow(i,`${IT(i).wt} lb`)).join('')||'<div class="empty">No exterior or roof parts yet.</div>'}
+    <button class="tb-btn" style="margin-top:12px" data-go="build" data-tab2="vehicle">Change vehicle ›</button>`;
+}
+$('#pg-profile').addEventListener('click',e=>{ const t=e.target.closest('[data-pt]'); if(t){ pfTile=t.dataset.pt; renderProfile(true); } });
+
+/* =====================================================================
+   PART DETAIL PAGE ("View more")
+   ===================================================================== */
+function connections(inst){ const it=IT(inst), z=it.zone, out=[], has=x=>C.has(x);
+  if(['fridge','fan','heater','hydronic','sink','bed','bath'].includes(z)&&it.draw) out.push(['12 V DC',has('battery')?'Wired to the battery bank through the fuse block':'Needs a battery bank to run']);
+  if(['cook','ac'].includes(z)&&it.draw) out.push(['120 V AC',has('inverter')?'Powered by the inverter':'Needs an inverter']);
+  if(z==='panel') out.push(['12 V DC','LED strips on dimmable circuits from the fuse block']);
+  if(z==='solar') out.push(['Solar',has('battery')?'Roof gland → MPPT charge controller → battery bank':'Needs a battery bank and charge controller']);
+  if(z==='battery') out.push(['Bus bars','Feeds the fuse block, inverter and DC-DC charger']);
+  if(z==='inverter') out.push(['Battery',has('battery')?'Thick cables to the battery bank with a class-T fuse':'Needs a battery bank'],['Shore',has('shore')?'Shore inlet feeds the built-in charger':'Add a shore inlet to charge at campgrounds']);
+  if(z==='dcdc') out.push(['Alternator','Starter battery → DC-DC charger → house battery']);
+  if(z==='shore') out.push(['Inverter',has('inverter')?'Feeds the inverter/charger':'Needs an inverter/charger or separate charger']);
+  if(z==='sink'||z==='bath'||z==='oshower') out.push(['Fresh water',has('fresh')?'12V pump from the fresh tank':'Needs a fresh water tank']);
+  if(z==='sink'||(z==='bath'&&inst.cid==='wetbath')) out.push(['Drain',has('grey')?'Drains to the grey tank':'Needs a grey tank']);
+  if(z==='fresh') out.push(['Supplies',['sink','bath','oshower'].filter(has).map(x=>IT(has(x)).name).join(', ')||'Nothing yet']);
+  if(z==='grey') out.push(['Collects from',['sink','bath'].filter(has).map(x=>IT(has(x)).name).join(', ')||'Nothing yet']);
+  return out; }
+function renderPartPage(iid){
+  const inst=S.items.find(i=>i.iid===iid); if(!inst){ $('#pg-part').innerHTML=`<div class="pg-wrap"><div class="empty">That part isn’t in the build anymore. <a href="#build" style="color:var(--cyan)">Back to build</a></div></div>`; return; }
+  const it=IT(inst), info=INFO[it.id]||[it.custom?'Custom part you added.':'', '', '', 0], g=instGroups.get(iid), k=calc();
+  const img=snapPart(iid);
+  let loc=''; if(g){ const b=groupBox(g), c=C; const side=(b.z0+b.z1)/2<-6?'driver side':(b.z0+b.z1)/2>6?'passenger side':'center';
+    loc=`${fmtN(Math.max(0,b.x0),1)} in from the rear doors · ${side} · ${b.y0<c.f-1?`${fmtN(b.y0,1)} in above the ground`:b.y0>c.roofY-1?'on the roof':`${fmtN(Math.max(0,b.y0-c.fy),1)} in above the floor`}`; }
+  const ps=placedSize(iid), conns=connections(inst), share=k.draw&&it.draw?it.draw/k.draw*100:0;
+  const st=statusOf(inst), m=mountOf(inst);
+  let h=`<div class="pg-wrap part">
+    <button class="back" data-goback="1">‹ Back</button>
+    <div class="pp-top"><div class="pp-img">${img?`<img src="${img}" alt="">`:''}</div>
+      <div class="pp-info"><small>${esc((CATALOG.find(x=>x.id===it.cat)||{name:CAT_NAME[it.cat]||'Custom'}).name)} · Phase ${it.phase} · ${PHASES[it.phase]}</small><h1>${esc(it.name)}</h1><p>${esc(info[0])}</p>
+        <div class="pop-status big">${STATUS.map(([s,n,ic])=>`<button data-pst="${s}" class="${st===s?'on':''}">${ic} ${n}</button>`).join('')}</div>
+        <div class="pp-btns"><button class="tb-btn primary" data-pm="move" ${m==='fixed'?'disabled':''}>✥ Move in 3D</button><button class="tb-btn" data-pm="cmp">⚖ Compare alternatives</button><button class="tb-btn" data-pm="remove">Remove</button></div></div></div>
+    <div class="pp-grid">
+      <div class="card"><h3>Measurements</h3><div class="spec">
+        <span>Spec size (W×D×H)</span><span>${it.sz?`${sizeTxt(it.sz)}`:'Sized to vehicle'}</span>${it.sz?`<span></span><span>${sizeCm(it.sz)}</span>`:''}
+        ${ps?`<span>As placed (L×W×H)</span><span>${fmtN(ps.x,1)} × ${fmtN(ps.z,1)} × ${fmtN(ps.y,1)} in</span><span></span><span>${fmtN(ps.x*2.54)} × ${fmtN(ps.z*2.54)} × ${fmtN(ps.y*2.54)} cm</span>`:''}
+        <span>Weight</span><span>${it.wt} lb · ${fmtN(lb2kg(it.wt),1)} kg</span><span>Share of payload</span><span>${fmtN(it.wt/k.payload*100,1)}%</span></div></div>
+      <div class="card"><h3>Location on the vehicle</h3><div class="spec"><span>Mounting</span><span>${MOUNT_NAME[m]}</span><span>Position</span><span style="white-space:normal">${loc||'—'}</span>${inst.pos?`<span>Moved from default</span><span>${fmtN(inst.pos.x,1)} / ${fmtN(inst.pos.z,1)} in${inst.pos.r?` · ${inst.pos.r*90}°`:''}</span>`:''}</div></div>
+      <div class="card"><h3>Energy</h3><div class="spec"><span>Uses</span><span>${it.draw?`${it.draw} Wh/day`:'No power'}</span>${it.draw?`<span>Share of daily use</span><span>${fmtN(share)}%</span><span>Per year</span><span>${fmtN(it.draw*365/1000)} kWh</span>`:''}${it.solarW?`<span>Produces</span><span>≈${fmtN(it.solarW*S.settings.sunHours*.75)} Wh/day</span>`:''}${it.ah?`<span>Stores</span><span>${fmtN(it.ah*12.8*.9)} Wh usable</span>`:''}${it.fresh?`<span>Holds</span><span>${it.fresh} gal · ${fmtN(it.fresh*8.34)} lb full</span>`:''}${it.rv?`<span>Insulation</span><span>R-${it.rv}</span>`:''}</div></div>
+      <div class="card"><h3>Cost</h3><div class="spec"><span>Price</span><span>${fmt$(it.cost)}</span><span>Share of build</span><span>${fmtN(it.cost/(k.cost||1)*100,1)}%</span><span>Install difficulty</span><span>${info[3]?`<span class="dots">${'●'.repeat(info[3])}<i>${'●'.repeat(5-info[3])}</i></span>`:'—'}</span></div></div>
+      ${conns.length?`<div class="card wide"><h3>Connections</h3>${conns.map(([a,b])=>`<div class="conn"><b>${a}</b><span>${esc(b)}</span></div>`).join('')}</div>`:''}
+      ${info[1]?`<div class="card"><h3>Pros</h3><ul class="pl">${info[1].split('|').map(x=>`<li>${x}</li>`).join('')}</ul></div><div class="card"><h3>Cons</h3><ul class="cl">${info[2].split('|').map(x=>`<li>${x}</li>`).join('')}</ul></div>`:''}
+      ${(it.mats||[]).length?`<div class="card wide"><h3>Materials</h3><div class="pp-mats">${it.mats.map(s=>{ const mk=matOf(inst,s); return `<div><img src="${swatch(mk)}" alt=""><b>${SLOT_NAME[s]}</b><span>${MATNAME[mk]}</span></div>`; }).join('')}</div></div>`:''}
+    </div></div>`;
+  $('#pg-part').innerHTML=h; $('#pg-part').dataset.iid=iid;
+}
+$('#pg-part').addEventListener('click',e=>{
+  const iid=$('#pg-part').dataset.iid, inst=S.items.find(i=>i.iid===iid); if(!inst) return;
+  const s=e.target.closest('[data-pst]'); if(s){ inst.status=s.dataset.pst; commit(); renderPartPage(iid); return; }
+  const p=e.target.closest('[data-pm]'); if(!p) return;
+  if(p.dataset.pm==='move'){ go('build'); setTimeout(()=>{ select(iid); moveBegin(iid); },60); }
+  else if(p.dataset.pm==='cmp'){ const it=IT(inst); cmpState.mode='parts'; cmpState.ids=it.custom?['custom:'+iid]:(ZONE[it.zone].length>1?ZONE[it.zone].slice(0,4):[it.id]); go('compare'); }
+  else if(p.dataset.pm==='remove'){ removeInst(iid); go('build'); }
+});
+
+/* ---------- cart ---------- */
+function addToCart(cid){
+  const it=ITEM[cid]; if(!it) return; const ex=S.items.find(i=>i.cid===cid);
+  if(ex){ toast(`<b>${it.name}</b> is already in your project (${STATUS.find(s=>s[0]===statusOf(ex))[1].toLowerCase()})`); return; }
+  addItem(cid,true); toast(`🛒 Added <b>${it.name}</b> to your cart — it’s in your project & profile`);
+}
+function updCart(){ const n=S.items.filter(i=>statusOf(i)==='need').length; document.querySelectorAll('.cartn').forEach(e=>{ e.textContent=n; e.hidden=!n; }); }
+
+/* ---------- mobile sheets ---------- */
+function openSheet(which,tab){ closeSheets(); if(which==='left'){ setTab(tab); $('#sheetTitleL').textContent={vehicle:'Vehicle',catalog:'Parts',finish:'Finishes'}[tab]; $('#left').classList.add('open'); } else { $('#right').classList.add('open'); } document.body.classList.add('sheet-open'); }
+function closeSheets(){ $('#left').classList.remove('open'); $('#right').classList.remove('open'); document.body.classList.remove('sheet-open'); document.querySelectorAll('#mnav [data-sheet]').forEach(b=>b.classList.remove('on')); }
+document.querySelectorAll('.sclose').forEach(b=>b.onclick=closeSheets);
+document.querySelectorAll('[data-sheet]').forEach(b=>b.onclick=e=>{ e.stopPropagation(); const [w,t]=b.dataset.sheet.split(':'); if(curPage!=='build') go('build'); const isOpen=(w==='left'?$('#left'):$('#right')).classList.contains('open')&&(w!=='left'||!$('#p-'+t).hidden); if(isOpen){ closeSheets(); return; } setTimeout(()=>{ openSheet(w,t); b.classList.add('on'); },curPage!=='build'?30:0); });
+$('#bUndo').onclick=undo; $('#bRedo').onclick=redo;
+initNoPaint();
 
 /* =====================================================================
    LOOP
@@ -2195,7 +3040,7 @@ function loop(now){
   updateCamSide();
   const settled=Math.abs(exCur-view.explode)<.002; selDims.visible=settled;
   if(view.sel){ placePop(); selHelper.visible=true; if(selDimsDirty&&settled){ buildSelDims(); selDimsDirty=false; } }
-  renderer.render(scene,camera);
+  if(curPage==='build') renderer.render(scene,camera);
 }
 
 /* =====================================================================
@@ -2204,7 +3049,9 @@ function loop(now){
 resize();
 commit(); renderCams(); renderPhases();
 goPreset('ext',true);
+route(); updHist(); updCart();
 requestAnimationFrame(loop);
+window.__nf={select,moveBegin,moveEnd,nudge,rotatePart,flipSide,autoArrange,resetPart,cluster,get S(){return S},get MV(){return MV},go,undo,redo,addToCart};
 setTimeout(()=>$('#loading').classList.add('gone'),150);
 if(innerWidth<=860){ $('#main').classList.add('noL','noR'); }
 </script>

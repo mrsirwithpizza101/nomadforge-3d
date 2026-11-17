@@ -15,6 +15,9 @@ It's a single self-contained `index.html` (Three.js loaded from a CDN) — no bu
 - **Camera presets** — Exterior 3/4, Rear Doors Open, Side Door Open, Top-Down Floorplan, and Driver Cab View on hotkeys `1`–`5`, with animated doors.
 - **Modular catalog (45+ parts)** — sleeping & seating, kitchen & galley, bathroom & hygiene, off-grid power, water & climate, and exterior/overland gear. Modules snap to zones and swap when a zone is occupied.
 - **Materials & finishes** — procedural cabinetry, countertop, wall/ceiling and flooring finishes, applied build-wide or per part.
+- **Move & arrange** — drag, nudge, rotate or flip any movable part with live collision and bounds checks (walls, wheel wells, ceiling, other parts); cluster parts and tap Automate for compact, weight-balanced or spread-out layouts.
+- **Compare, Tracker & Profile** — compare parts or materials side by side (cost, weight, energy, R-value, range impact), track what you need / have / installed, and see your build’s parts, cost, range and vehicle on your profile.
+- **Year & model type** — choose the model year and trim/powertrain (gas, diesel or EV) for accurate GVWR, payload and range.
 - **Live build tracker** — itemized bill of materials and cost by phase, payload vs. GVWR, front/rear and left/right weight distribution, solar + alternator harvest vs. appliance draw with days of battery autonomy, fresh/grey water capacity, and engineering checks.
 - **Phased build mode** — step through Phase 1 Insulation & Framing → 2 Electrical & Plumbing → 3 Cabinetry & Finish → 4 Exterior Gear.
 - **Save / load** — multiple builds in browser storage, JSON import/export, and CSV bill-of-materials export.
